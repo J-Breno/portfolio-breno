@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-20">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center bg-gradient-hero pt-20">
       <DataParticles />
       
       {/* Background Elements */}
