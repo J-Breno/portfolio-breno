@@ -171,6 +171,8 @@ const ServicesSection = () => {
           icon={service.icon}
           features={service.modalFeatures}
           color={service.color}
+          includesLabel={t.services.modalIncludesLabel}
+          ctaLabel={t.services.modalCtaLabel}
         />
       ))}
     </>
