@@ -10,6 +10,10 @@ export const translations = {
       about: 'Sobre',
       contact: 'Contato',
       hire: 'Contratar',
+      downloadCV: 'Currículo',
+      cvPortuguese: 'Português',
+      cvEnglish: 'Inglês',
+      cvSpanish: 'Espanhol',
     },
     // Hero
     hero: {
@@ -199,6 +203,10 @@ export const translations = {
       about: 'About',
       contact: 'Contact',
       hire: 'Hire Me',
+      downloadCV: 'Resume',
+      cvPortuguese: 'Portuguese',
+      cvEnglish: 'English',
+      cvSpanish: 'Spanish',
     },
     // Hero
     hero: {
@@ -388,6 +396,10 @@ export const translations = {
       about: 'Sobre mí',
       contact: 'Contacto',
       hire: 'Contrátame',
+      downloadCV: 'Currículum',
+      cvPortuguese: 'Portugués',
+      cvEnglish: 'Inglés',
+      cvSpanish: 'Español',
     },
     // Hero
     hero: {
