@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-20 z-0">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-20">
       <DataParticles />
       
       {/* Background Elements */}
@@ -31,7 +31,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-0">
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <motion.div
