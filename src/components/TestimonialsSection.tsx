@@ -7,6 +7,7 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import iarlleyPhoto from '@/assets/testimonials/iarlley-gomes.png';
 import lucasPhoto from '@/assets/testimonials/lucas-guilherme.png';
 import pedroPhoto from '@/assets/testimonials/pedro-davi.png';
+import eduardoPhoto from '@/assets/testimonials/eduardo-ferreira.png';
 
 const testimonials = [
   {
@@ -31,8 +32,7 @@ const testimonials = [
     quote: 'João Breno é um profissional que se destaca pelo grande conhecimento em programação, pela vontade constante de aprender e pelo raciocínio lógico rápido. Sua capacidade de evolução é admirável e inspiradora, mostrando sempre que está pronto para encarar novos desafios e crescer ainda mais. É um privilégio ter alguém tão dedicado e talentoso na equipe!',
     author: 'Eduardo Ferreira',
     role: 'Analista de Monitoramento',
-    photo: null,
-    initials: 'EF',
+    photo: eduardoPhoto,
   },
   {
     quote: 'Breno é um colaborador que logo conquista sua confiança por conta da sua capacidade técnica, comprometimento e facilidade de relacionamento, é um excelente profissional para desenvolvimento ágil, pois tem muita facilidade para o trabalho em equipe, se aplica nas atividades e demandando pouca gerência. Recomendo o seu trabalho sem dúvidas. Focado no resultado, tem grande capacidade de tornar projetos em realidade. Entre suas virtudes destaco sua capacidade técnica e a facilidade de captar novos conhecimentos.',
