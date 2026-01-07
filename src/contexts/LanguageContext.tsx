@@ -17,7 +17,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const value = useMemo(() => ({
     language,
     setLanguage,
-    t: translations[language],
+    t: translations[language] as TranslationType,
   }), [language]);
 
   return (
