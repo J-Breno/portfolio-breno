@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, useMemo } from 'react';
 import { translations, Language } from '@/i18n/translations';
 
 type TranslationType = typeof translations['pt-BR'];
@@ -9,15 +9,19 @@ interface LanguageContextType {
   t: TranslationType;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | null>(null);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>('pt-BR');
 
-  const t = translations[language];
+  const value = useMemo(() => ({
+    language,
+    setLanguage,
+    t: translations[language],
+  }), [language]);
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   );
