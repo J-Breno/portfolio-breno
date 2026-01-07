@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, TrendingUp, Database, Zap } from 'lucide-react';
+import { TrendingUp, Database, Zap } from 'lucide-react';
 import DataParticles from './DataParticles';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -14,7 +14,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-20 z-0">
       <DataParticles />
       
       {/* Background Elements */}
@@ -150,23 +150,6 @@ const HeroSection = () => {
 
       </div>
 
-      {/* Scroll Indicator - outside container, hidden on mobile */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex"
-      >
-        <motion.button
-          onClick={scrollToServices}
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
-        >
-          <span className="text-sm">{t.hero.explore}</span>
-          <ArrowDown className="w-5 h-5" />
-        </motion.button>
-      </motion.div>
     </section>
   );
 };
