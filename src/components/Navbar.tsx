@@ -17,6 +17,7 @@ const Navbar = () => {
     { href: '#servicos', label: t.nav.services },
     { href: '#habilidades', label: t.nav.skills },
     { href: '#sobre', label: t.nav.about },
+    { href: '#depoimentos', label: t.nav.testimonials },
     { href: '#contato', label: t.nav.contact },
   ];
 
@@ -30,7 +31,7 @@ const Navbar = () => {
 
   // Intersection Observer for active section detection
   useEffect(() => {
-    const sections = ['inicio', 'servicos', 'habilidades', 'sobre', 'contato'];
+    const sections = ['inicio', 'servicos', 'habilidades', 'sobre', 'depoimentos', 'contato'];
     
     const observer = new IntersectionObserver(
       (entries) => {

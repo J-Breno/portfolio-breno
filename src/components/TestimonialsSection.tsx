@@ -9,60 +9,44 @@ import lucasPhoto from '@/assets/testimonials/lucas-guilherme.png';
 import pedroPhoto from '@/assets/testimonials/pedro-davi.png';
 import eduardoPhoto from '@/assets/testimonials/eduardo-ferreira.png';
 
-const testimonials = [
-  {
-    quote: 'Tive a oportunidade de acompanhar seu trabalho e posso destacar o profissionalismo e a motivação que demonstra em cada desafio. Possui sólida experiência em soluções lógicas e se destaca pela forma como analisa cenários e propõe soluções práticas e eficazes. Além da competência técnica, impressiona também pela rapidez em aprender novas tecnologias e pela disposição em compartilhar conhecimento, agregando muito valor às equipes em que atua.',
-    author: 'Iarlley Gomes',
-    role: 'Network Analyst | NOC | FCF',
-    photo: iarlleyPhoto,
-  },
-  {
-    quote: 'João Breno, uma pessoa disciplinada, talentosa e comunicativa. Tem grande conhecimento na área da programação, domina as principais ferramentas e está sempre se dedicando aos estudos para se aprimorar ainda mais, foi muito bom ter aprendido tanto com ele.',
-    author: 'Lucas Guilherme',
-    role: 'Analista de Dados | Excel | Power BI | SQL',
-    photo: lucasPhoto,
-  },
-  {
-    quote: 'João Breno é um profissional com excelente domínio em programação, sempre disposto a aprender e a encarar novos desafios. Sua dedicação e talento fazem a diferença na equipe.',
-    author: 'Pedro Davi',
-    role: 'Analista de Monitoramento',
-    photo: pedroPhoto,
-  },
-  {
-    quote: 'João Breno é um profissional que se destaca pelo grande conhecimento em programação, pela vontade constante de aprender e pelo raciocínio lógico rápido. Sua capacidade de evolução é admirável e inspiradora, mostrando sempre que está pronto para encarar novos desafios e crescer ainda mais. É um privilégio ter alguém tão dedicado e talentoso na equipe!',
-    author: 'Eduardo Ferreira',
-    role: 'Analista de Monitoramento',
-    photo: eduardoPhoto,
-  },
-  {
-    quote: 'Breno é um colaborador que logo conquista sua confiança por conta da sua capacidade técnica, comprometimento e facilidade de relacionamento, é um excelente profissional para desenvolvimento ágil, pois tem muita facilidade para o trabalho em equipe, se aplica nas atividades e demandando pouca gerência. Recomendo o seu trabalho sem dúvidas. Focado no resultado, tem grande capacidade de tornar projetos em realidade. Entre suas virtudes destaco sua capacidade técnica e a facilidade de captar novos conhecimentos.',
-    author: 'Dnivaldo A O Filho',
-    role: 'Analista de Redes e de comunicação de dados',
-    photo: null,
-    initials: 'DF',
-  },
-];
+const photoMap: Record<string, string | null> = {
+  'Iarlley Gomes': iarlleyPhoto,
+  'Lucas Guilherme': lucasPhoto,
+  'Pedro Davi': pedroPhoto,
+  'Eduardo Ferreira': eduardoPhoto,
+  'Dnivaldo A O Filho': null,
+};
+
+const initialsMap: Record<string, string> = {
+  'Dnivaldo A O Filho': 'DF',
+};
 
 const TestimonialsSection = () => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
 
+  const testimonials = t.testimonials?.items || [];
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
     }, 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   const goTo = (index: number) => setCurrent(index);
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
   const currentTestimonial = testimonials[current];
+  const photo = currentTestimonial ? photoMap[currentTestimonial.author] : null;
+  const initials = currentTestimonial ? initialsMap[currentTestimonial.author] : null;
+
+  if (!currentTestimonial) return null;
 
   return (
-    <section ref={ref} className="py-20 bg-background">
+    <section id="depoimentos" ref={ref} className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -101,16 +85,16 @@ const TestimonialsSection = () => {
               </p>
               
               <div className="flex flex-col items-center gap-3">
-                {currentTestimonial.photo ? (
+                {photo ? (
                   <img 
-                    src={currentTestimonial.photo} 
+                    src={photo} 
                     alt={currentTestimonial.author}
                     className="w-16 h-16 rounded-full object-cover border-2 border-accent/30"
                   />
                 ) : (
                   <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center border-2 border-accent/30">
                     <span className="text-accent font-semibold text-lg">
-                      {currentTestimonial.initials}
+                      {initials || currentTestimonial.author?.charAt(0) || '?'}
                     </span>
                   </div>
                 )}

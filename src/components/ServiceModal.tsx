@@ -33,14 +33,20 @@ const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, feature
                 className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50"
               />
             </Dialog.Overlay>
-            <Dialog.Content asChild onPointerDownOutside={() => onClose()}>
-              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
+            <Dialog.Content asChild>
+              <motion.div 
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+                onClick={onClose}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9, y: 20 }}
                   transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                  className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl bg-card border border-border shadow-glow pointer-events-auto"
+                  className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl bg-card border border-border shadow-glow"
                   onClick={(e) => e.stopPropagation()}
                 >
                 {/* Header */}
@@ -51,7 +57,7 @@ const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, feature
                     transition={{ delay: 0.2 }}
                     className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-background/20 backdrop-blur-sm flex items-center justify-center mb-4"
                   >
-                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-accent-foreground" />
+                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-white" />
                   </motion.div>
                   
                   <Dialog.Title className="text-xl md:text-2xl lg:text-3xl font-bold text-accent-foreground mb-2 pr-10">
@@ -118,7 +124,7 @@ const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, feature
                   </motion.a>
                 </div>
                 </motion.div>
-              </div>
+              </motion.div>
             </Dialog.Content>
           </Dialog.Portal>
         )}
