@@ -1,18 +1,21 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, BarChart3 } from 'lucide-react';
-
-const navLinks = [
-  { href: '#inicio', label: 'Início' },
-  { href: '#servicos', label: 'Serviços' },
-  { href: '#habilidades', label: 'Habilidades' },
-  { href: '#sobre', label: 'Sobre' },
-  { href: '#contato', label: 'Contato' },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { href: '#inicio', label: t.nav.home },
+    { href: '#servicos', label: t.nav.services },
+    { href: '#habilidades', label: t.nav.skills },
+    { href: '#sobre', label: t.nav.about },
+    { href: '#contato', label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +63,7 @@ const Navbar = () => {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link, index) => (
               <motion.a
                 key={link.href}
@@ -78,6 +81,9 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-gold group-hover:w-full transition-all duration-300" />
               </motion.a>
             ))}
+            
+            <LanguageSelector />
+            
             <motion.a
               href="#contato"
               onClick={(e) => {
@@ -91,17 +97,20 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              Contratar
+              {t.nav.hire}
             </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center text-foreground"
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-3 md:hidden">
+            <LanguageSelector />
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="w-10 h-10 flex items-center justify-center text-foreground"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 
@@ -143,7 +152,7 @@ const Navbar = () => {
                 transition={{ delay: 0.5 }}
                 className="mt-4 px-8 py-3 rounded-lg bg-gradient-gold text-accent-foreground font-semibold text-xl shadow-gold"
               >
-                Contratar
+                {t.nav.hire}
               </motion.a>
             </div>
           </motion.div>

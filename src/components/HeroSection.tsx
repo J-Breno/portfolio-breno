@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, TrendingUp, Database, Zap } from 'lucide-react';
 import DataParticles from './DataParticles';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   const scrollToServices = () => {
     const element = document.querySelector('#servicos');
     if (element) {
@@ -44,7 +47,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-sm text-muted-foreground">Disponível para oportunidades</span>
+            <span className="text-sm text-muted-foreground">{t.hero.available}</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -54,12 +57,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            Transformando{' '}
-            <span className="text-gradient-gold">Dados</span>
+            {t.hero.title1}{' '}
+            <span className="text-gradient-gold">{t.hero.title2}</span>
             <br />
-            em{' '}
+            {t.hero.title3}{' '}
             <span className="relative inline-block">
-              <span className="text-gradient-gold">Decisão</span>
+              <span className="text-gradient-gold">{t.hero.title4}</span>
               <motion.span
                 className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-gold rounded-full"
                 initial={{ scaleX: 0 }}
@@ -76,10 +79,10 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
           >
-            Análises claras, dashboards estratégicos e automações que ajudam empresas a{' '}
-            <span className="text-foreground font-medium">decidir melhor</span>,{' '}
-            <span className="text-foreground font-medium">mais rápido</span> e com{' '}
-            <span className="text-foreground font-medium">menos risco</span>.
+            {t.hero.subtitle}{' '}
+            <span className="text-foreground font-medium">{t.hero.decideBetter}</span>,{' '}
+            <span className="text-foreground font-medium">{t.hero.faster}</span> {t.hero.and}{' '}
+            <span className="text-foreground font-medium">{t.hero.lessRisk}</span>.
           </motion.p>
 
           {/* Stats */}
@@ -90,9 +93,9 @@ const HeroSection = () => {
             className="grid grid-cols-3 gap-4 md:gap-8 max-w-lg mx-auto mb-12"
           >
             {[
-              { icon: TrendingUp, label: 'BI & Analytics', value: 'Expert' },
-              { icon: Database, label: 'SQL & Data', value: 'Fluente' },
-              { icon: Zap, label: 'Automação', value: 'Ágil' },
+              { icon: TrendingUp, label: t.hero.biLabel, value: t.hero.biValue },
+              { icon: Database, label: t.hero.sqlLabel, value: t.hero.sqlValue },
+              { icon: Zap, label: t.hero.autoLabel, value: t.hero.autoValue },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -128,7 +131,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
-              Vamos Conversar
+              {t.hero.cta1}
             </motion.a>
             <motion.a
               href="#servicos"
@@ -140,7 +143,7 @@ const HeroSection = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Ver Serviços
+              {t.hero.cta2}
             </motion.a>
           </motion.div>
         </div>
@@ -158,7 +161,7 @@ const HeroSection = () => {
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center gap-2 text-muted-foreground hover:text-accent transition-colors"
           >
-            <span className="text-sm">Explore</span>
+            <span className="text-sm">{t.hero.explore}</span>
             <ArrowDown className="w-5 h-5" />
           </motion.button>
         </motion.div>

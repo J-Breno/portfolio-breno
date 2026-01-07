@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, Linkedin, Github, Mail, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, Linkedin, Github, Instagram, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactSection = () => {
   const [ref, inView] = useInView({
@@ -11,6 +12,7 @@ const ContactSection = () => {
   });
 
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -31,8 +33,8 @@ const ContactSection = () => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     toast({
-      title: "Mensagem enviada!",
-      description: "Obrigado pelo contato. Retornarei em breve!",
+      title: t.contact.successTitle,
+      description: t.contact.successDescription,
     });
 
     setFormData({ name: '', email: '', subject: '', message: '' });
@@ -40,9 +42,9 @@ const ContactSection = () => {
   };
 
   const socialLinks = [
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Mail, href: 'mailto:joaobreno@email.com', label: 'Email' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/joão-breno', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/J-Breno/', label: 'GitHub' },
+    { icon: Instagram, href: 'https://www.instagram.com/joao_breno.io/', label: 'Instagram' },
   ];
 
   return (
@@ -66,15 +68,14 @@ const ContactSection = () => {
             transition={{ delay: 0.2 }}
             className="text-accent font-medium text-sm tracking-widest uppercase mb-4 block"
           >
-            Vamos trabalhar juntos
+            {t.contact.subtitle}
           </motion.span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Entre em{' '}
-            <span className="text-gradient-gold">Contato</span>
+            {t.contact.title}{' '}
+            <span className="text-gradient-gold">{t.contact.titleHighlight}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Pronto para transformar seus dados em decisões estratégicas?
-            Vamos conversar sobre como posso ajudar sua empresa.
+            {t.contact.description}
           </p>
         </motion.div>
 
@@ -89,7 +90,7 @@ const ContactSection = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Nome
+                    {t.contact.nameLabel}
                   </label>
                   <input
                     type="text"
@@ -99,12 +100,12 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-foreground placeholder:text-muted-foreground"
-                    placeholder="Seu nome"
+                    placeholder={t.contact.namePlaceholder}
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email
+                    {t.contact.emailLabel}
                   </label>
                   <input
                     type="email"
@@ -114,14 +115,14 @@ const ContactSection = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-foreground placeholder:text-muted-foreground"
-                    placeholder="seu@email.com"
+                    placeholder={t.contact.emailPlaceholder}
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                  Assunto
+                  {t.contact.subjectLabel}
                 </label>
                 <input
                   type="text"
@@ -131,13 +132,13 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-foreground placeholder:text-muted-foreground"
-                  placeholder="Proposta de trabalho, projeto, etc."
+                  placeholder={t.contact.subjectPlaceholder}
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Mensagem
+                  {t.contact.messageLabel}
                 </label>
                 <textarea
                   id="message"
@@ -147,7 +148,7 @@ const ContactSection = () => {
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-all text-foreground placeholder:text-muted-foreground resize-none"
-                  placeholder="Conte-me mais sobre sua necessidade..."
+                  placeholder={t.contact.messagePlaceholder}
                 />
               </div>
 
@@ -165,11 +166,11 @@ const ContactSection = () => {
                       animate={{ rotate: 360 }}
                       transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
                     />
-                    Enviando...
+                    {t.contact.submitting}
                   </>
                 ) : (
                   <>
-                    Enviar Mensagem
+                    {t.contact.submit}
                     <Send className="w-5 h-5" />
                   </>
                 )}
@@ -186,16 +187,11 @@ const ContactSection = () => {
           >
             <div className="p-8 rounded-2xl bg-gradient-card border border-border/50">
               <h3 className="text-xl font-bold text-foreground mb-6">
-                Por que entrar em contato?
+                {t.contact.whyContact}
               </h3>
 
               <div className="space-y-4 mb-8">
-                {[
-                  'Resposta rápida e profissional',
-                  'Análise gratuita do seu cenário atual',
-                  'Propostas personalizadas para seu negócio',
-                  'Sem compromisso inicial',
-                ].map((item, index) => (
+                {t.contact.reasons.map((item, index) => (
                   <motion.div
                     key={item}
                     initial={{ opacity: 0, x: 20 }}
@@ -212,7 +208,7 @@ const ContactSection = () => {
               {/* Social Links */}
               <div className="pt-6 border-t border-border">
                 <p className="text-sm text-muted-foreground mb-4">
-                  Ou conecte-se comigo:
+                  {t.contact.connectWith}
                 </p>
                 <div className="flex gap-4">
                   {socialLinks.map((social) => (

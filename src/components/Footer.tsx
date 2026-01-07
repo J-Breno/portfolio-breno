@@ -1,7 +1,17 @@
 import { motion } from 'framer-motion';
 import { BarChart3, Heart } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { id: 'inicio', label: t.nav.home },
+    { id: 'servicos', label: t.nav.services },
+    { id: 'sobre', label: t.nav.about },
+    { id: 'contato', label: t.nav.contact },
+  ];
+
   return (
     <footer className="py-8 border-t border-border/50 bg-background">
       <div className="container mx-auto px-6">
@@ -28,7 +38,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-sm text-muted-foreground flex items-center gap-1"
           >
-            Feito com <Heart className="w-4 h-4 text-accent" /> em {new Date().getFullYear()}
+            {t.footer.madeWith} <Heart className="w-4 h-4 text-accent" /> {t.footer.in} {new Date().getFullYear()}
           </motion.p>
 
           {/* Quick Links */}
@@ -38,19 +48,18 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex items-center gap-6"
           >
-            {['Início', 'Serviços', 'Sobre', 'Contato'].map((link) => (
+            {navLinks.map((link) => (
               <a
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.id}
+                href={`#${link.id}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  const id = link.toLowerCase() === 'início' ? 'inicio' : link.toLowerCase();
-                  const element = document.querySelector(`#${id}`);
+                  const element = document.querySelector(`#${link.id}`);
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="text-sm text-muted-foreground hover:text-accent transition-colors"
               >
-                {link}
+                {link.label}
               </a>
             ))}
           </motion.div>

@@ -1,35 +1,38 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Briefcase, GraduationCap, Target, Sparkles } from 'lucide-react';
-
-const timeline = [
-  {
-    icon: GraduationCap,
-    title: 'Formação & Início',
-    description: 'Construí uma base sólida em análise de dados, estatística e programação.',
-  },
-  {
-    icon: Briefcase,
-    title: 'Estágio em Dados',
-    description: 'Experiência prática desenvolvendo dashboards, relatórios e análises para decisões estratégicas.',
-  },
-  {
-    icon: Target,
-    title: 'Analista de Sistemas',
-    description: 'Atualmente em redes de computadores, ampliando visão de infraestrutura e integração de sistemas.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Próximo Passo',
-    description: 'Retornando à área de dados com maturidade técnica e visão sistêmica diferenciada.',
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const AboutSection = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const { t } = useLanguage();
+
+  const timeline = [
+    {
+      icon: GraduationCap,
+      title: t.about.timeline.education.title,
+      description: t.about.timeline.education.description,
+    },
+    {
+      icon: Briefcase,
+      title: t.about.timeline.internship.title,
+      description: t.about.timeline.internship.description,
+    },
+    {
+      icon: Target,
+      title: t.about.timeline.current.title,
+      description: t.about.timeline.current.description,
+    },
+    {
+      icon: Sparkles,
+      title: t.about.timeline.next.title,
+      description: t.about.timeline.next.description,
+    },
+  ];
 
   return (
     <section id="sobre" className="py-24 relative overflow-hidden" ref={ref}>
@@ -51,32 +54,24 @@ const AboutSection = () => {
               transition={{ delay: 0.2 }}
               className="text-accent font-medium text-sm tracking-widest uppercase mb-4 block"
             >
-              Quem sou eu
+              {t.about.subtitle}
             </motion.span>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              João{' '}
-              <span className="text-gradient-gold">Breno</span>
+              {t.about.name}{' '}
+              <span className="text-gradient-gold">{t.about.nameHighlight}</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Sou um profissional apaixonado por dados que acredita no poder da informação 
-              para transformar negócios. Com experiência em análise de dados e uma visão 
-              ampliada por minha atuação em sistemas e infraestrutura.
+              {t.about.description1}
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Minha trajetória me permitiu desenvolver uma <span className="text-foreground font-medium">combinação 
-              única</span>: entendo não apenas como analisar dados, mas também como eles fluem 
-              através dos sistemas, como otimizar processos e como comunicar insights de 
-              forma que <span className="text-foreground font-medium">geram ação</span>.
+              {t.about.description2}
             </p>
 
             {/* Value Proposition */}
             <div className="p-6 rounded-2xl bg-gradient-card border border-accent/20 shadow-glow">
-              <p className="text-foreground font-medium mb-2">Por que me escolher?</p>
+              <p className="text-foreground font-medium mb-2">{t.about.valueTitle}</p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Trago maturidade profissional, visão sistêmica e a determinação de quem 
-                escolheu retornar à área de dados porque sabe que é onde posso 
-                gerar mais valor. Não sou apenas mais um candidato — sou alguém que 
-                entende a importância de cada decisão baseada em dados.
+                {t.about.valueDescription}
               </p>
             </div>
           </motion.div>
