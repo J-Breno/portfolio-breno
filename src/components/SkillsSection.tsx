@@ -18,22 +18,24 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const skills = [
-  { icon: FileSpreadsheet, name: 'Excel', description: 'Fórmulas complexas, VBA, análises dinâmicas' },
-  { icon: BarChart3, name: 'Power BI', description: 'DAX, modelagem, dashboards executivos' },
-  { icon: Database, name: 'SQL', description: 'PostgreSQL, MySQL, queries otimizadas' },
-  { icon: Code2, name: 'Python', description: 'Pandas, automações, análise de dados' },
-  { icon: Workflow, name: 'N8N', description: 'Automação de workflows e integrações' },
-  { icon: GitBranch, name: 'Git', description: 'Versionamento e colaboração' },
-  { icon: Activity, name: 'Zabbix', description: 'Monitoramento e análise de métricas' },
-  { icon: BarChart3, name: 'Grafana', description: 'Dashboards e visualização de dados' },
-  { icon: Cloud, name: 'AWS', description: 'Serviços cloud e infraestrutura' },
-  { icon: Wind, name: 'Airflow', description: 'Orquestração de pipelines de dados' },
-  { icon: Container, name: 'Docker', description: 'Containerização e deploy' },
-  { icon: MessageSquare, name: 'Comunicação', description: 'Apresentação de insights e storytelling' },
-  { icon: Users, name: 'Trabalho em Equipe', description: 'Colaboração efetiva em times' },
-  { icon: Brain, name: 'Pensamento Analítico', description: 'Tomada de decisão baseada em dados' },
-  { icon: ClipboardCheck, name: 'SCRUM', description: 'Gestão ágil de projetos e sprints' },
+type SkillKey = 'excel' | 'powerbi' | 'sql' | 'python' | 'n8n' | 'git' | 'zabbix' | 'grafana' | 'aws' | 'airflow' | 'docker' | 'communication' | 'teamwork' | 'analyticalThinking' | 'scrum';
+
+const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
+  { icon: FileSpreadsheet, key: 'excel' },
+  { icon: BarChart3, key: 'powerbi' },
+  { icon: Database, key: 'sql' },
+  { icon: Code2, key: 'python' },
+  { icon: Workflow, key: 'n8n' },
+  { icon: GitBranch, key: 'git' },
+  { icon: Activity, key: 'zabbix' },
+  { icon: BarChart3, key: 'grafana' },
+  { icon: Cloud, key: 'aws' },
+  { icon: Wind, key: 'airflow' },
+  { icon: Container, key: 'docker' },
+  { icon: MessageSquare, key: 'communication' },
+  { icon: Users, key: 'teamwork' },
+  { icon: Brain, key: 'analyticalThinking' },
+  { icon: ClipboardCheck, key: 'scrum' },
 ];
 
 const SkillsSection = () => {
@@ -67,37 +69,43 @@ const SkillsSection = () => {
     },
   };
 
-  const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
-    <motion.div
-      variants={itemVariants}
-      className="group relative"
-    >
+  const skillItems = t.skills.skillItems as Record<SkillKey, { name: string; description: string }>;
+
+  const SkillCard = ({ skill }: { skill: typeof skillsData[0] }) => {
+    const skillData = skillItems[skill.key];
+    
+    return (
       <motion.div
-        className="p-4 rounded-2xl bg-gradient-card border border-border/50 text-center hover:border-accent/30 transition-all duration-300 cursor-pointer h-full"
-        whileHover={{ y: -5, scale: 1.03 }}
-        transition={{ type: 'spring', stiffness: 300 }}
+        variants={itemVariants}
+        className="group relative"
       >
-        {/* Icon */}
-        <div className="w-10 h-10 mx-auto mb-2 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-          <skill.icon className="w-5 h-5 text-accent" />
-        </div>
-
-        {/* Name */}
-        <h4 className="font-semibold text-foreground text-xs">{skill.name}</h4>
-
-        {/* Tooltip */}
         <motion.div
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 p-2 rounded-lg bg-card border border-border shadow-card opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20"
-          initial={false}
+          className="p-4 rounded-2xl bg-gradient-card border border-border/50 text-center hover:border-accent/30 transition-all duration-300 cursor-pointer h-full"
+          whileHover={{ y: -5, scale: 1.03 }}
+          transition={{ type: 'spring', stiffness: 300 }}
         >
-          <p className="text-xs text-muted-foreground text-center">
-            {skill.description}
-          </p>
-          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-card" />
+          {/* Icon */}
+          <div className="w-10 h-10 mx-auto mb-2 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+            <skill.icon className="w-5 h-5 text-accent" />
+          </div>
+
+          {/* Name */}
+          <h4 className="font-semibold text-foreground text-xs">{skillData.name}</h4>
+
+          {/* Tooltip */}
+          <motion.div
+            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 p-2 rounded-lg bg-card border border-border shadow-card opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20"
+            initial={false}
+          >
+            <p className="text-xs text-muted-foreground text-center">
+              {skillData.description}
+            </p>
+            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-card" />
+          </motion.div>
         </motion.div>
       </motion.div>
-    </motion.div>
-  );
+    );
+  };
 
   return (
     <section id="habilidades" className="py-24 relative overflow-hidden" ref={ref}>
@@ -137,8 +145,8 @@ const SkillsSection = () => {
           animate={inView ? 'visible' : 'hidden'}
           className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-3 md:gap-4 max-w-4xl mx-auto"
         >
-          {skills.map((skill) => (
-            <SkillCard key={skill.name} skill={skill} />
+          {skillsData.map((skill) => (
+            <SkillCard key={skill.key} skill={skill} />
           ))}
         </motion.div>
 
