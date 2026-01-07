@@ -193,6 +193,49 @@ export const translations = {
       madeWith: 'Feito com',
       in: 'em',
     },
+    // Tools
+    tools: {
+      subtitle: 'Tech Stack',
+      title: 'Ferramentas &',
+      titleHighlight: 'Tecnologias',
+      description: 'As ferramentas que domino para entregar soluções de dados de alto impacto',
+      certNote: '+ Certificações em Power BI, SQL e metodologias ágeis',
+    },
+    // Stats
+    stats: {
+      dashboards: { value: 50, label: 'Dashboards Criados' },
+      clients: { value: 15, label: 'Clientes Atendidos' },
+      projects: { value: 30, label: 'Projetos Entregues' },
+      experience: { value: 3, label: 'Anos de Experiência' },
+    },
+    // Testimonials
+    testimonials: {
+      subtitle: 'Recomendações',
+      title: 'O que dizem',
+      titleHighlight: 'sobre mim',
+      description: 'Feedback de colegas, gestores e clientes com quem trabalhei',
+      note: '💡 Você pode adicionar depoimentos reais de colegas, gestores ou clientes aqui',
+      items: [
+        {
+          quote: 'Profissional dedicado e com excelente capacidade analítica. Entrega resultados consistentes e de alta qualidade.',
+          author: 'Adicione um nome',
+          role: 'Cargo / Empresa',
+          avatar: '👤',
+        },
+        {
+          quote: 'Ótima comunicação e habilidade de transformar dados complexos em insights acionáveis para o negócio.',
+          author: 'Adicione um nome',
+          role: 'Cargo / Empresa',
+          avatar: '👤',
+        },
+        {
+          quote: 'Proativo, organizado e sempre buscando aprender novas tecnologias. Recomendo fortemente!',
+          author: 'Adicione um nome',
+          role: 'Cargo / Empresa',
+          avatar: '👤',
+        },
+      ],
+    },
   },
   'en-US': {
     // Navbar
@@ -386,6 +429,49 @@ export const translations = {
       madeWith: 'Made with',
       in: 'in',
     },
+    // Tools
+    tools: {
+      subtitle: 'Tech Stack',
+      title: 'Tools &',
+      titleHighlight: 'Technologies',
+      description: 'The tools I master to deliver high-impact data solutions',
+      certNote: '+ Certifications in Power BI, SQL and agile methodologies',
+    },
+    // Stats
+    stats: {
+      dashboards: { value: 50, label: 'Dashboards Created' },
+      clients: { value: 15, label: 'Clients Served' },
+      projects: { value: 30, label: 'Projects Delivered' },
+      experience: { value: 3, label: 'Years of Experience' },
+    },
+    // Testimonials
+    testimonials: {
+      subtitle: 'Recommendations',
+      title: 'What they say',
+      titleHighlight: 'about me',
+      description: 'Feedback from colleagues, managers and clients I have worked with',
+      note: '💡 You can add real testimonials from colleagues, managers or clients here',
+      items: [
+        {
+          quote: 'Dedicated professional with excellent analytical skills. Delivers consistent, high-quality results.',
+          author: 'Add a name',
+          role: 'Role / Company',
+          avatar: '👤',
+        },
+        {
+          quote: 'Great communication and ability to transform complex data into actionable business insights.',
+          author: 'Add a name',
+          role: 'Role / Company',
+          avatar: '👤',
+        },
+        {
+          quote: 'Proactive, organized and always looking to learn new technologies. Highly recommend!',
+          author: 'Add a name',
+          role: 'Role / Company',
+          avatar: '👤',
+        },
+      ],
+    },
   },
   'es-ES': {
     // Navbar
@@ -578,6 +664,49 @@ export const translations = {
     footer: {
       madeWith: 'Hecho con',
       in: 'en',
+    },
+    // Tools
+    tools: {
+      subtitle: 'Tech Stack',
+      title: 'Herramientas &',
+      titleHighlight: 'Tecnologías',
+      description: 'Las herramientas que domino para entregar soluciones de datos de alto impacto',
+      certNote: '+ Certificaciones en Power BI, SQL y metodologías ágiles',
+    },
+    // Stats
+    stats: {
+      dashboards: { value: 50, label: 'Dashboards Creados' },
+      clients: { value: 15, label: 'Clientes Atendidos' },
+      projects: { value: 30, label: 'Proyectos Entregados' },
+      experience: { value: 3, label: 'Años de Experiencia' },
+    },
+    // Testimonials
+    testimonials: {
+      subtitle: 'Recomendaciones',
+      title: 'Lo que dicen',
+      titleHighlight: 'sobre mí',
+      description: 'Feedback de colegas, gerentes y clientes con quienes he trabajado',
+      note: '💡 Puedes agregar testimonios reales de colegas, gerentes o clientes aquí',
+      items: [
+        {
+          quote: 'Profesional dedicado y con excelente capacidad analítica. Entrega resultados consistentes y de alta calidad.',
+          author: 'Agrega un nombre',
+          role: 'Cargo / Empresa',
+          avatar: '👤',
+        },
+        {
+          quote: 'Excelente comunicación y habilidad para transformar datos complejos en insights accionables para el negocio.',
+          author: 'Agrega un nombre',
+          role: 'Cargo / Empresa',
+          avatar: '👤',
+        },
+        {
+          quote: 'Proactivo, organizado y siempre buscando aprender nuevas tecnologías. ¡Lo recomiendo mucho!',
+          author: 'Agrega un nombre',
+          role: 'Cargo / Empresa',
+          avatar: '👤',
+        },
+      ],
     },
   },
 };
