@@ -4,6 +4,7 @@ import { Menu, X, BarChart3 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSelector from './LanguageSelector';
 import ThemeToggle from './ThemeToggle';
+import ResumeDownloadButton from './ResumeDownloadButton';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -122,21 +123,7 @@ const Navbar = () => {
             <ThemeToggle />
             <LanguageSelector />
             
-            <motion.a
-              href="#contato"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo('#contato');
-              }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-              className="px-5 py-2 rounded-lg bg-gradient-gold text-accent-foreground font-semibold shadow-gold hover:shadow-glow transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {t.nav.hire}
-            </motion.a>
+            <ResumeDownloadButton />
           </div>
 
           {/* Mobile Menu Button */}
@@ -193,19 +180,9 @@ const Navbar = () => {
                   </motion.a>
                 );
               })}
-              <motion.a
-                href="#contato"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo('#contato');
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="mt-4 px-8 py-3 rounded-lg bg-gradient-gold text-accent-foreground font-semibold text-xl shadow-gold"
-              >
-                {t.nav.hire}
-              </motion.a>
+              <div className="mt-4">
+                <ResumeDownloadButton />
+              </div>
             </div>
           </motion.div>
         )}
