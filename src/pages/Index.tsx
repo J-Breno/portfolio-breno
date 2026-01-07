@@ -1,8 +1,11 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
+import ToolsSection from '@/components/ToolsSection';
 import SkillsSection from '@/components/SkillsSection';
+import StatsCounter from '@/components/StatsCounter';
 import AboutSection from '@/components/AboutSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -13,8 +16,11 @@ const Index = () => {
       <main>
         <HeroSection />
         <ServicesSection />
+        <ToolsSection />
         <SkillsSection />
+        <StatsCounter />
         <AboutSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />
