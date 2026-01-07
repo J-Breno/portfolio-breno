@@ -11,9 +11,9 @@ export const translations = {
       contact: 'Contato',
       hire: 'Contratar',
       downloadCV: 'Currículo',
-      cvPortuguese: 'Português',
-      cvEnglish: 'Inglês',
-      cvSpanish: 'Espanhol',
+      cvPortuguese: 'Baixar em Português',
+      cvEnglish: 'Baixar em Inglês',
+      cvSpanish: 'Baixar em Espanhol',
     },
     // Hero
     hero: {
@@ -204,9 +204,9 @@ export const translations = {
       contact: 'Contact',
       hire: 'Hire Me',
       downloadCV: 'Resume',
-      cvPortuguese: 'Portuguese',
-      cvEnglish: 'English',
-      cvSpanish: 'Spanish',
+      cvPortuguese: 'Download in Portuguese',
+      cvEnglish: 'Download in English',
+      cvSpanish: 'Download in Spanish',
     },
     // Hero
     hero: {
@@ -397,9 +397,9 @@ export const translations = {
       contact: 'Contacto',
       hire: 'Contrátame',
       downloadCV: 'Currículum',
-      cvPortuguese: 'Portugués',
-      cvEnglish: 'Inglés',
-      cvSpanish: 'Español',
+      cvPortuguese: 'Descargar en Portugués',
+      cvEnglish: 'Descargar en Inglés',
+      cvSpanish: 'Descargar en Español',
     },
     // Hero
     hero: {

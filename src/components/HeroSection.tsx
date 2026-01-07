@@ -2,16 +2,10 @@ import { motion } from 'framer-motion';
 import { TrendingUp, Database, Zap } from 'lucide-react';
 import DataParticles from './DataParticles';
 import { useLanguage } from '@/contexts/LanguageContext';
+import ResumeDownloadButton from './ResumeDownloadButton';
 
 const HeroSection = () => {
   const { t } = useLanguage();
-
-  const scrollToServices = () => {
-    const element = document.querySelector('#servicos');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero pt-20 z-0">
@@ -133,18 +127,7 @@ const HeroSection = () => {
             >
               {t.hero.cta1}
             </motion.a>
-            <motion.a
-              href="#servicos"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToServices();
-              }}
-              className="px-8 py-4 rounded-xl border border-border text-foreground font-medium text-lg hover:bg-secondary/50 hover:border-accent/30 transition-all duration-300"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {t.hero.cta2}
-            </motion.a>
+            <ResumeDownloadButton variant="hero" />
           </motion.div>
         </div>
 
