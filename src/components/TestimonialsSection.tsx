@@ -4,42 +4,62 @@ import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
+import iarlleyPhoto from '@/assets/testimonials/iarlley-gomes.png';
+import lucasPhoto from '@/assets/testimonials/lucas-guilherme.png';
+import pedroPhoto from '@/assets/testimonials/pedro-davi.png';
+
+const testimonials = [
+  {
+    quote: 'Tive a oportunidade de acompanhar seu trabalho e posso destacar o profissionalismo e a motivação que demonstra em cada desafio. Possui sólida experiência em soluções lógicas e se destaca pela forma como analisa cenários e propõe soluções práticas e eficazes. Além da competência técnica, impressiona também pela rapidez em aprender novas tecnologias e pela disposição em compartilhar conhecimento, agregando muito valor às equipes em que atua.',
+    author: 'Iarlley Gomes',
+    role: 'Network Analyst | NOC | FCF',
+    photo: iarlleyPhoto,
+  },
+  {
+    quote: 'João Breno, uma pessoa disciplinada, talentosa e comunicativa. Tem grande conhecimento na área da programação, domina as principais ferramentas e está sempre se dedicando aos estudos para se aprimorar ainda mais, foi muito bom ter aprendido tanto com ele.',
+    author: 'Lucas Guilherme',
+    role: 'Analista de Dados | Excel | Power BI | SQL',
+    photo: lucasPhoto,
+  },
+  {
+    quote: 'João Breno é um profissional com excelente domínio em programação, sempre disposto a aprender e a encarar novos desafios. Sua dedicação e talento fazem a diferença na equipe.',
+    author: 'Pedro Davi',
+    role: 'Analista de Monitoramento',
+    photo: pedroPhoto,
+  },
+  {
+    quote: 'João Breno é um profissional que se destaca pelo grande conhecimento em programação, pela vontade constante de aprender e pelo raciocínio lógico rápido. Sua capacidade de evolução é admirável e inspiradora, mostrando sempre que está pronto para encarar novos desafios e crescer ainda mais. É um privilégio ter alguém tão dedicado e talentoso na equipe!',
+    author: 'Eduardo Ferreira',
+    role: 'Analista de Monitoramento',
+    photo: null,
+    initials: 'EF',
+  },
+  {
+    quote: 'Breno é um colaborador que logo conquista sua confiança por conta da sua capacidade técnica, comprometimento e facilidade de relacionamento, é um excelente profissional para desenvolvimento ágil, pois tem muita facilidade para o trabalho em equipe, se aplica nas atividades e demandando pouca gerência. Recomendo o seu trabalho sem dúvidas. Focado no resultado, tem grande capacidade de tornar projetos em realidade. Entre suas virtudes destaco sua capacidade técnica e a facilidade de captar novos conhecimentos.',
+    author: 'Dnivaldo A O Filho',
+    role: 'Analista de Redes e de comunicação de dados',
+    photo: null,
+    initials: 'DF',
+  },
+];
+
 const TestimonialsSection = () => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
   const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
 
-  const testimonials = t.testimonials?.items || [
-    {
-      quote: 'Profissional dedicado e com excelente capacidade analítica. Entrega resultados consistentes e de alta qualidade.',
-      author: 'Seu Nome Aqui',
-      role: 'Cargo / Empresa',
-      avatar: '👤',
-    },
-    {
-      quote: 'Ótima comunicação e habilidade de transformar dados complexos em insights acionáveis para o negócio.',
-      author: 'Outro Nome',
-      role: 'Cargo / Empresa',
-      avatar: '👤',
-    },
-    {
-      quote: 'Proativo, organizado e sempre buscando aprender novas tecnologias. Recomendo fortemente!',
-      author: 'Mais Um Nome',
-      role: 'Cargo / Empresa',
-      avatar: '👤',
-    },
-  ];
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 8000);
     return () => clearInterval(timer);
-  }, [testimonials.length]);
+  }, []);
 
   const goTo = (index: number) => setCurrent(index);
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
+
+  const currentTestimonial = testimonials[current];
 
   return (
     <section ref={ref} className="py-20 bg-background">
@@ -64,7 +84,7 @@ const TestimonialsSection = () => {
         </motion.div>
 
         {/* Carousel */}
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative max-w-4xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -76,15 +96,27 @@ const TestimonialsSection = () => {
             >
               <Quote className="w-10 h-10 text-accent/30 absolute top-6 left-6" />
               
-              <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8 italic">
-                "{testimonials[current].quote}"
+              <p className="text-base md:text-lg text-foreground leading-relaxed mb-8 italic max-w-3xl mx-auto">
+                "{currentTestimonial.quote}"
               </p>
               
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-4xl">{testimonials[current].avatar}</span>
+              <div className="flex flex-col items-center gap-3">
+                {currentTestimonial.photo ? (
+                  <img 
+                    src={currentTestimonial.photo} 
+                    alt={currentTestimonial.author}
+                    className="w-16 h-16 rounded-full object-cover border-2 border-accent/30"
+                  />
+                ) : (
+                  <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center border-2 border-accent/30">
+                    <span className="text-accent font-semibold text-lg">
+                      {currentTestimonial.initials}
+                    </span>
+                  </div>
+                )}
                 <div>
-                  <p className="font-semibold text-foreground">{testimonials[current].author}</p>
-                  <p className="text-sm text-muted-foreground">{testimonials[current].role}</p>
+                  <p className="font-semibold text-foreground">{currentTestimonial.author}</p>
+                  <p className="text-sm text-muted-foreground">{currentTestimonial.role}</p>
                 </div>
               </div>
             </motion.div>
@@ -123,16 +155,6 @@ const TestimonialsSection = () => {
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
-
-          {/* Note */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-center text-sm text-muted-foreground mt-8"
-          >
-            {t.testimonials?.note || '💡 Adicione depoimentos reais de colegas, gestores ou clientes aqui'}
-          </motion.p>
         </div>
       </div>
     </section>
