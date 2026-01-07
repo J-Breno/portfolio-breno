@@ -42,6 +42,8 @@ export const translations = {
       cta: 'Saiba Mais',
       bottomText: 'Quer saber mais? Entre em contato.',
       bottomCta: 'Falar Comigo',
+      modalIncludesLabel: 'O que inclui:',
+      modalCtaLabel: 'Falar sobre este serviço',
       dataAnalysis: {
         title: 'Análise de Dados & BI',
         description: 'Dashboards que contam histórias e revelam oportunidades escondidas nos seus dados.',
@@ -212,6 +214,8 @@ export const translations = {
       cta: 'Learn More',
       bottomText: 'Want to know more? Get in touch.',
       bottomCta: 'Contact Me',
+      modalIncludesLabel: "What's included:",
+      modalCtaLabel: 'Talk about this service',
       dataAnalysis: {
         title: 'Data Analysis & BI',
         description: 'Dashboards that tell stories and reveal hidden opportunities in your data.',
@@ -382,6 +386,8 @@ export const translations = {
       cta: 'Saber Más',
       bottomText: '¿Quieres saber más? Ponte en contacto.',
       bottomCta: 'Contáctame',
+      modalIncludesLabel: 'Qué incluye:',
+      modalCtaLabel: 'Hablar sobre este servicio',
       dataAnalysis: {
         title: 'Análisis de Datos & BI',
         description: 'Dashboards que cuentan historias y revelan oportunidades ocultas en tus datos.',

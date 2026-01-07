@@ -9,99 +9,31 @@ import {
   Workflow,
   MessageSquare,
   Users,
-  Lightbulb,
   Brain,
   ClipboardCheck,
-  Headphones,
-  FileText,
-  Activity
+  Activity,
+  Cloud,
+  Wind,
+  Container
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const hardSkills = [
-  { 
-    icon: FileSpreadsheet, 
-    name: 'Excel', 
-    description: 'Fórmulas complexas, VBA, análises dinâmicas'
-  },
-  { 
-    icon: BarChart3, 
-    name: 'Power BI', 
-    description: 'DAX, modelagem, dashboards executivos'
-  },
-  { 
-    icon: Database, 
-    name: 'SQL', 
-    description: 'PostgreSQL, MySQL, queries otimizadas'
-  },
-  { 
-    icon: Code2, 
-    name: 'Python', 
-    description: 'Pandas, automações, análise de dados'
-  },
-  { 
-    icon: Workflow, 
-    name: 'N8N', 
-    description: 'Automação de workflows e integrações'
-  },
-  { 
-    icon: GitBranch, 
-    name: 'Git', 
-    description: 'Versionamento e colaboração'
-  },
-  { 
-    icon: Activity, 
-    name: 'Zabbix', 
-    description: 'Monitoramento e análise de métricas'
-  },
-  { 
-    icon: BarChart3, 
-    name: 'Grafana', 
-    description: 'Dashboards e visualização de dados'
-  },
-];
-
-const softSkills = [
-  { 
-    icon: MessageSquare, 
-    name: 'Comunicação', 
-    description: 'Apresentação de insights e storytelling'
-  },
-  { 
-    icon: Users, 
-    name: 'Trabalho em Equipe', 
-    description: 'Colaboração efetiva em times multidisciplinares'
-  },
-  { 
-    icon: Lightbulb, 
-    name: 'Resolução de Problemas', 
-    description: 'Análise crítica e soluções criativas'
-  },
-  { 
-    icon: Brain, 
-    name: 'Pensamento Analítico', 
-    description: 'Tomada de decisão baseada em dados'
-  },
-  { 
-    icon: ClipboardCheck, 
-    name: 'Metodologia SCRUM', 
-    description: 'Gestão ágil de projetos e sprints'
-  },
-  { 
-    icon: Headphones, 
-    name: 'Atendimento ao Cliente', 
-    description: 'Comunicação clara e foco na solução'
-  },
-  { 
-    icon: FileText, 
-    name: 'Documentação', 
-    description: 'Registro técnico claro e organizado'
-  },
-  { 
-    icon: Lightbulb, 
-    name: 'Proatividade', 
-    description: 'Iniciativa e antecipação de necessidades'
-  },
+const skills = [
+  { icon: FileSpreadsheet, name: 'Excel', description: 'Fórmulas complexas, VBA, análises dinâmicas' },
+  { icon: BarChart3, name: 'Power BI', description: 'DAX, modelagem, dashboards executivos' },
+  { icon: Database, name: 'SQL', description: 'PostgreSQL, MySQL, queries otimizadas' },
+  { icon: Code2, name: 'Python', description: 'Pandas, automações, análise de dados' },
+  { icon: Workflow, name: 'N8N', description: 'Automação de workflows e integrações' },
+  { icon: GitBranch, name: 'Git', description: 'Versionamento e colaboração' },
+  { icon: Activity, name: 'Zabbix', description: 'Monitoramento e análise de métricas' },
+  { icon: BarChart3, name: 'Grafana', description: 'Dashboards e visualização de dados' },
+  { icon: Cloud, name: 'AWS', description: 'Serviços cloud e infraestrutura' },
+  { icon: Wind, name: 'Airflow', description: 'Orquestração de pipelines de dados' },
+  { icon: Container, name: 'Docker', description: 'Containerização e deploy' },
+  { icon: MessageSquare, name: 'Comunicação', description: 'Apresentação de insights e storytelling' },
+  { icon: Users, name: 'Trabalho em Equipe', description: 'Colaboração efetiva em times' },
+  { icon: Brain, name: 'Pensamento Analítico', description: 'Tomada de decisão baseada em dados' },
+  { icon: ClipboardCheck, name: 'SCRUM', description: 'Gestão ágil de projetos e sprints' },
 ];
 
 const SkillsSection = () => {
@@ -116,7 +48,7 @@ const SkillsSection = () => {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.06,
+        staggerChildren: 0.04,
       },
     },
   };
@@ -135,27 +67,27 @@ const SkillsSection = () => {
     },
   };
 
-  const SkillCard = ({ skill }: { skill: typeof hardSkills[0] }) => (
+  const SkillCard = ({ skill }: { skill: typeof skills[0] }) => (
     <motion.div
       variants={itemVariants}
       className="group relative"
     >
       <motion.div
-        className="p-5 rounded-2xl bg-gradient-card border border-border/50 text-center hover:border-accent/30 transition-all duration-300 cursor-pointer"
+        className="p-4 rounded-2xl bg-gradient-card border border-border/50 text-center hover:border-accent/30 transition-all duration-300 cursor-pointer h-full"
         whileHover={{ y: -5, scale: 1.03 }}
         transition={{ type: 'spring', stiffness: 300 }}
       >
         {/* Icon */}
-        <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-          <skill.icon className="w-6 h-6 text-accent" />
+        <div className="w-10 h-10 mx-auto mb-2 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+          <skill.icon className="w-5 h-5 text-accent" />
         </div>
 
         {/* Name */}
-        <h4 className="font-semibold text-foreground text-sm">{skill.name}</h4>
+        <h4 className="font-semibold text-foreground text-xs">{skill.name}</h4>
 
         {/* Tooltip */}
         <motion.div
-          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 p-3 rounded-lg bg-card border border-border shadow-card opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20"
+          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-40 p-2 rounded-lg bg-card border border-border shadow-card opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-20"
           initial={false}
         >
           <p className="text-xs text-muted-foreground text-center">
@@ -198,47 +130,16 @@ const SkillsSection = () => {
           </p>
         </motion.div>
 
-        {/* Hard Skills */}
+        {/* Skills Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 gap-3 md:gap-4 max-w-4xl mx-auto"
         >
-          <h3 className="text-lg font-semibold text-foreground mb-6 text-center">
-            {t.skills.hardSkillsTitle}
-          </h3>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4"
-          >
-            {hardSkills.map((skill) => (
-              <SkillCard key={skill.name} skill={skill} />
-            ))}
-          </motion.div>
-        </motion.div>
-
-        {/* Soft Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <h3 className="text-lg font-semibold text-foreground mb-6 text-center">
-            {t.skills.softSkillsTitle}
-          </h3>
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4"
-          >
-            {softSkills.map((skill) => (
-              <SkillCard key={skill.name} skill={skill} />
-            ))}
-          </motion.div>
+          {skills.map((skill) => (
+            <SkillCard key={skill.name} skill={skill} />
+          ))}
         </motion.div>
 
         {/* Additional Info */}
