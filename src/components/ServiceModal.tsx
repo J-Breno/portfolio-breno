@@ -34,13 +34,15 @@ const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, feature
               />
             </Dialog.Overlay>
             <Dialog.Content asChild onPointerDownOutside={() => onClose()}>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl bg-card border border-border shadow-glow"
-              >
+              <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 pointer-events-none">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                  transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                  className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl bg-card border border-border shadow-glow pointer-events-auto"
+                  onClick={(e) => e.stopPropagation()}
+                >
                 {/* Header */}
                 <div className={`relative p-6 md:p-8 pb-6 bg-gradient-to-br ${color} rounded-t-2xl`}>
                   <motion.div
@@ -115,7 +117,8 @@ const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, feature
                     {ctaLabel}
                   </motion.a>
                 </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </Dialog.Content>
           </Dialog.Portal>
         )}

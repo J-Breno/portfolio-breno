@@ -35,7 +35,7 @@ const ServicesSection = () => {
       modalTitle: t.services.sql.modalTitle,
       modalDescription: t.services.sql.modalDescription,
       modalFeatures: t.services.sql.modalFeatures,
-      color: 'from-navy-light to-primary',
+      color: 'from-purple-dark to-primary',
     },
     {
       key: 'automation' as const,
@@ -46,7 +46,7 @@ const ServicesSection = () => {
       modalTitle: t.services.automation.modalTitle,
       modalDescription: t.services.automation.modalDescription,
       modalFeatures: t.services.automation.modalFeatures,
-      color: 'from-accent to-navy-light',
+      color: 'from-accent to-purple-dark',
     },
   ];
 
