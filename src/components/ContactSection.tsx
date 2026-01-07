@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { Send, Linkedin, Github, Instagram, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
 
 const ContactSection = () => {
   const [ref, inView] = useInView({
@@ -29,16 +30,29 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
 
-    toast({
-      title: t.contact.successTitle,
-      description: t.contact.successDescription,
-    });
+      if (error) throw error;
 
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
+      toast({
+        title: t.contact.successTitle,
+        description: t.contact.successDescription,
+      });
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Erro",
+        description: "Não foi possível enviar a mensagem. Tente novamente.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [

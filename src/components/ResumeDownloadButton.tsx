@@ -60,7 +60,7 @@ const ResumeDownloadButton = ({ variant = 'header' }: ResumeDownloadButtonProps)
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-2 w-64 rounded-lg bg-card border border-border shadow-lg z-50 overflow-hidden"
+            className="absolute right-0 mt-2 w-64 rounded-lg bg-card border border-border shadow-xl z-[100] overflow-hidden"
           >
             {cvOptions.map((option) => (
               <button
