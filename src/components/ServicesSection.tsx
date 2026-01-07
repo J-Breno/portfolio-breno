@@ -99,7 +99,7 @@ const ServicesSection = () => {
                 >
                   {/* Icon */}
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-gold group-hover:shadow-glow transition-all duration-500`}>
-                    <service.icon className="w-7 h-7 text-accent-foreground" />
+                    <service.icon className="w-7 h-7 text-white" />
                   </div>
 
                   {/* Content */}
