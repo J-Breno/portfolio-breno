@@ -7,6 +7,7 @@ export const translations = {
       home: 'Início',
       services: 'Serviços',
       skills: 'Habilidades',
+      projects: 'Projetos',
       about: 'Sobre',
       testimonials: 'Depoimentos',
       contact: 'Contato',
@@ -244,6 +245,73 @@ export const translations = {
         },
       ],
     },
+    // Projects
+    projects: {
+      subtitle: 'Portfólio',
+      title: 'Meus',
+      titleHighlight: 'Projetos',
+      description: 'Dashboards e soluções desenvolvidas para diferentes áreas de negócio',
+      viewProject: 'Ver Projeto',
+      items: [
+        {
+          id: 'customer-analytics',
+          name: 'Customer Analytics',
+          shortDescription: 'Painel de Experiência & Retenção de Clientes',
+          description: `Experiência & Retenção de Clientes
+
+Objetivo:
+Analisar comportamento, satisfação e risco de churn dos clientes, antecipando problemas e melhorando a retenção.
+
+O que entrega:
+• Visão geral da base de clientes
+• Identificação de clientes em risco
+• Análise de reclamações e chamados
+• Acompanhamento da retenção ao longo do tempo
+
+Valor para a empresa:
+Reduz perda de clientes, melhora a experiência e apoia decisões preventivas baseadas em dados.`,
+          link: 'https://dashboard-customer-chi.vercel.app/',
+        },
+        {
+          id: 'financehub',
+          name: 'FinanceHub',
+          shortDescription: 'Painel Financeiro & Performance Empresarial',
+          description: `Financeiro & Performance Empresarial
+
+Objetivo:
+Centralizar indicadores financeiros e de desempenho para apoiar decisões estratégicas de crescimento e eficiência.
+
+O que entrega:
+• Visão executiva de receita e crescimento
+• Análise de performance por área ou produto
+• Comparativo entre metas e resultados
+• Identificação de gargalos e oportunidades
+
+Valor para a empresa:
+Permite foco no que gera resultado, melhor alocação de recursos e crescimento mais previsível.`,
+          link: 'https://dashboard-financehub.vercel.app/',
+        },
+        {
+          id: 'ops-monitor',
+          name: 'Ops Monitor',
+          shortDescription: 'Painel de Monitoramento Operacional',
+          description: `Monitoramento Operacional
+
+Objetivo:
+Acompanhar métricas operacionais em tempo real para garantir disponibilidade e performance dos serviços.
+
+O que entrega:
+• Monitoramento de incidentes e MTTR
+• Análise de SLA e disponibilidade
+• Dashboards de performance em tempo real
+• Alertas e acompanhamento de tendências
+
+Valor para a empresa:
+Garante operação estável, resposta rápida a incidentes e melhoria contínua da infraestrutura.`,
+          link: 'https://dashboard-operacoes.vercel.app/',
+        },
+      ],
+    },
   },
   'en-US': {
     // Navbar
@@ -251,6 +319,7 @@ export const translations = {
       home: 'Home',
       services: 'Services',
       skills: 'Skills',
+      projects: 'Projects',
       about: 'About',
       testimonials: 'Testimonials',
       contact: 'Contact',
@@ -488,6 +557,73 @@ export const translations = {
         },
       ],
     },
+    // Projects
+    projects: {
+      subtitle: 'Portfolio',
+      title: 'My',
+      titleHighlight: 'Projects',
+      description: 'Dashboards and solutions developed for different business areas',
+      viewProject: 'View Project',
+      items: [
+        {
+          id: 'customer-analytics',
+          name: 'Customer Analytics',
+          shortDescription: 'Customer Experience & Retention Dashboard',
+          description: `Customer Experience & Retention
+
+Objective:
+Analyze customer behavior, satisfaction and churn risk, anticipating problems and improving retention.
+
+Deliverables:
+• Customer base overview
+• At-risk customer identification
+• Complaints and tickets analysis
+• Retention tracking over time
+
+Business Value:
+Reduces customer loss, improves experience and supports preventive data-driven decisions.`,
+          link: 'https://dashboard-customer-chi.vercel.app/',
+        },
+        {
+          id: 'financehub',
+          name: 'FinanceHub',
+          shortDescription: 'Financial & Business Performance Dashboard',
+          description: `Financial & Business Performance
+
+Objective:
+Centralize financial and performance indicators to support strategic growth and efficiency decisions.
+
+Deliverables:
+• Executive view of revenue and growth
+• Performance analysis by area or product
+• Goals vs results comparison
+• Bottleneck and opportunity identification
+
+Business Value:
+Enables focus on what drives results, better resource allocation and more predictable growth.`,
+          link: 'https://dashboard-financehub.vercel.app/',
+        },
+        {
+          id: 'ops-monitor',
+          name: 'Ops Monitor',
+          shortDescription: 'Operational Monitoring Dashboard',
+          description: `Operational Monitoring
+
+Objective:
+Track operational metrics in real-time to ensure service availability and performance.
+
+Deliverables:
+• Incident monitoring and MTTR
+• SLA and availability analysis
+• Real-time performance dashboards
+• Alerts and trend tracking
+
+Business Value:
+Ensures stable operation, fast incident response and continuous infrastructure improvement.`,
+          link: 'https://dashboard-operacoes.vercel.app/',
+        },
+      ],
+    },
   },
   'es-ES': {
     // Navbar
@@ -495,6 +631,7 @@ export const translations = {
       home: 'Inicio',
       services: 'Servicios',
       skills: 'Habilidades',
+      projects: 'Proyectos',
       about: 'Sobre mí',
       testimonials: 'Testimonios',
       contact: 'Contacto',
@@ -729,6 +866,73 @@ export const translations = {
           quote: 'Breno es un colaborador que rápidamente gana tu confianza por su capacidad técnica, compromiso y facilidad de relacionamiento. Es un excelente profesional para desarrollo ágil, pues tiene gran facilidad para el trabajo en equipo, se aplica en las actividades y demanda poca gerencia. Recomiendo su trabajo sin dudas. Enfocado en resultados, tiene gran capacidad de convertir proyectos en realidad. Entre sus virtudes destaco su capacidad técnica y la facilidad para captar nuevos conocimientos.',
           author: 'Dnivaldo A O Filho',
           role: 'Analista de Redes y Comunicación de Datos',
+        },
+      ],
+    },
+    // Projects
+    projects: {
+      subtitle: 'Portafolio',
+      title: 'Mis',
+      titleHighlight: 'Proyectos',
+      description: 'Dashboards y soluciones desarrolladas para diferentes áreas de negocio',
+      viewProject: 'Ver Proyecto',
+      items: [
+        {
+          id: 'customer-analytics',
+          name: 'Customer Analytics',
+          shortDescription: 'Panel de Experiencia y Retención de Clientes',
+          description: `Experiencia y Retención de Clientes
+
+Objetivo:
+Analizar comportamiento, satisfacción y riesgo de churn de los clientes, anticipando problemas y mejorando la retención.
+
+Qué entrega:
+• Visión general de la base de clientes
+• Identificación de clientes en riesgo
+• Análisis de quejas y tickets
+• Seguimiento de la retención a lo largo del tiempo
+
+Valor para la empresa:
+Reduce la pérdida de clientes, mejora la experiencia y apoya decisiones preventivas basadas en datos.`,
+          link: 'https://dashboard-customer-chi.vercel.app/',
+        },
+        {
+          id: 'financehub',
+          name: 'FinanceHub',
+          shortDescription: 'Panel Financiero y Performance Empresarial',
+          description: `Financiero y Performance Empresarial
+
+Objetivo:
+Centralizar indicadores financieros y de desempeño para apoyar decisiones estratégicas de crecimiento y eficiencia.
+
+Qué entrega:
+• Visión ejecutiva de ingresos y crecimiento
+• Análisis de performance por área o producto
+• Comparativo entre metas y resultados
+• Identificación de cuellos de botella y oportunidades
+
+Valor para la empresa:
+Permite enfoque en lo que genera resultado, mejor asignación de recursos y crecimiento más predecible.`,
+          link: 'https://dashboard-financehub.vercel.app/',
+        },
+        {
+          id: 'ops-monitor',
+          name: 'Ops Monitor',
+          shortDescription: 'Panel de Monitoreo Operacional',
+          description: `Monitoreo Operacional
+
+Objetivo:
+Seguir métricas operacionales en tiempo real para garantizar disponibilidad y performance de los servicios.
+
+Qué entrega:
+• Monitoreo de incidentes y MTTR
+• Análisis de SLA y disponibilidad
+• Dashboards de performance en tiempo real
+• Alertas y seguimiento de tendencias
+
+Valor para la empresa:
+Garantiza operación estable, respuesta rápida a incidentes y mejora continua de la infraestructura.`,
+          link: 'https://dashboard-operacoes.vercel.app/',
         },
       ],
     },
