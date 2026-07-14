@@ -137,6 +137,7 @@ export const translations = {
         linux: { name: 'Linux', description: 'Terminal, scripts e administração de ambientes' },
         ai: { name: 'IA', description: 'Aplicação de IA generativa e produtividade' },
         git: { name: 'Git', description: 'Versionamento e colaboração em projetos' },
+        communication: { name: 'Comunicação', description: 'Comunicação clara com áreas de negócio e tradução de dados em decisões' },
       },
     },
     // About
@@ -453,6 +454,7 @@ Garante operação estável, resposta rápida a incidentes e melhoria contínua 
         linux: { name: 'Linux', description: 'Terminal, scripting and environment administration' },
         ai: { name: 'AI', description: 'Applied generative AI and productivity' },
         git: { name: 'Git', description: 'Version control and collaboration' },
+        communication: { name: 'Communication', description: 'Clear communication with business areas and translating data into decisions' },
       },
     },
     // About
@@ -769,6 +771,7 @@ Ensures stable operation, fast incident response and continuous infrastructure i
         linux: { name: 'Linux', description: 'Terminal, scripts y administración de entornos' },
         ai: { name: 'IA', description: 'IA generativa aplicada y productividad' },
         git: { name: 'Git', description: 'Control de versiones y colaboración' },
+        communication: { name: 'Comunicación', description: 'Comunicación clara con áreas de negocio y traducción de datos en decisiones' },
       },
     },
     // About
