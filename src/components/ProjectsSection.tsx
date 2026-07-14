@@ -6,14 +6,20 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import ProjectModal from './ProjectModal';
 
 // Import project images
-import customerAnalyticsImg from '@/assets/projects/customer-analytics.png';
-import financehubImg from '@/assets/projects/financehub.png';
-import opsMonitorImg from '@/assets/projects/ops-monitor.png';
+import realXMetaImg from '@/assets/projects/real-x-meta.png';
+import realXMetaComercialImg from '@/assets/projects/real-x-meta-comercial.png';
+import mrBolosImg from '@/assets/projects/mr-bolos.png';
+import realXMetaControladoriaImg from '@/assets/projects/real-x-meta-controladoria.png';
+import financeiroDreImg from '@/assets/projects/financeiro-dre.png';
+import heavyPowerNutritionImg from '@/assets/projects/heavy-power-nutrition.png';
 
 const imageMap: Record<string, string> = {
-  'customer-analytics': customerAnalyticsImg,
-  'financehub': financehubImg,
-  'ops-monitor': opsMonitorImg,
+  'real-x-meta': realXMetaImg,
+  'real-x-meta-comercial': realXMetaComercialImg,
+  'mr-bolos': mrBolosImg,
+  'real-x-meta-controladoria': realXMetaControladoriaImg,
+  'financeiro-dre': financeiroDreImg,
+  'heavy-power-nutrition': heavyPowerNutritionImg,
 };
 
 const ProjectsSection = () => {
