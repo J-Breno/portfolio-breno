@@ -1,41 +1,69 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  Database, 
-  BarChart3, 
-  FileSpreadsheet, 
-  Code2, 
-  GitBranch, 
-  Workflow,
-  MessageSquare,
-  Users,
+import {
+  BarChart3,
+  FileSpreadsheet,
+  Sigma,
+  Filter,
+  Code,
+  BookOpen,
   Brain,
-  ClipboardCheck,
-  Activity,
-  Cloud,
-  Wind,
-  Container
+  Database,
+  Layers,
+  Workflow,
+  Waypoints,
+  Code2,
+  Target,
+  Zap,
+  Boxes,
+  Warehouse,
+  Terminal,
+  Sparkles,
+  GitBranch,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-type SkillKey = 'excel' | 'powerbi' | 'sql' | 'python' | 'n8n' | 'git' | 'zabbix' | 'grafana' | 'aws' | 'airflow' | 'docker' | 'communication' | 'teamwork' | 'analyticalThinking' | 'scrum';
+type SkillKey =
+  | 'powerbi'
+  | 'excel'
+  | 'dax'
+  | 'powerquery'
+  | 'languageM'
+  | 'storytelling'
+  | 'machinelearning'
+  | 'sql'
+  | 'fabric'
+  | 'n8n'
+  | 'apachehop'
+  | 'python'
+  | 'kpis'
+  | 'spark'
+  | 'databricks'
+  | 'datawarehouse'
+  | 'linux'
+  | 'ai'
+  | 'git';
 
 const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
-  { icon: FileSpreadsheet, key: 'excel' },
   { icon: BarChart3, key: 'powerbi' },
+  { icon: FileSpreadsheet, key: 'excel' },
+  { icon: Sigma, key: 'dax' },
+  { icon: Filter, key: 'powerquery' },
+  { icon: Code, key: 'languageM' },
+  { icon: BookOpen, key: 'storytelling' },
+  { icon: Brain, key: 'machinelearning' },
   { icon: Database, key: 'sql' },
-  { icon: Code2, key: 'python' },
+  { icon: Layers, key: 'fabric' },
   { icon: Workflow, key: 'n8n' },
+  { icon: Waypoints, key: 'apachehop' },
+  { icon: Code2, key: 'python' },
+  { icon: Target, key: 'kpis' },
+  { icon: Zap, key: 'spark' },
+  { icon: Boxes, key: 'databricks' },
+  { icon: Warehouse, key: 'datawarehouse' },
+  { icon: Terminal, key: 'linux' },
+  { icon: Sparkles, key: 'ai' },
   { icon: GitBranch, key: 'git' },
-  { icon: Activity, key: 'zabbix' },
-  { icon: BarChart3, key: 'grafana' },
-  { icon: Cloud, key: 'aws' },
-  { icon: Wind, key: 'airflow' },
-  { icon: Container, key: 'docker' },
-  { icon: MessageSquare, key: 'communication' },
-  { icon: Users, key: 'teamwork' },
-  { icon: Brain, key: 'analyticalThinking' },
-  { icon: ClipboardCheck, key: 'scrum' },
 ];
 
 const SkillsSection = () => {
