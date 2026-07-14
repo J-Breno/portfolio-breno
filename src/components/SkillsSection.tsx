@@ -20,6 +20,7 @@ import {
   Terminal,
   Sparkles,
   GitBranch,
+  MessageCircle,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -42,7 +43,8 @@ type SkillKey =
   | 'datawarehouse'
   | 'linux'
   | 'ai'
-  | 'git';
+  | 'git'
+  | 'communication';
 
 const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
   { icon: BarChart3, key: 'powerbi' },
@@ -64,6 +66,7 @@ const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
   { icon: Terminal, key: 'linux' },
   { icon: Sparkles, key: 'ai' },
   { icon: GitBranch, key: 'git' },
+  { icon: MessageCircle, key: 'communication' },
 ];
 
 const SkillsSection = () => {
