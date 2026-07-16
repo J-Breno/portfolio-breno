@@ -2,7 +2,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Language, languageNames, languageFlags } from '@/i18n/translations';
+import { Language, languageNames } from '@/i18n/translations';
+import FlagIcon from './FlagIcon';
 
 const languages: Language[] = ['pt-BR', 'en-US', 'es-ES'];
 
@@ -35,7 +36,7 @@ const LanguageSelector = () => {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        <span className="text-lg">{languageFlags[language]}</span>
+        <FlagIcon lang={language} className="w-5 h-[14px]" />
         <span className="text-sm text-foreground hidden sm:inline">{languageNames[language]}</span>
         <ChevronDown 
           className={`w-4 h-4 text-muted-foreground transition-transform ${isOpen ? 'rotate-180' : ''}`} 
@@ -60,7 +61,7 @@ const LanguageSelector = () => {
                 }`}
                 whileHover={{ x: 4 }}
               >
-                <span className="text-xl">{languageFlags[lang]}</span>
+                <FlagIcon lang={lang} className="w-6 h-[17px]" />
                 <span className="text-sm font-medium">{languageNames[lang]}</span>
                 {language === lang && (
                   <motion.div

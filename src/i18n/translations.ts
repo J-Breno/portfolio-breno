@@ -159,7 +159,7 @@ export const translations = {
           description: 'Projetos de BI e automação para a CAGECE: coleta e tratamento de dados com Python, SQL Server e Excel, web scraping em sistemas internos, dashboards em Power BI (Power Query, DAX, modelagem) e automações administrativas.',
         },
         current: {
-          title: 'Analista de Dados — EmpresaUP-ISP (07/2024 – Atual)',
+          title: 'Analista de Dados — UP-ISP (07/2024 – Atual)',
           description: 'Análise, monitoramento e BI para provedores de internet: Zabbix, Grafana e Power BI para performance e incidentes; SQL, Python e Microsoft Fabric para extração e automação; n8n para fluxos internos; interface direta com clientes e operação em rotinas Scrum via Tiflux.',
         },
         next: {
@@ -533,7 +533,7 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
           description: 'BI and automation projects for CAGECE: data collection and processing with Python, SQL Server and Excel, web scraping on internal systems, Power BI dashboards (Power Query, DAX, modeling) and administrative automations.',
         },
         current: {
-          title: 'Data Analyst — EmpresaUP-ISP (07/2024 – Present)',
+          title: 'Data Analyst — UP-ISP (07/2024 – Present)',
           description: 'Analysis, monitoring and BI for ISPs: Zabbix, Grafana and Power BI for performance and incident tracking; SQL, Python and Microsoft Fabric for extraction and automation; n8n for internal workflows; direct interface with clients and operations in Scrum routines via Tiflux.',
         },
         next: {
@@ -907,7 +907,7 @@ Identifies the most profitable products and regions, guiding commercial strategy
           description: 'Proyectos de BI y automatización para CAGECE: recolección y tratamiento de datos con Python, SQL Server y Excel, web scraping en sistemas internos, dashboards en Power BI (Power Query, DAX, modelado) y automatizaciones administrativas.',
         },
         current: {
-          title: 'Analista de Datos — EmpresaUP-ISP (07/2024 – Actual)',
+          title: 'Analista de Datos — UP-ISP (07/2024 – Actual)',
           description: 'Análisis, monitoreo y BI para proveedores de internet: Zabbix, Grafana y Power BI para rendimiento e incidentes; SQL, Python y Microsoft Fabric para extracción y automatización; n8n para flujos internos; interfaz directa con clientes y operación en rutinas Scrum vía Tiflux.',
         },
         next: {
