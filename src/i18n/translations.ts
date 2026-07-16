@@ -54,8 +54,8 @@ export const translations = {
         title: 'Análise de Dados & BI',
         description: 'Dashboards que contam histórias e revelam oportunidades escondidas nos seus dados.',
         features: [
-          'Dashboards interativos em Power BI',
-          'Visualizações avançadas em Excel',
+          'Dashboards interativos em Power BI (DAX, Power Query, Linguagem M)',
+          'Monitoramento e análise com Zabbix e Grafana',
           'Análises com Python (Pandas, Matplotlib)',
           'Relatórios executivos automatizados',
           'KPIs e métricas de negócio',
@@ -73,9 +73,10 @@ export const translations = {
         title: 'SQL & Engenharia de Dados',
         description: 'Dados organizados, limpos e prontos para gerar valor real para sua empresa.',
         features: [
-          'Modelagem de dados eficiente',
+          'Microsoft Fabric e SQL Server',
           'Queries otimizadas e performáticas',
-          'ETL e integração de fontes',
+          'ETL e integração de múltiplas fontes',
+          'Web scraping e coleta automatizada',
           'Qualidade e governança de dados',
         ],
         modalTitle: 'SQL & Engenharia de Dados',
@@ -159,7 +160,7 @@ export const translations = {
           description: 'Projetos de BI e automação para a CAGECE: coleta e tratamento de dados com Python, SQL Server e Excel, web scraping em sistemas internos, dashboards em Power BI (Power Query, DAX, modelagem) e automações administrativas.',
         },
         current: {
-          title: 'Analista de Dados — EmpresaUP-ISP (07/2024 – Atual)',
+          title: 'Analista de Dados — UP-ISP (07/2024 – Atual)',
           description: 'Análise, monitoramento e BI para provedores de internet: Zabbix, Grafana e Power BI para performance e incidentes; SQL, Python e Microsoft Fabric para extração e automação; n8n para fluxos internos; interface direta com clientes e operação em rotinas Scrum via Tiflux.',
         },
         next: {
@@ -428,8 +429,8 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
         title: 'Data Analysis & BI',
         description: 'Dashboards that tell stories and reveal hidden opportunities in your data.',
         features: [
-          'Interactive Power BI dashboards',
-          'Advanced Excel visualizations',
+          'Interactive Power BI dashboards (DAX, Power Query, M)',
+          'Monitoring and analysis with Zabbix and Grafana',
           'Python analytics (Pandas, Matplotlib)',
           'Automated executive reports',
           'KPIs and business metrics',
@@ -447,9 +448,10 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
         title: 'SQL & Data Engineering',
         description: 'Organized, clean data ready to generate real value for your company.',
         features: [
-          'Efficient data modeling',
+          'Microsoft Fabric and SQL Server',
           'Optimized, performant queries',
-          'ETL and source integration',
+          'ETL and integration of multiple sources',
+          'Web scraping and automated collection',
           'Data quality and governance',
         ],
         modalTitle: 'SQL & Data Engineering',
@@ -533,7 +535,7 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
           description: 'BI and automation projects for CAGECE: data collection and processing with Python, SQL Server and Excel, web scraping on internal systems, Power BI dashboards (Power Query, DAX, modeling) and administrative automations.',
         },
         current: {
-          title: 'Data Analyst — EmpresaUP-ISP (07/2024 – Present)',
+          title: 'Data Analyst — UP-ISP (07/2024 – Present)',
           description: 'Analysis, monitoring and BI for ISPs: Zabbix, Grafana and Power BI for performance and incident tracking; SQL, Python and Microsoft Fabric for extraction and automation; n8n for internal workflows; direct interface with clients and operations in Scrum routines via Tiflux.',
         },
         next: {
@@ -802,8 +804,8 @@ Identifies the most profitable products and regions, guiding commercial strategy
         title: 'Análisis de Datos & BI',
         description: 'Dashboards que cuentan historias y revelan oportunidades ocultas en tus datos.',
         features: [
-          'Dashboards interactivos en Power BI',
-          'Visualizaciones avanzadas en Excel',
+          'Dashboards interactivos en Power BI (DAX, Power Query, M)',
+          'Monitoreo y análisis con Zabbix y Grafana',
           'Análisis con Python (Pandas, Matplotlib)',
           'Informes ejecutivos automatizados',
           'KPIs y métricas de negocio',
@@ -821,9 +823,10 @@ Identifies the most profitable products and regions, guiding commercial strategy
         title: 'SQL & Ingeniería de Datos',
         description: 'Datos organizados, limpios y listos para generar valor real para tu empresa.',
         features: [
-          'Modelado de datos eficiente',
+          'Microsoft Fabric y SQL Server',
           'Queries optimizadas y performantes',
-          'ETL e integración de fuentes',
+          'ETL e integración de múltiples fuentes',
+          'Web scraping y recolección automatizada',
           'Calidad y gobernanza de datos',
         ],
         modalTitle: 'SQL & Ingeniería de Datos',
@@ -907,7 +910,7 @@ Identifies the most profitable products and regions, guiding commercial strategy
           description: 'Proyectos de BI y automatización para CAGECE: recolección y tratamiento de datos con Python, SQL Server y Excel, web scraping en sistemas internos, dashboards en Power BI (Power Query, DAX, modelado) y automatizaciones administrativas.',
         },
         current: {
-          title: 'Analista de Datos — EmpresaUP-ISP (07/2024 – Actual)',
+          title: 'Analista de Datos — UP-ISP (07/2024 – Actual)',
           description: 'Análisis, monitoreo y BI para proveedores de internet: Zabbix, Grafana y Power BI para rendimiento e incidentes; SQL, Python y Microsoft Fabric para extracción y automatización; n8n para flujos internos; interfaz directa con clientes y operación en rutinas Scrum vía Tiflux.',
         },
         next: {
