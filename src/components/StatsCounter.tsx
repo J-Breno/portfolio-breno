@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { BarChart3, Users, Award, Clock } from 'lucide-react';
+import { BarChart3, Database, Network, Code2 } from 'lucide-react';
 
 interface StatItem {
   icon: React.ElementType;
@@ -13,33 +13,33 @@ interface StatItem {
 
 const StatsCounter = () => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0]);
 
   const stats: StatItem[] = [
     { 
-      icon: BarChart3, 
-      value: t.stats?.dashboards?.value || 50, 
-      suffix: '+', 
-      label: t.stats?.dashboards?.label || 'Dashboards Criados' 
+      icon: Database,
+      value: t.stats.records.value,
+      suffix: '',
+      label: t.stats.records.label
     },
     { 
-      icon: Users, 
-      value: t.stats?.clients?.value || 15, 
-      suffix: '+', 
-      label: t.stats?.clients?.label || 'Clientes Atendidos' 
+      icon: Network,
+      value: t.stats.sources.value,
+      suffix: '',
+      label: t.stats.sources.label
     },
     { 
-      icon: Award, 
-      value: t.stats?.projects?.value || 30, 
-      suffix: '+', 
-      label: t.stats?.projects?.label || 'Projetos Entregues' 
+      icon: Code2,
+      value: t.stats.apis.value,
+      suffix: '',
+      label: t.stats.apis.label
     },
     { 
-      icon: Clock, 
-      value: t.stats?.experience?.value || 3, 
-      suffix: '+', 
-      label: t.stats?.experience?.label || 'Anos de Experiência' 
+      icon: BarChart3,
+      value: t.stats.dashboards.value,
+      suffix: '',
+      label: t.stats.dashboards.label
     },
   ];
 
@@ -85,7 +85,7 @@ const StatsCounter = () => {
                   <Icon className="w-7 h-7" />
                 </div>
                 <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
-                  {counts[index]}{stat.suffix}
+                  {counts[index].toLocaleString(language)}{stat.suffix}
                 </div>
                 <p className="text-sm text-muted-foreground">{stat.label}</p>
               </motion.div>

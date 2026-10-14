@@ -13,24 +13,24 @@ const AboutSection = () => {
 
   const timeline = [
     {
-      icon: GraduationCap,
-      title: t.about.timeline.education.title,
-      description: t.about.timeline.education.description,
-    },
-    {
-      icon: Briefcase,
-      title: t.about.timeline.internship.title,
-      description: t.about.timeline.internship.description,
-    },
-    {
       icon: Target,
       title: t.about.timeline.current.title,
       description: t.about.timeline.current.description,
     },
     {
+      icon: Briefcase,
+      title: t.about.timeline.previous.title,
+      description: t.about.timeline.previous.description,
+    },
+    {
       icon: Sparkles,
-      title: t.about.timeline.next.title,
-      description: t.about.timeline.next.description,
+      title: t.about.timeline.internship.title,
+      description: t.about.timeline.internship.description,
+    },
+    {
+      icon: GraduationCap,
+      title: t.about.timeline.education.title,
+      description: t.about.timeline.education.description,
     },
   ];
 

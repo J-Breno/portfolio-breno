@@ -21,10 +21,17 @@ import {
   Sparkles,
   GitBranch,
   MessageCircle,
+  Cloud,
+  Network,
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 type SkillKey =
+  | 'pyspark'
+  | 'delta'
+  | 'azure'
+  | 'fastapi'
+  | 'pandas'
   | 'powerbi'
   | 'excel'
   | 'dax'
@@ -47,6 +54,14 @@ type SkillKey =
   | 'communication';
 
 const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
+  { icon: Code2, key: 'python' },
+  { icon: Database, key: 'sql' },
+  { icon: Zap, key: 'pyspark' },
+  { icon: Boxes, key: 'databricks' },
+  { icon: Layers, key: 'delta' },
+  { icon: Cloud, key: 'azure' },
+  { icon: Network, key: 'fastapi' },
+  { icon: Filter, key: 'pandas' },
   { icon: BarChart3, key: 'powerbi' },
   { icon: FileSpreadsheet, key: 'excel' },
   { icon: Sigma, key: 'dax' },
@@ -54,14 +69,11 @@ const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
   { icon: Code, key: 'languageM' },
   { icon: BookOpen, key: 'storytelling' },
   { icon: Brain, key: 'machinelearning' },
-  { icon: Database, key: 'sql' },
   { icon: Layers, key: 'fabric' },
   { icon: Workflow, key: 'n8n' },
   { icon: Waypoints, key: 'apachehop' },
-  { icon: Code2, key: 'python' },
   { icon: Target, key: 'kpis' },
   { icon: Zap, key: 'spark' },
-  { icon: Boxes, key: 'databricks' },
   { icon: Warehouse, key: 'datawarehouse' },
   { icon: Terminal, key: 'linux' },
   { icon: Sparkles, key: 'ai' },

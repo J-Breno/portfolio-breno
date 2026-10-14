@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { TrendingUp, Database, Zap } from 'lucide-react';
+import { Workflow, Network, Cloud } from 'lucide-react';
 import DataParticles from './DataParticles';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ResumeDownloadButton from './ResumeDownloadButton';
@@ -87,9 +87,9 @@ const HeroSection = () => {
             className="grid grid-cols-3 gap-4 md:gap-8 max-w-lg mx-auto mb-12"
           >
             {[
-              { icon: TrendingUp, label: t.hero.biLabel, value: t.hero.biValue },
-              { icon: Database, label: t.hero.sqlLabel, value: t.hero.sqlValue },
-              { icon: Zap, label: t.hero.autoLabel, value: t.hero.autoValue },
+              { icon: Workflow, label: t.hero.biLabel, value: t.hero.biValue },
+              { icon: Network, label: t.hero.sqlLabel, value: t.hero.sqlValue },
+              { icon: Cloud, label: t.hero.autoLabel, value: t.hero.autoValue },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

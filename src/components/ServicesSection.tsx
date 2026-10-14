@@ -16,17 +16,6 @@ const ServicesSection = () => {
 
   const services = [
     {
-      key: 'dataAnalysis' as const,
-      icon: BarChart3,
-      title: t.services.dataAnalysis.title,
-      description: t.services.dataAnalysis.description,
-      features: t.services.dataAnalysis.features,
-      modalTitle: t.services.dataAnalysis.modalTitle,
-      modalDescription: t.services.dataAnalysis.modalDescription,
-      modalFeatures: t.services.dataAnalysis.modalFeatures,
-      color: 'from-accent to-gold-light',
-    },
-    {
       key: 'sql' as const,
       icon: Database,
       title: t.services.sql.title,
@@ -47,6 +36,17 @@ const ServicesSection = () => {
       modalDescription: t.services.automation.modalDescription,
       modalFeatures: t.services.automation.modalFeatures,
       color: 'from-accent to-purple-dark',
+    },
+    {
+      key: 'dataAnalysis' as const,
+      icon: BarChart3,
+      title: t.services.dataAnalysis.title,
+      description: t.services.dataAnalysis.description,
+      features: t.services.dataAnalysis.features,
+      modalTitle: t.services.dataAnalysis.modalTitle,
+      modalDescription: t.services.dataAnalysis.modalDescription,
+      modalFeatures: t.services.dataAnalysis.modalFeatures,
+      color: 'from-accent to-gold-light',
     },
   ];
 
