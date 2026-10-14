@@ -19,106 +19,145 @@ export const translations = {
     },
     // Hero
     hero: {
-      available: 'Disponível para oportunidades',
-      title1: 'Transformando',
-      title2: 'Dados',
-      title3: 'em',
-      title4: 'Decisão',
-      subtitle: 'Análises claras, dashboards estratégicos e automações que ajudam empresas a',
-      decideBetter: 'decidir melhor',
-      faster: 'mais rápido',
-      lessRisk: 'menos risco',
-      and: 'e com',
-      biLabel: 'BI & Analytics',
-      biValue: 'Expert',
-      sqlLabel: 'SQL & Data',
-      sqlValue: 'Fluente',
-      autoLabel: 'Automação',
-      autoValue: 'Ágil',
-      cta1: 'Vamos Conversar',
-      cta2: 'Ver Serviços',
-      explore: 'Explore',
+      "available": "Engenheiro de Dados Júnior · UP-ISP",
+      "title1": "João",
+      "title2": "Breno",
+      "title3": "Engenharia de",
+      "title4": "Dados",
+      "subtitle": "Conecto sistemas e transformo dados operacionais em bases prontas para análise, com",
+      "decideBetter": "pipelines em produção",
+      "faster": "integrações ágeis",
+      "lessRisk": "dados confiáveis",
+      "and": "e",
+      "biLabel": "Pipelines",
+      "biValue": "Databricks",
+      "sqlLabel": "Integrações",
+      "sqlValue": "FastAPI",
+      "autoLabel": "Cloud",
+      "autoValue": "Azure",
+      "cta1": "Vamos Conversar",
+      "cta2": "Ver Serviços",
+      "explore": "Explore"
     },
     // Services
     services: {
-      subtitle: 'O que posso fazer por você',
-      title: 'Serviços',
-      titleHighlight: 'Especializados',
-      description: 'Soluções completas para transformar a forma como sua empresa utiliza dados',
-      cta: 'Saiba Mais',
-      bottomText: 'Quer saber mais? Entre em contato.',
-      bottomCta: 'Falar Comigo',
-      modalIncludesLabel: 'O que inclui:',
-      modalCtaLabel: 'Falar sobre este serviço',
-      dataAnalysis: {
-        title: 'Análise de Dados & BI',
-        description: 'Dashboards que contam histórias e revelam oportunidades escondidas nos seus dados.',
-        features: [
-          'Dashboards interativos em Power BI (DAX, Power Query, Linguagem M)',
-          'Monitoramento e análise com Zabbix e Grafana',
-          'Análises com Python (Pandas, Matplotlib)',
-          'Relatórios executivos automatizados',
-          'KPIs e métricas de negócio',
+      "subtitle": "Da ingestão à análise",
+      "title": "Soluções em",
+      "titleHighlight": "Dados",
+      "description": "Engenharia que conecta fontes, reduz trabalho manual e entrega dados prontos para o negócio.",
+      "cta": "Ver Detalhes",
+      "bottomText": "Seu desafio começa em fontes desconectadas, dados inconsistentes ou processos manuais?",
+      "bottomCta": "Conversar sobre o desafio",
+      "modalIncludesLabel": "Como atuo:",
+      "modalCtaLabel": "Conversar sobre este desafio",
+      "sql": {
+        "title": "Pipelines & Engenharia de Dados",
+        "description": "Da fonte operacional à tabela de análise: pipelines diários com foco em confiabilidade, qualidade e desempenho.",
+        "features": [
+          "ETL/ELT com Python, SQL e PySpark",
+          "Databricks e Delta Lake no Azure",
+          "Ingestão de múltiplas fontes operacionais",
+          "Validação e padronização com Pandas e PySpark"
         ],
-        modalTitle: 'Análise de Dados & Business Intelligence',
-        modalDescription: 'Transformo dados brutos em insights acionáveis através de dashboards interativos e relatórios estratégicos que impulsionam a tomada de decisão.',
-        modalFeatures: [
-          { title: 'Power BI', description: 'Dashboards interativos com DAX avançado, modelagem de dados e visualizações impactantes' },
-          { title: 'Excel Avançado', description: 'Fórmulas complexas, tabelas dinâmicas, macros VBA e análises estatísticas' },
-          { title: 'Python Analytics', description: 'Análises com Pandas, visualizações com Matplotlib e Plotly, relatórios automatizados' },
-          { title: 'Storytelling com Dados', description: 'Apresentação de insights de forma clara e persuasiva para diferentes públicos' },
-        ],
+        "modalTitle": "Pipelines ETL/ELT em Produção",
+        "modalDescription": "Na UP-ISP, desenvolvo e mantenho pipelines que integram 5 fontes operacionais e processam cerca de 150 mil registros por dia. Transformo requisitos da operação em dados prontos para consumo.",
+        "modalFeatures": [
+          {
+            "title": "Ingestão integrada",
+            "description": "Conexão de fontes operacionais com Python e SQL para alimentar os fluxos de dados."
+          },
+          {
+            "title": "Processamento no Azure",
+            "description": "Transformações em Databricks com PySpark, SQL e Delta Lake, em execução diária em produção."
+          },
+          {
+            "title": "Qualidade de dados",
+            "description": "Tratamento de nulos, duplicidades e formatos com Pandas e PySpark."
+          },
+          {
+            "title": "Tabelas para análise",
+            "description": "Estruturas alinhadas aos requisitos das equipes técnicas e áreas de negócio."
+          }
+        ]
       },
-      sql: {
-        title: 'SQL & Engenharia de Dados',
-        description: 'Dados organizados, limpos e prontos para gerar valor real para sua empresa.',
-        features: [
-          'Microsoft Fabric e SQL Server',
-          'Queries otimizadas e performáticas',
-          'ETL e integração de múltiplas fontes',
-          'Web scraping e coleta automatizada',
-          'Qualidade e governança de dados',
+      "automation": {
+        "title": "APIs & Integrações",
+        "description": "Sistemas conectados e informações disponíveis em minutos, sem depender de coleta manual.",
+        "features": [
+          "APIs de integração com FastAPI",
+          "Extração com Python, SQL e Requests",
+          "Automações operacionais com n8n",
+          "Versionamento colaborativo com Git"
         ],
-        modalTitle: 'SQL & Engenharia de Dados',
-        modalDescription: 'Estruturo e organizo seus dados de forma eficiente, garantindo qualidade, performance e acessibilidade para análises.',
-        modalFeatures: [
-          { title: 'Modelagem de Dados', description: 'Criação de estruturas relacionais eficientes e normalizadas' },
-          { title: 'SQL Avançado', description: 'Queries otimizadas, CTEs, Window Functions e procedures' },
-          { title: 'ETL/ELT', description: 'Integração e transformação de dados de múltiplas fontes' },
-          { title: 'Data Quality', description: 'Validação, limpeza e governança de dados' },
-        ],
+        "modalTitle": "Integrações que Reduzem Trabalho Manual",
+        "modalDescription": "Desenvolvi 6 APIs com FastAPI para integrar sistemas internos à ingestão de dados, reduzindo o tempo de disponibilização das informações de horas para minutos.",
+        "modalFeatures": [
+          {
+            "title": "FastAPI",
+            "description": "APIs para conectar sistemas internos aos processos de ingestão."
+          },
+          {
+            "title": "Extração automatizada",
+            "description": "Experiência com 4 fontes de dados, incluindo APIs REST, bancos e sistemas internos."
+          },
+          {
+            "title": "n8n",
+            "description": "Criação de 2 automações para alertas e rotinas operacionais na UP-ISP."
+          },
+          {
+            "title": "Git em equipe",
+            "description": "Branches, merges e pull requests para versionamento e colaboração no desenvolvimento."
+          }
+        ]
       },
-      automation: {
-        title: 'Automação & Pipelines',
-        description: 'Processos manuais transformados em fluxos automáticos que trabalham por você.',
-        features: [
-          'Automação completa com N8N',
-          'Integração de sistemas e APIs',
-          'Workflows automatizados',
-          'Eliminação de tarefas repetitivas',
+      "dataAnalysis": {
+        "title": "Dados para BI & Decisão",
+        "description": "Uma base sólida em análise para construir dados que respondem às perguntas reais da operação.",
+        "features": [
+          "Power BI, Power Query e DAX",
+          "Modelagem orientada ao consumo analítico",
+          "Padronização de CSV, Excel, JSON e Parquet",
+          "Indicadores de rede e chamados"
         ],
-        modalTitle: 'Automação & Pipelines de Dados',
-        modalDescription: 'Automatizo processos manuais e repetitivos, criando fluxos inteligentes que economizam tempo e reduzem erros.',
-        modalFeatures: [
-          { title: 'N8N Expert', description: 'Qualquer tipo de automação: integrações, notificações, sincronizações, workflows complexos' },
-          { title: 'APIs & Integrações', description: 'Conexão entre sistemas, webhooks, automação de processos entre plataformas' },
-          { title: 'Workflows Inteligentes', description: 'Fluxos automatizados com lógica condicional e tratamento de erros' },
-          { title: 'Relatórios Automáticos', description: 'Geração e envio automatizado de relatórios por email, Slack, etc.' },
-        ],
-      },
+        "modalTitle": "Engenharia com Visão de Negócio",
+        "modalDescription": "Minha experiência em BI aproxima a engenharia de quem consome os dados. Desenvolvi 8 dashboards na UP-ISP e 4 no estágio na Fimm Brasil, para indicadores operacionais da CAGECE.",
+        "modalFeatures": [
+          {
+            "title": "Power BI",
+            "description": "Dashboards com Power Query, DAX e modelagem para acompanhamento operacional."
+          },
+          {
+            "title": "Dados consistentes",
+            "description": "Tratamento e padronização de arquivos com Python e Pandas para uma base confiável."
+          },
+          {
+            "title": "Indicadores úteis",
+            "description": "Acompanhamento de desempenho da rede e chamados para apoiar prioridades de manutenção."
+          },
+          {
+            "title": "Conexão com o negócio",
+            "description": "Colaboração com equipes técnicas e áreas de negócio para transformar requisitos em tabelas prontas para análise."
+          }
+        ]
+      }
     },
     // Skills
     skills: {
-      subtitle: 'Expertise Técnica',
+      subtitle: "Stack em prática",
       title: 'Habilidades &',
       titleHighlight: 'Ferramentas',
-      description: 'Stack moderna e comprovada para entregar resultados de alto impacto',
+      description: "Ferramentas que conectam minha experiência em engenharia de dados, integração e BI.",
       hardSkillsTitle: 'Hard Skills',
       softSkillsTitle: 'Soft Skills',
       footer1: 'Aprendizado contínuo',
-      footer2: 'Metodologia SCRUM',
+      footer2: "Colaboração técnica e negócio",
       footer3: 'Foco em resultados',
       skillItems: {
+        pyspark: {"name": "PySpark", "description": "Transformação e validação de dados em pipelines no Databricks"},
+        delta: {"name": "Delta Lake", "description": "Tabelas e processamento de dados nos pipelines do Databricks"},
+        azure: {"name": "Azure", "description": "Ambiente cloud dos pipelines de dados em produção"},
+        fastapi: {"name": "FastAPI", "description": "APIs de integração entre sistemas e ingestão de dados"},
+        pandas: {"name": "Pandas", "description": "Tratamento de nulos, duplicidades, formatos e arquivos"},
         powerbi: { name: 'Power BI', description: 'Modelagem, dashboards e relatórios executivos' },
         excel: { name: 'Excel', description: 'Fórmulas avançadas, tabelas dinâmicas e análises' },
         dax: { name: 'DAX', description: 'Medidas, cálculos e inteligência de tempo no Power BI' },
@@ -130,7 +169,7 @@ export const translations = {
         fabric: { name: 'Microsoft Fabric', description: 'Plataforma unificada de dados e analytics' },
         n8n: { name: 'Automações N8N', description: 'Workflows e integrações entre sistemas' },
         apachehop: { name: 'Apache Hop', description: 'Orquestração e pipelines de dados' },
-        python: { name: 'Python', description: 'Pandas, automações e análise de dados' },
+        python: { name: 'Python', description: "Pipelines ETL/ELT, integração e tratamento de dados" },
         kpis: { name: 'KPIs', description: 'Definição e acompanhamento de indicadores' },
         spark: { name: 'Apache Spark', description: 'Processamento distribuído de big data' },
         databricks: { name: 'Databricks', description: 'Lakehouse, notebooks e engenharia de dados' },
@@ -143,57 +182,52 @@ export const translations = {
     },
     // About
     about: {
-      subtitle: 'Quem sou eu',
-      name: 'João',
-      nameHighlight: 'Breno',
-      description1: 'Analista de Dados Jr com experiência em análise de indicadores, monitoramento e suporte à tomada de decisão orientada por dados. Atuo no segmento de redes de computadores transformando dados operacionais em informações estratégicas, apoiando clientes, operação e áreas técnicas.',
-      description2: 'Tenho perfil analítico, hands-on e voltado à identificação de padrões, melhoria contínua e otimização de processos, com vivência em ambientes ágeis (Scrum) e contato direto com clientes e operações. Profissional dedicado, com muita vontade de servir e aprender.',
-      valueTitle: 'Por que me escolher?',
-      valueDescription: 'Combino domínio técnico em Power BI, SQL, Python e automações (n8n) com visão de negócio e comunicação clara. Entrego dashboards que contam histórias, KPIs que orientam decisões e automações que economizam tempo — sempre alinhado à realidade da operação e do cliente.',
-      timeline: {
-        education: {
-          title: 'Formação & Base Técnica',
-          description: 'Base sólida em análise de dados, SQL, estatística e ferramentas de BI, com estudo contínuo em Python, Microsoft Fabric e engenharia de dados.',
+      "subtitle": "Quem sou eu",
+      "name": "João",
+      "nameHighlight": "Breno",
+      "description1": "Sou Engenheiro de Dados Júnior na UP-ISP, com cerca de 3 anos de experiência em dados e mais de 1 ano construindo soluções de engenharia em produção. Desenvolvo pipelines ETL/ELT com Python, SQL, PySpark e Databricks no Azure, conectando a operação a dados confiáveis para análise.",
+      "description2": "Minha trajetória começou no BI: antes de construir pipelines, eu já conhecia os desafios de quem precisa usar os dados. Essa base em Power BI, DAX e modelagem me ajuda a traduzir requisitos de negócio em tabelas úteis, não apenas em processos que executam. Hoje, combino essa visão com integrações via FastAPI e validações com Pandas e PySpark.",
+      "valueTitle": "Da origem ao dado que o negócio usa",
+      "valueDescription": "Na UP-ISP, mantenho pipelines diários que integram 5 fontes e processam cerca de 150 mil registros por dia. Também desenvolvi 6 APIs com FastAPI que substituíram a coleta manual e reduziram a disponibilização das informações de horas para minutos. Meu foco é unir confiabilidade, qualidade e desempenho a uma entrega que faça sentido para a operação.",
+      "timeline": {
+        "current": {
+          "title": "Engenheiro de Dados Júnior — UP-ISP (07/2025 – Atual)",
+          "description": "Promovido na mesma empresa. Desenvolvo e mantenho pipelines ETL/ELT em Databricks, PySpark, SQL e Delta Lake no Azure, com execução diária em produção. Integro sistemas com 6 APIs FastAPI, valido nulos, duplicidades e formatos e preparo tabelas para as áreas de negócio."
         },
-        internship: {
-          title: 'Analista de Dados — Fimm Brasil (06/2023 – 06/2024)',
-          description: 'Projetos de BI e automação para a CAGECE: coleta e tratamento de dados com Python, SQL Server e Excel, web scraping em sistemas internos, dashboards em Power BI (Power Query, DAX, modelagem) e automações administrativas.',
+        "previous": {
+          "title": "Analista de Dados Júnior — UP-ISP (07/2024 – 07/2025)",
+          "description": "Desenvolvi 8 dashboards Power BI para desempenho da rede e chamados, automatizei a extração de 4 fontes com Python, SQL e Requests e criei 2 automações n8n. Padronizei CSV, Excel, JSON e Parquet com Pandas e trabalhei com Git em equipe."
         },
-        current: {
-          title: 'Analista de Dados — UP-ISP (07/2024 – Atual)',
-          description: 'Análise, monitoramento e BI para provedores de internet: Zabbix, Grafana e Power BI para performance e incidentes; SQL, Python e Microsoft Fabric para extração e automação; n8n para fluxos internos; interface direta com clientes e operação em rotinas Scrum via Tiflux.',
+        "internship": {
+          "title": "Estagiário em Análise de Dados — Fimm Brasil (06/2023 – 06/2024)",
+          "description": "Desenvolvi 4 dashboards Power BI para indicadores operacionais da CAGECE. Extraí e tratei dados com Python, SQL Server e Excel, utilizei web scraping e participei de automações administrativas para leitura de currículos e análise de e-mails."
         },
-        next: {
-          title: 'Próximos Passos',
-          description: 'Aprofundamento em Microsoft Fabric, Databricks/Spark, Data Warehouse e Machine Learning aplicado a operações de rede.',
-        },
-      },
+        "education": {
+          "title": "Pós-graduação em Engenharia de Dados — Em andamento",
+          "description": "Aprofundo conhecimentos em arquitetura de pipelines, qualidade de dados e orquestração, conectando os estudos aos desafios que encontro em produção."
+        }
+      }
     },
     // Contact
     contact: {
-      subtitle: 'Oportunidades',
+      subtitle: "Vamos construir juntos",
       title: 'Entre em',
       titleHighlight: 'Contato',
-      description: 'Interessado em ter um analista de dados na sua equipe? Vamos conversar sobre como posso agregar valor ao seu time.',
+      description: "Dados fragmentados, ingestão manual ou pipelines que precisam evoluir? Vamos conversar sobre o seu cenário e como minha experiência em engenharia de dados pode contribuir.",
       nameLabel: 'Nome',
       namePlaceholder: 'Seu nome',
       emailLabel: 'Email',
       emailPlaceholder: 'seu@email.com',
       subjectLabel: 'Assunto',
-      subjectPlaceholder: 'Oportunidade, projeto, etc.',
+      subjectPlaceholder: "Pipelines, integrações, colaboração...",
       messageLabel: 'Mensagem',
-      messagePlaceholder: 'Conte-me mais sobre a oportunidade...',
+      messagePlaceholder: "Qual desafio de dados sua equipe quer resolver?",
       submit: 'Enviar Mensagem',
       submitting: 'Enviando...',
       successTitle: 'Mensagem enviada!',
       successDescription: 'Obrigado pelo contato. Retornarei em breve!',
-      whyContact: 'Por que me contratar?',
-      reasons: [
-        'Pronto para agregar valor ao time',
-        'Experiência comprovada com dados',
-        'Proativo e comprometido com resultados',
-        'Disponível para início imediato',
-      ],
+      whyContact: "O que levo para o seu time",
+      reasons: ["Pipelines diários em produção no Azure", "Integrações que levaram dados de horas para minutos", "Qualidade de dados com Pandas e PySpark", "Visão de negócio construída na prática com BI"],
       connectWith: 'Conecte-se comigo:',
     },
     // Footer
@@ -211,10 +245,22 @@ export const translations = {
     },
     // Stats
     stats: {
-      dashboards: { value: 50, label: 'Dashboards Criados' },
-      clients: { value: 15, label: 'Clientes Atendidos' },
-      projects: { value: 30, label: 'Projetos Entregues' },
-      experience: { value: 3, label: 'Anos de Experiência' },
+      "records": {
+        "value": 150000,
+        "label": "Registros por dia · cerca de"
+      },
+      "sources": {
+        "value": 5,
+        "label": "Fontes nos pipelines diários"
+      },
+      "apis": {
+        "value": 6,
+        "label": "APIs FastAPI desenvolvidas"
+      },
+      "dashboards": {
+        "value": 12,
+        "label": "Dashboards entre UP-ISP e Fimm"
+      }
     },
     // Testimonials
     testimonials: {
@@ -256,7 +302,7 @@ export const translations = {
       subtitle: 'Portfólio',
       title: 'Meus',
       titleHighlight: 'Projetos',
-      description: 'Dashboards e soluções desenvolvidas para diferentes áreas de negócio',
+      description: "Minha base em BI: dashboards que traduzem dados em decisões e orientam minha visão de engenharia.",
       viewProject: 'Ver Projeto',
       items: [
         {
@@ -394,106 +440,145 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
     },
     // Hero
     hero: {
-      available: 'Available for opportunities',
-      title1: 'Transforming',
-      title2: 'Data',
-      title3: 'into',
-      title4: 'Decision',
-      subtitle: 'Clear analyses, strategic dashboards and automations that help companies',
-      decideBetter: 'decide better',
-      faster: 'faster',
-      lessRisk: 'less risk',
-      and: 'and with',
-      biLabel: 'BI & Analytics',
-      biValue: 'Expert',
-      sqlLabel: 'SQL & Data',
-      sqlValue: 'Fluent',
-      autoLabel: 'Automation',
-      autoValue: 'Agile',
-      cta1: "Let's Talk",
-      cta2: 'See Services',
-      explore: 'Explore',
+      "available": "Junior Data Engineer · UP-ISP",
+      "title1": "João",
+      "title2": "Breno",
+      "title3": "Data",
+      "title4": "Engineering",
+      "subtitle": "I connect systems and turn operational data into analysis-ready tables through",
+      "decideBetter": "production pipelines",
+      "faster": "efficient integrations",
+      "lessRisk": "reliable data",
+      "and": "and",
+      "biLabel": "Pipelines",
+      "biValue": "Databricks",
+      "sqlLabel": "Integrations",
+      "sqlValue": "FastAPI",
+      "autoLabel": "Cloud",
+      "autoValue": "Azure",
+      "cta1": "Let's Talk",
+      "cta2": "See Services",
+      "explore": "Explore"
     },
     // Services
     services: {
-      subtitle: 'What I can do for you',
-      title: 'Specialized',
-      titleHighlight: 'Services',
-      description: 'Complete solutions to transform how your company uses data',
-      cta: 'Learn More',
-      bottomText: 'Want to know more? Get in touch.',
-      bottomCta: 'Contact Me',
-      modalIncludesLabel: "What's included:",
-      modalCtaLabel: 'Talk about this service',
-      dataAnalysis: {
-        title: 'Data Analysis & BI',
-        description: 'Dashboards that tell stories and reveal hidden opportunities in your data.',
-        features: [
-          'Interactive Power BI dashboards (DAX, Power Query, M)',
-          'Monitoring and analysis with Zabbix and Grafana',
-          'Python analytics (Pandas, Matplotlib)',
-          'Automated executive reports',
-          'KPIs and business metrics',
+      "subtitle": "From ingestion to analysis",
+      "title": "Data",
+      "titleHighlight": "Solutions",
+      "description": "Engineering that connects sources, reduces manual work and delivers business-ready data.",
+      "cta": "View Details",
+      "bottomText": "Disconnected sources, inconsistent data or manual processes slowing your team down?",
+      "bottomCta": "Discuss your data challenge",
+      "modalIncludesLabel": "How I work:",
+      "modalCtaLabel": "Discuss this challenge",
+      "sql": {
+        "title": "Pipelines & Data Engineering",
+        "description": "From operational sources to analysis-ready tables: daily pipelines built for reliability, quality and performance.",
+        "features": [
+          "ETL/ELT with Python, SQL and PySpark",
+          "Databricks and Delta Lake on Azure",
+          "Ingestion from multiple operational sources",
+          "Validation and standardization with Pandas and PySpark"
         ],
-        modalTitle: 'Data Analysis & Business Intelligence',
-        modalDescription: 'I transform raw data into actionable insights through interactive dashboards and strategic reports that drive decision-making.',
-        modalFeatures: [
-          { title: 'Power BI', description: 'Interactive dashboards with advanced DAX, data modeling and impactful visualizations' },
-          { title: 'Advanced Excel', description: 'Complex formulas, pivot tables, VBA macros and statistical analysis' },
-          { title: 'Python Analytics', description: 'Analysis with Pandas, visualizations with Matplotlib and Plotly, automated reports' },
-          { title: 'Data Storytelling', description: 'Presenting insights clearly and persuasively for different audiences' },
-        ],
+        "modalTitle": "ETL/ELT Pipelines in Production",
+        "modalDescription": "At UP-ISP, I develop and maintain pipelines integrating 5 operational sources and processing around 150,000 records daily. I turn operational requirements into usable data.",
+        "modalFeatures": [
+          {
+            "title": "Integrated ingestion",
+            "description": "Connecting operational sources with Python and SQL to feed data workflows."
+          },
+          {
+            "title": "Processing on Azure",
+            "description": "Daily production transformations in Databricks using PySpark, SQL and Delta Lake."
+          },
+          {
+            "title": "Data quality",
+            "description": "Handling nulls, duplicates and inconsistent formats with Pandas and PySpark."
+          },
+          {
+            "title": "Analysis-ready tables",
+            "description": "Data structures aligned with technical teams and business requirements."
+          }
+        ]
       },
-      sql: {
-        title: 'SQL & Data Engineering',
-        description: 'Organized, clean data ready to generate real value for your company.',
-        features: [
-          'Microsoft Fabric and SQL Server',
-          'Optimized, performant queries',
-          'ETL and integration of multiple sources',
-          'Web scraping and automated collection',
-          'Data quality and governance',
+      "automation": {
+        "title": "APIs & Integrations",
+        "description": "Connected systems and information available in minutes, without relying on manual collection.",
+        "features": [
+          "Integration APIs with FastAPI",
+          "Extraction with Python, SQL and Requests",
+          "Operational automations with n8n",
+          "Collaborative version control with Git"
         ],
-        modalTitle: 'SQL & Data Engineering',
-        modalDescription: 'I structure and organize your data efficiently, ensuring quality, performance and accessibility for analysis.',
-        modalFeatures: [
-          { title: 'Data Modeling', description: 'Creation of efficient and normalized relational structures' },
-          { title: 'Advanced SQL', description: 'Optimized queries, CTEs, Window Functions and procedures' },
-          { title: 'ETL/ELT', description: 'Integration and transformation of data from multiple sources' },
-          { title: 'Data Quality', description: 'Validation, cleaning and data governance' },
-        ],
+        "modalTitle": "Integrations That Reduce Manual Work",
+        "modalDescription": "I developed 6 FastAPI APIs to integrate internal systems into data ingestion, reducing data availability time from hours to minutes.",
+        "modalFeatures": [
+          {
+            "title": "FastAPI",
+            "description": "APIs connecting internal systems to data ingestion processes."
+          },
+          {
+            "title": "Automated extraction",
+            "description": "Experience with 4 data sources, including REST APIs, databases and internal systems."
+          },
+          {
+            "title": "n8n",
+            "description": "Built 2 automations for alerts and operational routines at UP-ISP."
+          },
+          {
+            "title": "Teamwork with Git",
+            "description": "Branches, merges and pull requests for version control and collaborative development."
+          }
+        ]
       },
-      automation: {
-        title: 'Automation & Pipelines',
-        description: 'Manual processes transformed into automatic flows that work for you.',
-        features: [
-          'Complete automation with N8N',
-          'System and API integration',
-          'Automated workflows',
-          'Elimination of repetitive tasks',
+      "dataAnalysis": {
+        "title": "Data for BI & Decisions",
+        "description": "A solid analytics foundation for building data that answers real operational questions.",
+        "features": [
+          "Power BI, Power Query and DAX",
+          "Modeling for analytical consumption",
+          "Standardizing CSV, Excel, JSON and Parquet",
+          "Network performance and ticket indicators"
         ],
-        modalTitle: 'Automation & Data Pipelines',
-        modalDescription: 'I automate manual and repetitive processes, creating intelligent flows that save time and reduce errors.',
-        modalFeatures: [
-          { title: 'N8N Expert', description: 'Any type of automation: integrations, notifications, syncs, complex workflows' },
-          { title: 'APIs & Integrations', description: 'Connection between systems, webhooks, process automation between platforms' },
-          { title: 'Smart Workflows', description: 'Automated flows with conditional logic and error handling' },
-          { title: 'Automatic Reports', description: 'Automated generation and sending of reports via email, Slack, etc.' },
-        ],
-      },
+        "modalTitle": "Engineering with Business Context",
+        "modalDescription": "My BI experience brings engineering closer to the people using the data. I developed 8 dashboards at UP-ISP and 4 during my Fimm Brasil internship for CAGECE operational indicators.",
+        "modalFeatures": [
+          {
+            "title": "Power BI",
+            "description": "Dashboards with Power Query, DAX and data modeling for operational monitoring."
+          },
+          {
+            "title": "Consistent data",
+            "description": "File processing and standardization with Python and Pandas for a reliable data foundation."
+          },
+          {
+            "title": "Useful indicators",
+            "description": "Tracking network performance and tickets to support maintenance priorities."
+          },
+          {
+            "title": "Business collaboration",
+            "description": "Working with technical and business teams to translate requirements into analysis-ready tables."
+          }
+        ]
+      }
     },
     // Skills
     skills: {
-      subtitle: 'Technical Expertise',
+      subtitle: "Hands-on stack",
       title: 'Skills &',
       titleHighlight: 'Tools',
-      description: 'Modern and proven stack to deliver high-impact results',
+      description: "Tools connecting my experience in data engineering, integration and BI.",
       hardSkillsTitle: 'Hard Skills',
       softSkillsTitle: 'Soft Skills',
       footer1: 'Continuous learning',
-      footer2: 'SCRUM methodology',
+      footer2: "Technical and business collaboration",
       footer3: 'Results-focused',
       skillItems: {
+        pyspark: {"name": "PySpark", "description": "Data transformation and validation in Databricks pipelines"},
+        delta: {"name": "Delta Lake", "description": "Tables and data processing in Databricks pipelines"},
+        azure: {"name": "Azure", "description": "Cloud environment for production data pipelines"},
+        fastapi: {"name": "FastAPI", "description": "APIs connecting internal systems to data ingestion"},
+        pandas: {"name": "Pandas", "description": "Handling nulls, duplicates, formats and files"},
         powerbi: { name: 'Power BI', description: 'Modeling, dashboards and executive reports' },
         excel: { name: 'Excel', description: 'Advanced formulas, pivot tables and analyses' },
         dax: { name: 'DAX', description: 'Measures, calculations and time intelligence in Power BI' },
@@ -505,7 +590,7 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
         fabric: { name: 'Microsoft Fabric', description: 'Unified data and analytics platform' },
         n8n: { name: 'N8N Automations', description: 'Workflows and system integrations' },
         apachehop: { name: 'Apache Hop', description: 'Data pipelines and orchestration' },
-        python: { name: 'Python', description: 'Pandas, automations and data analysis' },
+        python: { name: 'Python', description: "ETL/ELT pipelines, integration and data processing" },
         kpis: { name: 'KPIs', description: 'Defining and tracking key indicators' },
         spark: { name: 'Apache Spark', description: 'Distributed big data processing' },
         databricks: { name: 'Databricks', description: 'Lakehouse, notebooks and data engineering' },
@@ -518,57 +603,52 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
     },
     // About
     about: {
-      subtitle: 'Who I am',
-      name: 'João',
-      nameHighlight: 'Breno',
-      description1: "Junior Data Analyst experienced in KPI analysis, monitoring and data-driven decision support. I work in the computer networking segment, turning operational data into strategic insights that support clients, operations and technical teams.",
-      description2: 'Analytical, hands-on profile focused on pattern recognition, continuous improvement and process optimization, with experience in agile (Scrum) environments and direct contact with clients and operations. Dedicated professional, eager to serve and to learn.',
-      valueTitle: 'Why choose me?',
-      valueDescription: 'I combine strong technical skills in Power BI, SQL, Python and automation (n8n) with business vision and clear communication. I deliver dashboards that tell stories, KPIs that drive decisions and automations that save time — always aligned with the reality of the operation and the client.',
-      timeline: {
-        education: {
-          title: 'Education & Technical Foundation',
-          description: 'Solid foundation in data analysis, SQL, statistics and BI tools, with ongoing study of Python, Microsoft Fabric and data engineering.',
+      "subtitle": "Who I am",
+      "name": "João",
+      "nameHighlight": "Breno",
+      "description1": "I am a Junior Data Engineer at UP-ISP, with around 3 years of experience in data and over a year building data engineering solutions in production. I develop ETL/ELT pipelines with Python, SQL, PySpark and Databricks on Azure, connecting operations to reliable data for analysis.",
+      "description2": "My journey started in BI: before building pipelines, I understood the challenges of the people using the data. That foundation in Power BI, DAX and modeling helps me translate business requirements into useful tables, not just processes that run. Today, I combine that perspective with FastAPI integrations and data validation using Pandas and PySpark.",
+      "valueTitle": "From source to data the business can use",
+      "valueDescription": "At UP-ISP, I maintain daily pipelines integrating 5 sources and processing around 150,000 records per day. I also developed 6 FastAPI APIs that replaced manual collection and cut data availability time from hours to minutes. My focus is reliability, quality and performance, with delivery grounded in operational needs.",
+      "timeline": {
+        "current": {
+          "title": "Junior Data Engineer — UP-ISP (07/2025 – Present)",
+          "description": "Promoted within the same company. I develop and maintain daily production ETL/ELT pipelines using Databricks, PySpark, SQL and Delta Lake on Azure. I integrate systems through 6 FastAPI APIs, validate nulls, duplicates and formats, and prepare tables for business teams."
         },
-        internship: {
-          title: 'Data Analyst — Fimm Brasil (06/2023 – 06/2024)',
-          description: 'BI and automation projects for CAGECE: data collection and processing with Python, SQL Server and Excel, web scraping on internal systems, Power BI dashboards (Power Query, DAX, modeling) and administrative automations.',
+        "previous": {
+          "title": "Junior Data Analyst — UP-ISP (07/2024 – 07/2025)",
+          "description": "Developed 8 Power BI dashboards for network performance and tickets, automated extraction from 4 sources using Python, SQL and Requests, and created 2 n8n automations. Standardized CSV, Excel, JSON and Parquet with Pandas and collaborated using Git."
         },
-        current: {
-          title: 'Data Analyst — UP-ISP (07/2024 – Present)',
-          description: 'Analysis, monitoring and BI for ISPs: Zabbix, Grafana and Power BI for performance and incident tracking; SQL, Python and Microsoft Fabric for extraction and automation; n8n for internal workflows; direct interface with clients and operations in Scrum routines via Tiflux.',
+        "internship": {
+          "title": "Data Analysis Intern — Fimm Brasil (06/2023 – 06/2024)",
+          "description": "Developed 4 Power BI dashboards for CAGECE operational indicators. Extracted and processed data with Python, SQL Server and Excel, used web scraping and contributed to administrative automations for résumé processing and email analysis."
         },
-        next: {
-          title: 'Next Steps',
-          description: 'Deep-diving into Microsoft Fabric, Databricks/Spark, Data Warehousing and Machine Learning applied to network operations.',
-        },
-      },
+        "education": {
+          "title": "Postgraduate Studies in Data Engineering — In progress",
+          "description": "Deepening my knowledge of pipeline architecture, data quality and orchestration, connecting my studies to the challenges I encounter in production."
+        }
+      }
     },
     // Contact
     contact: {
-      subtitle: 'Opportunities',
+      subtitle: "Let's build together",
       title: 'Get in',
       titleHighlight: 'Touch',
-      description: 'Interested in having a data analyst on your team? Let\'s talk about how I can add value to your team.',
+      description: "Fragmented data, manual ingestion or pipelines that need to evolve? Let’s discuss your context and how my data engineering experience can contribute.",
       nameLabel: 'Name',
       namePlaceholder: 'Your name',
       emailLabel: 'Email',
       emailPlaceholder: 'your@email.com',
       subjectLabel: 'Subject',
-      subjectPlaceholder: 'Opportunity, project, etc.',
+      subjectPlaceholder: "Pipelines, integrations, collaboration...",
       messageLabel: 'Message',
-      messagePlaceholder: 'Tell me more about the opportunity...',
+      messagePlaceholder: "What data challenge does your team want to solve?",
       submit: 'Send Message',
       submitting: 'Sending...',
       successTitle: 'Message sent!',
       successDescription: 'Thanks for reaching out. I\'ll get back to you soon!',
-      whyContact: 'Why hire me?',
-      reasons: [
-        'Ready to add value to the team',
-        'Proven experience with data',
-        'Proactive and results-committed',
-        'Available for immediate start',
-      ],
+      whyContact: "What I bring to your team",
+      reasons: ["Daily production pipelines on Azure", "Integrations that cut data delivery from hours to minutes", "Data quality with Pandas and PySpark", "Business context built through hands-on BI"],
       connectWith: 'Connect with me:',
     },
     // Footer
@@ -586,10 +666,22 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
     },
     // Stats
     stats: {
-      dashboards: { value: 50, label: 'Dashboards Created' },
-      clients: { value: 15, label: 'Clients Served' },
-      projects: { value: 30, label: 'Projects Delivered' },
-      experience: { value: 3, label: 'Years of Experience' },
+      "records": {
+        "value": 150000,
+        "label": "Records per day · approximately"
+      },
+      "sources": {
+        "value": 5,
+        "label": "Sources in daily pipelines"
+      },
+      "apis": {
+        "value": 6,
+        "label": "FastAPI APIs developed"
+      },
+      "dashboards": {
+        "value": 12,
+        "label": "Dashboards across UP-ISP and Fimm"
+      }
     },
     // Testimonials
     testimonials: {
@@ -631,7 +723,7 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
       subtitle: 'Portfolio',
       title: 'My',
       titleHighlight: 'Projects',
-      description: 'Dashboards and solutions developed for different business areas',
+      description: "My BI foundation: dashboards that turn data into decisions and shape my engineering perspective.",
       viewProject: 'View Project',
       items: [
         {
@@ -769,106 +861,145 @@ Identifies the most profitable products and regions, guiding commercial strategy
     },
     // Hero
     hero: {
-      available: 'Disponible para oportunidades',
-      title1: 'Transformando',
-      title2: 'Datos',
-      title3: 'en',
-      title4: 'Decisión',
-      subtitle: 'Análisis claros, dashboards estratégicos y automatizaciones que ayudan a las empresas a',
-      decideBetter: 'decidir mejor',
-      faster: 'más rápido',
-      lessRisk: 'menos riesgo',
-      and: 'y con',
-      biLabel: 'BI & Analytics',
-      biValue: 'Experto',
-      sqlLabel: 'SQL & Data',
-      sqlValue: 'Fluido',
-      autoLabel: 'Automatización',
-      autoValue: 'Ágil',
-      cta1: 'Hablemos',
-      cta2: 'Ver Servicios',
-      explore: 'Explorar',
+      "available": "Ingeniero de Datos Júnior · UP-ISP",
+      "title1": "João",
+      "title2": "Breno",
+      "title3": "Ingeniería de",
+      "title4": "Datos",
+      "subtitle": "Conecto sistemas y transformo datos operativos en tablas listas para el análisis, con",
+      "decideBetter": "pipelines en producción",
+      "faster": "integraciones ágiles",
+      "lessRisk": "datos fiables",
+      "and": "y",
+      "biLabel": "Pipelines",
+      "biValue": "Databricks",
+      "sqlLabel": "Integraciones",
+      "sqlValue": "FastAPI",
+      "autoLabel": "Cloud",
+      "autoValue": "Azure",
+      "cta1": "Hablemos",
+      "cta2": "Ver Servicios",
+      "explore": "Explorar"
     },
     // Services
     services: {
-      subtitle: 'Lo que puedo hacer por ti',
-      title: 'Servicios',
-      titleHighlight: 'Especializados',
-      description: 'Soluciones completas para transformar la forma en que tu empresa utiliza los datos',
-      cta: 'Saber Más',
-      bottomText: '¿Quieres saber más? Ponte en contacto.',
-      bottomCta: 'Contáctame',
-      modalIncludesLabel: 'Qué incluye:',
-      modalCtaLabel: 'Hablar sobre este servicio',
-      dataAnalysis: {
-        title: 'Análisis de Datos & BI',
-        description: 'Dashboards que cuentan historias y revelan oportunidades ocultas en tus datos.',
-        features: [
-          'Dashboards interactivos en Power BI (DAX, Power Query, M)',
-          'Monitoreo y análisis con Zabbix y Grafana',
-          'Análisis con Python (Pandas, Matplotlib)',
-          'Informes ejecutivos automatizados',
-          'KPIs y métricas de negocio',
+      "subtitle": "De la ingesta al análisis",
+      "title": "Soluciones de",
+      "titleHighlight": "Datos",
+      "description": "Ingeniería que conecta fuentes, reduce el trabajo manual y entrega datos listos para el negocio.",
+      "cta": "Ver Detalles",
+      "bottomText": "¿Fuentes desconectadas, datos inconsistentes o procesos manuales que frenan a tu equipo?",
+      "bottomCta": "Hablemos de tu reto",
+      "modalIncludesLabel": "Cómo trabajo:",
+      "modalCtaLabel": "Hablar sobre este reto",
+      "sql": {
+        "title": "Pipelines e Ingeniería de Datos",
+        "description": "De la fuente operativa a la tabla de análisis: pipelines diarios centrados en fiabilidad, calidad y rendimiento.",
+        "features": [
+          "ETL/ELT con Python, SQL y PySpark",
+          "Databricks y Delta Lake en Azure",
+          "Ingesta de múltiples fuentes operativas",
+          "Validación y estandarización con Pandas y PySpark"
         ],
-        modalTitle: 'Análisis de Datos & Business Intelligence',
-        modalDescription: 'Transformo datos brutos en insights accionables a través de dashboards interactivos e informes estratégicos que impulsan la toma de decisiones.',
-        modalFeatures: [
-          { title: 'Power BI', description: 'Dashboards interactivos con DAX avanzado, modelado de datos y visualizaciones impactantes' },
-          { title: 'Excel Avanzado', description: 'Fórmulas complejas, tablas dinámicas, macros VBA y análisis estadístico' },
-          { title: 'Python Analytics', description: 'Análisis con Pandas, visualizaciones con Matplotlib y Plotly, informes automatizados' },
-          { title: 'Storytelling con Datos', description: 'Presentación de insights de forma clara y persuasiva para diferentes públicos' },
-        ],
+        "modalTitle": "Pipelines ETL/ELT en Producción",
+        "modalDescription": "En UP-ISP desarrollo y mantengo pipelines que integran 5 fuentes operativas y procesan cerca de 150.000 registros al día. Transformo requisitos operativos en datos listos para su uso.",
+        "modalFeatures": [
+          {
+            "title": "Ingesta integrada",
+            "description": "Conexión de fuentes operativas con Python y SQL para alimentar los flujos de datos."
+          },
+          {
+            "title": "Procesamiento en Azure",
+            "description": "Transformaciones diarias en producción en Databricks con PySpark, SQL y Delta Lake."
+          },
+          {
+            "title": "Calidad de datos",
+            "description": "Tratamiento de nulos, duplicados y formatos con Pandas y PySpark."
+          },
+          {
+            "title": "Tablas para análisis",
+            "description": "Estructuras alineadas con los requisitos de los equipos técnicos y las áreas de negocio."
+          }
+        ]
       },
-      sql: {
-        title: 'SQL & Ingeniería de Datos',
-        description: 'Datos organizados, limpios y listos para generar valor real para tu empresa.',
-        features: [
-          'Microsoft Fabric y SQL Server',
-          'Queries optimizadas y performantes',
-          'ETL e integración de múltiples fuentes',
-          'Web scraping y recolección automatizada',
-          'Calidad y gobernanza de datos',
+      "automation": {
+        "title": "APIs e Integraciones",
+        "description": "Sistemas conectados e información disponible en minutos, sin depender de la recopilación manual.",
+        "features": [
+          "APIs de integración con FastAPI",
+          "Extracción con Python, SQL y Requests",
+          "Automatizaciones operativas con n8n",
+          "Control de versiones colaborativo con Git"
         ],
-        modalTitle: 'SQL & Ingeniería de Datos',
-        modalDescription: 'Estructuro y organizo tus datos de forma eficiente, garantizando calidad, rendimiento y accesibilidad para análisis.',
-        modalFeatures: [
-          { title: 'Modelado de Datos', description: 'Creación de estructuras relacionales eficientes y normalizadas' },
-          { title: 'SQL Avanzado', description: 'Queries optimizadas, CTEs, Window Functions y procedimientos' },
-          { title: 'ETL/ELT', description: 'Integración y transformación de datos de múltiples fuentes' },
-          { title: 'Calidad de Datos', description: 'Validación, limpieza y gobernanza de datos' },
-        ],
+        "modalTitle": "Integraciones que Reducen el Trabajo Manual",
+        "modalDescription": "Desarrollé 6 APIs con FastAPI para integrar sistemas internos en la ingesta de datos, reduciendo la disponibilidad de la información de horas a minutos.",
+        "modalFeatures": [
+          {
+            "title": "FastAPI",
+            "description": "APIs para conectar sistemas internos con los procesos de ingesta."
+          },
+          {
+            "title": "Extracción automatizada",
+            "description": "Experiencia con 4 fuentes de datos, incluidas APIs REST, bases de datos y sistemas internos."
+          },
+          {
+            "title": "n8n",
+            "description": "Creación de 2 automatizaciones para alertas y rutinas operativas en UP-ISP."
+          },
+          {
+            "title": "Git en equipo",
+            "description": "Branches, merges y pull requests para el control de versiones y el desarrollo colaborativo."
+          }
+        ]
       },
-      automation: {
-        title: 'Automatización & Pipelines',
-        description: 'Procesos manuales transformados en flujos automáticos que trabajan por ti.',
-        features: [
-          'Automatización completa con N8N',
-          'Integración de sistemas y APIs',
-          'Workflows automatizados',
-          'Eliminación de tareas repetitivas',
+      "dataAnalysis": {
+        "title": "Datos para BI y Decisiones",
+        "description": "Una base sólida en análisis para construir datos que responden a las preguntas reales de la operación.",
+        "features": [
+          "Power BI, Power Query y DAX",
+          "Modelado para el consumo analítico",
+          "Estandarización de CSV, Excel, JSON y Parquet",
+          "Indicadores de red y tickets"
         ],
-        modalTitle: 'Automatización & Pipelines de Datos',
-        modalDescription: 'Automatizo procesos manuales y repetitivos, creando flujos inteligentes que ahorran tiempo y reducen errores.',
-        modalFeatures: [
-          { title: 'N8N Expert', description: 'Cualquier tipo de automatización: integraciones, notificaciones, sincronizaciones, workflows complejos' },
-          { title: 'APIs & Integraciones', description: 'Conexión entre sistemas, webhooks, automatización de procesos entre plataformas' },
-          { title: 'Workflows Inteligentes', description: 'Flujos automatizados con lógica condicional y manejo de errores' },
-          { title: 'Informes Automáticos', description: 'Generación y envío automatizado de informes por email, Slack, etc.' },
-        ],
-      },
+        "modalTitle": "Ingeniería con Visión de Negocio",
+        "modalDescription": "Mi experiencia en BI acerca la ingeniería a quienes utilizan los datos. Desarrollé 8 dashboards en UP-ISP y 4 durante mis prácticas en Fimm Brasil, para indicadores operativos de CAGECE.",
+        "modalFeatures": [
+          {
+            "title": "Power BI",
+            "description": "Dashboards con Power Query, DAX y modelado para el seguimiento operativo."
+          },
+          {
+            "title": "Datos consistentes",
+            "description": "Tratamiento y estandarización de archivos con Python y Pandas para una base fiable."
+          },
+          {
+            "title": "Indicadores útiles",
+            "description": "Seguimiento del rendimiento de la red y los tickets para apoyar las prioridades de mantenimiento."
+          },
+          {
+            "title": "Colaboración con el negocio",
+            "description": "Trabajo con equipos técnicos y áreas de negocio para traducir requisitos en tablas listas para el análisis."
+          }
+        ]
+      }
     },
     // Skills
     skills: {
-      subtitle: 'Expertise Técnica',
+      subtitle: "Stack en práctica",
       title: 'Habilidades &',
       titleHighlight: 'Herramientas',
-      description: 'Stack moderna y comprobada para entregar resultados de alto impacto',
+      description: "Herramientas que conectan mi experiencia en ingeniería de datos, integración y BI.",
       hardSkillsTitle: 'Hard Skills',
       softSkillsTitle: 'Soft Skills',
       footer1: 'Aprendizaje continuo',
-      footer2: 'Metodología SCRUM',
+      footer2: "Colaboración técnica y de negocio",
       footer3: 'Enfoque en resultados',
       skillItems: {
+        pyspark: {"name": "PySpark", "description": "Transformación y validación de datos en pipelines de Databricks"},
+        delta: {"name": "Delta Lake", "description": "Tablas y procesamiento de datos en pipelines de Databricks"},
+        azure: {"name": "Azure", "description": "Entorno cloud de los pipelines de datos en producción"},
+        fastapi: {"name": "FastAPI", "description": "APIs que conectan sistemas internos con la ingesta de datos"},
+        pandas: {"name": "Pandas", "description": "Tratamiento de nulos, duplicados, formatos y archivos"},
         powerbi: { name: 'Power BI', description: 'Modelado, dashboards y reportes ejecutivos' },
         excel: { name: 'Excel', description: 'Fórmulas avanzadas, tablas dinámicas y análisis' },
         dax: { name: 'DAX', description: 'Medidas, cálculos e inteligencia de tiempo en Power BI' },
@@ -880,7 +1011,7 @@ Identifies the most profitable products and regions, guiding commercial strategy
         fabric: { name: 'Microsoft Fabric', description: 'Plataforma unificada de datos y analytics' },
         n8n: { name: 'Automatizaciones N8N', description: 'Workflows e integraciones entre sistemas' },
         apachehop: { name: 'Apache Hop', description: 'Pipelines y orquestación de datos' },
-        python: { name: 'Python', description: 'Pandas, automatizaciones y análisis de datos' },
+        python: { name: 'Python', description: "Pipelines ETL/ELT, integración y tratamiento de datos" },
         kpis: { name: 'KPIs', description: 'Definición y seguimiento de indicadores' },
         spark: { name: 'Apache Spark', description: 'Procesamiento distribuido de big data' },
         databricks: { name: 'Databricks', description: 'Lakehouse, notebooks e ingeniería de datos' },
@@ -893,57 +1024,52 @@ Identifies the most profitable products and regions, guiding commercial strategy
     },
     // About
     about: {
-      subtitle: 'Quién soy',
-      name: 'João',
-      nameHighlight: 'Breno',
-      description1: 'Analista de Datos Jr con experiencia en análisis de indicadores, monitoreo y soporte a la toma de decisiones basada en datos. Trabajo en el segmento de redes de computadoras, transformando datos operativos en información estratégica que apoya a clientes, operación y áreas técnicas.',
-      description2: 'Perfil analítico, hands-on y enfocado en la identificación de patrones, mejora continua y optimización de procesos, con experiencia en entornos ágiles (Scrum) y contacto directo con clientes y operaciones. Profesional dedicado, con muchas ganas de servir y aprender.',
-      valueTitle: '¿Por qué elegirme?',
-      valueDescription: 'Combino dominio técnico en Power BI, SQL, Python y automatizaciones (n8n) con visión de negocio y comunicación clara. Entrego dashboards que cuentan historias, KPIs que orientan decisiones y automatizaciones que ahorran tiempo — siempre alineado a la realidad de la operación y del cliente.',
-      timeline: {
-        education: {
-          title: 'Formación & Base Técnica',
-          description: 'Base sólida en análisis de datos, SQL, estadística y herramientas de BI, con estudio continuo de Python, Microsoft Fabric e ingeniería de datos.',
+      "subtitle": "Quién soy",
+      "name": "João",
+      "nameHighlight": "Breno",
+      "description1": "Soy Ingeniero de Datos Júnior en UP-ISP, con cerca de 3 años de experiencia en datos y más de un año desarrollando soluciones de ingeniería en producción. Desarrollo pipelines ETL/ELT con Python, SQL, PySpark y Databricks en Azure, conectando la operación con datos fiables para el análisis.",
+      "description2": "Mi trayectoria comenzó en BI: antes de construir pipelines, ya conocía los retos de quienes utilizan los datos. Esa base en Power BI, DAX y modelado me ayuda a traducir requisitos de negocio en tablas útiles, no solo en procesos que se ejecutan. Hoy combino esa perspectiva con integraciones mediante FastAPI y validaciones con Pandas y PySpark.",
+      "valueTitle": "Del origen al dato que el negocio utiliza",
+      "valueDescription": "En UP-ISP mantengo pipelines diarios que integran 5 fuentes y procesan cerca de 150.000 registros al día. También desarrollé 6 APIs con FastAPI que sustituyeron la recopilación manual y redujeron la disponibilidad de la información de horas a minutos. Mi enfoque une fiabilidad, calidad y rendimiento con las necesidades de la operación.",
+      "timeline": {
+        "current": {
+          "title": "Ingeniero de Datos Júnior — UP-ISP (07/2025 – Actualidad)",
+          "description": "Ascenso dentro de la misma empresa. Desarrollo y mantengo pipelines ETL/ELT diarios en producción con Databricks, PySpark, SQL y Delta Lake en Azure. Integro sistemas mediante 6 APIs FastAPI, valido nulos, duplicados y formatos y preparo tablas para las áreas de negocio."
         },
-        internship: {
-          title: 'Analista de Datos — Fimm Brasil (06/2023 – 06/2024)',
-          description: 'Proyectos de BI y automatización para CAGECE: recolección y tratamiento de datos con Python, SQL Server y Excel, web scraping en sistemas internos, dashboards en Power BI (Power Query, DAX, modelado) y automatizaciones administrativas.',
+        "previous": {
+          "title": "Analista de Datos Júnior — UP-ISP (07/2024 – 07/2025)",
+          "description": "Desarrollé 8 dashboards Power BI para el rendimiento de la red y los tickets, automaticé la extracción de 4 fuentes con Python, SQL y Requests y creé 2 automatizaciones n8n. Estandaricé CSV, Excel, JSON y Parquet con Pandas y colaboré con Git."
         },
-        current: {
-          title: 'Analista de Datos — UP-ISP (07/2024 – Actual)',
-          description: 'Análisis, monitoreo y BI para proveedores de internet: Zabbix, Grafana y Power BI para rendimiento e incidentes; SQL, Python y Microsoft Fabric para extracción y automatización; n8n para flujos internos; interfaz directa con clientes y operación en rutinas Scrum vía Tiflux.',
+        "internship": {
+          "title": "Prácticas en Análisis de Datos — Fimm Brasil (06/2023 – 06/2024)",
+          "description": "Desarrollé 4 dashboards Power BI para indicadores operativos de CAGECE. Extraje y procesé datos con Python, SQL Server y Excel, utilicé web scraping y participé en automatizaciones administrativas para procesar currículos y analizar correos."
         },
-        next: {
-          title: 'Próximos Pasos',
-          description: 'Profundización en Microsoft Fabric, Databricks/Spark, Data Warehouse y Machine Learning aplicados a operaciones de red.',
-        },
-      },
+        "education": {
+          "title": "Posgrado en Ingeniería de Datos — En curso",
+          "description": "Profundizo en arquitectura de pipelines, calidad de datos y orquestación, conectando los estudios con los retos que encuentro en producción."
+        }
+      }
     },
     // Contact
     contact: {
-      subtitle: 'Oportunidades',
+      subtitle: "Construyamos juntos",
       title: 'Ponte en',
       titleHighlight: 'Contacto',
-      description: '¿Interesado en tener un analista de datos en tu equipo? Hablemos sobre cómo puedo agregar valor a tu equipo.',
+      description: "¿Datos fragmentados, ingesta manual o pipelines que necesitan evolucionar? Hablemos de tu contexto y de cómo mi experiencia en ingeniería de datos puede contribuir.",
       nameLabel: 'Nombre',
       namePlaceholder: 'Tu nombre',
       emailLabel: 'Email',
       emailPlaceholder: 'tu@email.com',
       subjectLabel: 'Asunto',
-      subjectPlaceholder: 'Oportunidad, proyecto, etc.',
+      subjectPlaceholder: "Pipelines, integraciones, colaboración...",
       messageLabel: 'Mensaje',
-      messagePlaceholder: 'Cuéntame más sobre la oportunidad...',
+      messagePlaceholder: "¿Qué reto de datos quiere resolver tu equipo?",
       submit: 'Enviar Mensaje',
       submitting: 'Enviando...',
       successTitle: '¡Mensaje enviado!',
       successDescription: 'Gracias por contactarme. ¡Responderé pronto!',
-      whyContact: '¿Por qué contratarme?',
-      reasons: [
-        'Listo para agregar valor al equipo',
-        'Experiencia comprobada con datos',
-        'Proactivo y comprometido con resultados',
-        'Disponible para inicio inmediato',
-      ],
+      whyContact: "Lo que aporto a tu equipo",
+      reasons: ["Pipelines diarios en producción en Azure", "Integraciones que redujeron la entrega de horas a minutos", "Calidad de datos con Pandas y PySpark", "Visión de negocio construida en la práctica con BI"],
       connectWith: 'Conéctate conmigo:',
     },
     // Footer
@@ -961,10 +1087,22 @@ Identifies the most profitable products and regions, guiding commercial strategy
     },
     // Stats
     stats: {
-      dashboards: { value: 50, label: 'Dashboards Creados' },
-      clients: { value: 15, label: 'Clientes Atendidos' },
-      projects: { value: 30, label: 'Proyectos Entregados' },
-      experience: { value: 3, label: 'Años de Experiencia' },
+      "records": {
+        "value": 150000,
+        "label": "Registros al día · aproximadamente"
+      },
+      "sources": {
+        "value": 5,
+        "label": "Fuentes en los pipelines diarios"
+      },
+      "apis": {
+        "value": 6,
+        "label": "APIs FastAPI desarrolladas"
+      },
+      "dashboards": {
+        "value": 12,
+        "label": "Dashboards entre UP-ISP y Fimm"
+      }
     },
     // Testimonials
     testimonials: {
@@ -1006,7 +1144,7 @@ Identifies the most profitable products and regions, guiding commercial strategy
       subtitle: 'Portafolio',
       title: 'Mis',
       titleHighlight: 'Proyectos',
-      description: 'Dashboards y soluciones desarrolladas para diferentes áreas de negocio',
+      description: "Mi base en BI: dashboards que traducen datos en decisiones y orientan mi visión de ingeniería.",
       viewProject: 'Ver Proyecto',
       items: [
         {
