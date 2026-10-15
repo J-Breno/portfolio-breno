@@ -4,9 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Download, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import portugueseResume from '@/assets/resumes/portugues.pdf.asset.json';
-import englishResume from '@/assets/resumes/ingles.pdf.asset.json';
-import spanishResume from '@/assets/resumes/espanhol.pdf.asset.json';
+const resumes = {
+  pt: { url: '/cv/curriculo-joao-breno-portugues.pdf', filename: 'curriculo-joao-breno-portugues.pdf' },
+  en: { url: '/cv/curriculo-joao-breno-ingles.pdf', filename: 'curriculo-joao-breno-ingles.pdf' },
+  es: { url: '/cv/curriculo-joao-breno-espanhol.pdf', filename: 'curriculo-joao-breno-espanhol.pdf' },
+};
 
 interface ResumeDownloadButtonProps {
   variant?: 'header' | 'hero';
@@ -67,9 +69,9 @@ const ResumeDownloadButton = ({ variant = 'header' }: ResumeDownloadButtonProps)
   }, [isOpen]);
 
   const cvOptions = [
-    { label: t.nav.cvPortuguese, flag: '🇧🇷', file: portugueseResume.url, filename: portugueseResume.original_filename },
-    { label: t.nav.cvEnglish, flag: '🇺🇸', file: englishResume.url, filename: englishResume.original_filename },
-    { label: t.nav.cvSpanish, flag: '🇪🇸', file: spanishResume.url, filename: spanishResume.original_filename },
+    { label: t.nav.cvPortuguese, flag: '🇧🇷', file: resumes.pt.url, filename: resumes.pt.filename },
+    { label: t.nav.cvEnglish, flag: '🇺🇸', file: resumes.en.url, filename: resumes.en.filename },
+    { label: t.nav.cvSpanish, flag: '🇪🇸', file: resumes.es.url, filename: resumes.es.filename },
   ];
 
   const buttonStyles = variant === 'hero' 
