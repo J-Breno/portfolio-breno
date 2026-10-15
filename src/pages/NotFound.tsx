@@ -57,12 +57,14 @@ const NotFound = () => {
             className="relative inline-block mb-10"
           >
             <h1 className="text-8xl md:text-[9rem] leading-none font-black text-gradient-gold">404</h1>
-            <motion.span
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 h-1.5 w-2/3 rounded-full bg-gold"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
-            />
+            <div className="absolute -bottom-4 inset-x-0 flex justify-center">
+              <motion.span
+                className="block h-1.5 w-2/3 rounded-full bg-gold"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
+              />
+            </div>
           </motion.div>
 
           <motion.h2
