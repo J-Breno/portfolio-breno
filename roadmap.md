@@ -5,3 +5,4 @@
 - [x] Align browser/search descriptions and verify language switching and layout.
 - [x] Replace Portuguese, English and Spanish resume downloads with the supplied PT-Br, EN and ES PDFs.
 - [x] Replace Machine Learning, KPIs and Apache Hop with CI/CD, dbt and Airflow in all languages.
+- [x] Make all three service cards and their pop-ups share one readable blue header in light and dark themes.
