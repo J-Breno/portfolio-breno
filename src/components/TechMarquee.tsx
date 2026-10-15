@@ -12,7 +12,7 @@ const TechMarquee = () => {
           key={key}
           className="flex items-center gap-3 shrink-0 rounded-full border border-accent/25 bg-card/40 px-5 py-2.5"
         >
-          <Icon className="w-4.5 h-4.5 w-5 h-5 text-accent" />
+          <Icon className="w-5 h-5 text-accent" />
           <span className="text-sm font-medium text-foreground whitespace-nowrap">
             {skillItems[key].name}
           </span>
