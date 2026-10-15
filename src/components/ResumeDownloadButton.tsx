@@ -69,9 +69,9 @@ const ResumeDownloadButton = ({ variant = 'header' }: ResumeDownloadButtonProps)
   }, [isOpen]);
 
   const cvOptions = [
-    { label: t.nav.cvPortuguese, flag: '🇧🇷', file: portugueseResume.url, filename: portugueseResume.original_filename },
-    { label: t.nav.cvEnglish, flag: '🇺🇸', file: englishResume.url, filename: englishResume.original_filename },
-    { label: t.nav.cvSpanish, flag: '🇪🇸', file: spanishResume.url, filename: spanishResume.original_filename },
+    { label: t.nav.cvPortuguese, flag: '🇧🇷', file: resumes.pt.url, filename: resumes.pt.filename },
+    { label: t.nav.cvEnglish, flag: '🇺🇸', file: resumes.en.url, filename: resumes.en.filename },
+    { label: t.nav.cvSpanish, flag: '🇪🇸', file: resumes.es.url, filename: resumes.es.filename },
   ];
 
   const buttonStyles = variant === 'hero' 
