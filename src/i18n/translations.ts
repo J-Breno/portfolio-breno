@@ -301,6 +301,7 @@ export const translations = {
     },
     // Loading screen
     loading: { text: 'Carregando dados...' },
+    pipeline: { eyebrow: 'Como eu trabalho', title: 'Do dado bruto à decisão', subtitle: 'Cada etapa automatizada, testada e monitorada — para que a informação chegue confiável a quem decide.', steps: [ { title: 'Fontes', desc: 'APIs, bancos e planilhas' }, { title: 'Ingestão', desc: 'Python e Airflow' }, { title: 'Transformação', desc: 'SQL, dbt e Spark' }, { title: 'Data Warehouse', desc: 'Fabric e Databricks' }, { title: 'Decisão', desc: 'Dashboards em Power BI' } ] },
     // 404
     notFound: {
       title: 'Página não encontrada',
@@ -736,6 +737,7 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
     },
     // Loading screen
     loading: { text: 'Loading data...' },
+    pipeline: { eyebrow: 'How I work', title: 'From raw data to decisions', subtitle: 'Every stage automated, tested and monitored — so trusted information reaches the people who decide.', steps: [ { title: 'Sources', desc: 'APIs, databases and sheets' }, { title: 'Ingestion', desc: 'Python and Airflow' }, { title: 'Transformation', desc: 'SQL, dbt and Spark' }, { title: 'Data Warehouse', desc: 'Fabric and Databricks' }, { title: 'Decision', desc: 'Power BI dashboards' } ] },
     // 404
     notFound: {
       title: 'Page not found',
@@ -1171,6 +1173,7 @@ Identifies the most profitable products and regions, guiding commercial strategy
     },
     // Loading screen
     loading: { text: 'Cargando datos...' },
+    pipeline: { eyebrow: 'Cómo trabajo', title: 'Del dato bruto a la decisión', subtitle: 'Cada etapa automatizada, probada y monitoreada — para que la información llegue confiable a quien decide.', steps: [ { title: 'Fuentes', desc: 'APIs, bases y hojas de cálculo' }, { title: 'Ingesta', desc: 'Python y Airflow' }, { title: 'Transformación', desc: 'SQL, dbt y Spark' }, { title: 'Data Warehouse', desc: 'Fabric y Databricks' }, { title: 'Decisión', desc: 'Dashboards en Power BI' } ] },
     // 404
     notFound: {
       title: 'Página no encontrada',
