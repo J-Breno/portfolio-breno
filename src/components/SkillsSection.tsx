@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-type SkillKey =
+export type SkillKey =
   | 'pyspark'
   | 'delta'
   | 'azure'
@@ -52,7 +52,7 @@ type SkillKey =
   | 'git'
   | 'communication';
 
-const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
+export const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
   { icon: Code2, key: 'python' },
   { icon: Database, key: 'sql' },
   { icon: Zap, key: 'pyspark' },
