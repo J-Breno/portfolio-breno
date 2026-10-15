@@ -1,15 +1,6 @@
-import { createContext, useContext, useState, ReactNode, useMemo } from 'react';
+import { useContext, useState, ReactNode, useMemo } from 'react';
 import { translations, Language } from '@/i18n/translations';
-
-type TranslationType = typeof translations['pt-BR'];
-
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  t: TranslationType;
-}
-
-const LanguageContext = createContext<LanguageContextType | null>(null);
+import { LanguageContext, type TranslationType } from './language-context';
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>('pt-BR');

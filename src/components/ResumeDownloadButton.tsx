@@ -3,6 +3,10 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Download, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
+import portugueseResume from '@/assets/resumes/portugues.pdf.asset.json';
+import englishResume from '@/assets/resumes/ingles.pdf.asset.json';
+import spanishResume from '@/assets/resumes/espanhol.pdf.asset.json';
 
 interface ResumeDownloadButtonProps {
   variant?: 'header' | 'hero';
@@ -63,18 +67,10 @@ const ResumeDownloadButton = ({ variant = 'header' }: ResumeDownloadButtonProps)
   }, [isOpen]);
 
   const cvOptions = [
-    { label: t.nav.cvPortuguese, flag: '🇧🇷', file: '/cv/curriculo-joao-breno-portugues.pdf' },
-    { label: t.nav.cvEnglish, flag: '🇺🇸', file: '/cv/curriculo-joao-breno-ingles.pdf' },
-    { label: t.nav.cvSpanish, flag: '🇪🇸', file: '/cv/curriculo-joao-breno-espanhol.pdf' },
+    { label: t.nav.cvPortuguese, flag: '🇧🇷', file: portugueseResume.url, filename: portugueseResume.original_filename },
+    { label: t.nav.cvEnglish, flag: '🇺🇸', file: englishResume.url, filename: englishResume.original_filename },
+    { label: t.nav.cvSpanish, flag: '🇪🇸', file: spanishResume.url, filename: spanishResume.original_filename },
   ];
-
-  const handleDownload = (filePath: string) => {
-    const link = document.createElement('a');
-    link.href = filePath;
-    link.download = filePath.split('/').pop() || 'curriculo.pdf';
-    link.click();
-    setIsOpen(false);
-  };
 
   const buttonStyles = variant === 'hero' 
     ? "flex items-center gap-2 px-8 py-4 rounded-xl border border-border text-foreground font-medium text-lg hover:bg-secondary/50 hover:border-accent/30 transition-all duration-300"
@@ -99,14 +95,15 @@ const ResumeDownloadButton = ({ variant = 'header' }: ResumeDownloadButtonProps)
           className="rounded-lg bg-card border border-border shadow-xl overflow-hidden"
         >
           {cvOptions.map((option) => (
-            <button
+            <Button asChild variant="ghost"
               key={option.file}
-              onClick={() => handleDownload(option.file)}
-              className="w-full flex items-center gap-3 px-4 py-3 hover:bg-secondary/50 transition-colors text-left"
+              className="w-full h-auto justify-start gap-3 rounded-none px-4 py-3 hover:bg-secondary/50 transition-colors text-left whitespace-normal"
             >
+              <a href={option.file} download={option.filename} onClick={() => setIsOpen(false)}>
               <span className="text-xl">{option.flag}</span>
               <span className="text-foreground">{option.label}</span>
-            </button>
+              </a>
+            </Button>
           ))}
         </motion.div>
       )}
@@ -115,10 +112,12 @@ const ResumeDownloadButton = ({ variant = 'header' }: ResumeDownloadButtonProps)
 
   return (
     <div className="relative">
+      <Button asChild variant="ghost" className={`h-auto ${buttonStyles}`}>
       <motion.button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className={buttonStyles}
+        aria-expanded={isOpen}
+        aria-controls={isOpen ? 'cv-dropdown-portal' : undefined}
         whileHover={{ scale: variant === 'hero' ? 1.02 : 1.05 }}
         whileTap={{ scale: 0.98 }}
       >
@@ -126,6 +125,7 @@ const ResumeDownloadButton = ({ variant = 'header' }: ResumeDownloadButtonProps)
         {t.nav.downloadCV}
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </motion.button>
+      </Button>
 
       {typeof document !== 'undefined' && createPortal(dropdownContent, document.body)}
     </div>

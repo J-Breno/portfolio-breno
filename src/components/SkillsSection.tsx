@@ -7,13 +7,12 @@ import {
   Filter,
   Code,
   BookOpen,
-  Brain,
+  Infinity,
   Database,
   Layers,
   Workflow,
   Waypoints,
   Code2,
-  Target,
   Zap,
   Boxes,
   Warehouse,
@@ -38,13 +37,13 @@ type SkillKey =
   | 'powerquery'
   | 'languageM'
   | 'storytelling'
-  | 'machinelearning'
+  | 'cicd'
   | 'sql'
   | 'fabric'
   | 'n8n'
-  | 'apachehop'
+  | 'airflow'
   | 'python'
-  | 'kpis'
+  | 'dbt'
   | 'spark'
   | 'databricks'
   | 'datawarehouse'
@@ -68,11 +67,11 @@ const skillsData: { icon: typeof FileSpreadsheet; key: SkillKey }[] = [
   { icon: Filter, key: 'powerquery' },
   { icon: Code, key: 'languageM' },
   { icon: BookOpen, key: 'storytelling' },
-  { icon: Brain, key: 'machinelearning' },
+  { icon: Infinity, key: 'cicd' },
   { icon: Layers, key: 'fabric' },
   { icon: Workflow, key: 'n8n' },
-  { icon: Waypoints, key: 'apachehop' },
-  { icon: Target, key: 'kpis' },
+  { icon: Waypoints, key: 'airflow' },
+  { icon: Workflow, key: 'dbt' },
   { icon: Zap, key: 'spark' },
   { icon: Warehouse, key: 'datawarehouse' },
   { icon: Terminal, key: 'linux' },
