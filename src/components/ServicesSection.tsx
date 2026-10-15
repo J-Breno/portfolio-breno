@@ -24,7 +24,6 @@ const ServicesSection = () => {
       modalTitle: t.services.sql.modalTitle,
       modalDescription: t.services.sql.modalDescription,
       modalFeatures: t.services.sql.modalFeatures,
-      color: 'from-purple-dark to-primary',
     },
     {
       key: 'automation' as const,
@@ -35,7 +34,6 @@ const ServicesSection = () => {
       modalTitle: t.services.automation.modalTitle,
       modalDescription: t.services.automation.modalDescription,
       modalFeatures: t.services.automation.modalFeatures,
-      color: 'from-accent to-purple-dark',
     },
     {
       key: 'dataAnalysis' as const,
@@ -46,7 +44,6 @@ const ServicesSection = () => {
       modalTitle: t.services.dataAnalysis.modalTitle,
       modalDescription: t.services.dataAnalysis.modalDescription,
       modalFeatures: t.services.dataAnalysis.modalFeatures,
-      color: 'from-accent to-gold-light',
     },
   ];
 
@@ -98,8 +95,8 @@ const ServicesSection = () => {
                   onClick={() => setOpenModal(service.key)}
                 >
                   {/* Icon */}
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 shadow-gold group-hover:shadow-glow transition-all duration-500`}>
-                    <service.icon className="w-7 h-7 text-white" />
+                  <div className="w-14 h-14 rounded-xl bg-gradient-service flex items-center justify-center mb-6 shadow-gold group-hover:shadow-glow transition-all duration-500">
+                    <service.icon className="w-7 h-7 text-accent-foreground" />
                   </div>
 
                   {/* Content */}
@@ -170,7 +167,6 @@ const ServicesSection = () => {
           description={service.modalDescription}
           icon={service.icon}
           features={service.modalFeatures}
-          color={service.color}
           includesLabel={t.services.modalIncludesLabel}
           ctaLabel={t.services.modalCtaLabel}
         />
