@@ -222,5 +222,10 @@
     from { box-shadow: 0 0 20px hsl(217 91% 60% / 0.2); }
     to { box-shadow: 0 0 40px hsl(217 91% 60% / 0.4); }
   }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }
 
