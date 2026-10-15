@@ -14,12 +14,12 @@ interface ServiceModalProps {
   description: string;
   icon: LucideIcon;
   features: ServiceFeature[];
-  color: string;
   includesLabel: string;
+
   ctaLabel: string;
 }
 
-const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, features, color, includesLabel, ctaLabel }: ServiceModalProps) => {
+const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, features, includesLabel, ctaLabel }: ServiceModalProps) => {
   return (
     <Dialog.Root open={isOpen} onOpenChange={onClose}>
       <AnimatePresence>
@@ -50,27 +50,27 @@ const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, feature
                   onClick={(e) => e.stopPropagation()}
                 >
                 {/* Header */}
-                <div className={`relative p-6 md:p-8 pb-6 bg-gradient-to-br ${color} rounded-t-2xl`}>
+                <div className="relative p-6 md:p-8 pb-6 bg-gradient-service rounded-t-2xl">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-background/20 backdrop-blur-sm flex items-center justify-center mb-4"
+                    className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-primary-foreground/15 backdrop-blur-sm flex items-center justify-center mb-4"
                   >
-                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                    <Icon className="w-7 h-7 md:w-8 md:h-8 text-primary-foreground" />
                   </motion.div>
                   
-                  <Dialog.Title className="text-xl md:text-2xl lg:text-3xl font-bold text-accent-foreground mb-2 pr-10">
+                  <Dialog.Title className="text-xl md:text-2xl lg:text-3xl font-bold text-primary-foreground mb-2 pr-10">
                     {title}
                   </Dialog.Title>
                   
-                  <Dialog.Description className="text-accent-foreground/80 leading-relaxed text-sm md:text-base">
+                  <Dialog.Description className="text-primary-foreground/90 leading-relaxed text-sm md:text-base">
                     {description}
                   </Dialog.Description>
 
                   <Dialog.Close asChild>
                     <motion.button
-                      className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center text-accent-foreground hover:bg-background/30 transition-colors"
+                      className="absolute top-4 right-4 w-10 h-10 rounded-full bg-primary-foreground/15 backdrop-blur-sm flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/25 transition-colors"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
                     >
