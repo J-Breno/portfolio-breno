@@ -64,7 +64,7 @@ const ServiceModal = ({ isOpen, onClose, title, description, icon: Icon, feature
                     {title}
                   </Dialog.Title>
                   
-                  <Dialog.Description className="text-accent-foreground/80 leading-relaxed text-sm md:text-base">
+                  <Dialog.Description className="text-accent-foreground/90 leading-relaxed text-sm md:text-base">
                     {description}
                   </Dialog.Description>
 
