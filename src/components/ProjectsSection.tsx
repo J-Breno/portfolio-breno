@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Sparkles, ExternalLink } from 'lucide-react';
+import { Sparkles, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import ProjectModal from './ProjectModal';
 
@@ -28,6 +28,24 @@ const ProjectsSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const projects = t.projects.items;
+  const PAGE_SIZE = 6;
+  const [page, setPage] = useState(0);
+  const totalPages = Math.max(1, Math.ceil(projects.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages - 1);
+  const pageItems = projects.slice(currentPage * PAGE_SIZE, currentPage * PAGE_SIZE + PAGE_SIZE);
+  const count = pageItems.length;
+  // Card width adapts to how many projects are on the page so the grid always feels full
+  const itemWidth =
+    count === 1
+      ? 'w-full'
+      : count === 2 || count === 4
+        ? 'w-full md:w-[calc(50%-1rem)]'
+        : 'w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]';
+
+  const goTo = (p: number) => {
+    setPage(p);
+    document.getElementById('projetos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <section id="projetos" className="py-24 relative overflow-hidden">
@@ -59,19 +77,19 @@ const ProjectsSection = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+        <div className="flex flex-wrap justify-center gap-8">
+          {pageItems.map((project, index) => (
             <motion.div
-              key={project.id}
+              key={`${currentPage}-${project.id}`}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * index }}
               onClick={() => setOpenModal(project.id)}
-              className="group cursor-pointer"
+              className={`group cursor-pointer ${itemWidth}`}
             >
               <div className="relative overflow-hidden rounded-2xl bg-card border border-border transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
                 {/* Project Image */}
-                <div className="relative aspect-video overflow-hidden">
+                <div className={`relative overflow-hidden ${count === 1 ? 'aspect-video md:aspect-[21/9]' : 'aspect-video'}`}>
                   <img
                     src={imageMap[project.id]}
                     alt={project.name}
@@ -100,6 +118,45 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <nav aria-label="Paginação de projetos" className="mt-12 flex items-center justify-center gap-2">
+            <button
+              type="button"
+              onClick={() => goTo(currentPage - 1)}
+              disabled={currentPage === 0}
+              aria-label="Página anterior"
+              className="p-2 rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40 disabled:pointer-events-none"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-label={`Página ${i + 1}`}
+                aria-current={i === currentPage ? 'page' : undefined}
+                className={`w-10 h-10 rounded-full text-sm font-semibold transition-colors border ${
+                  i === currentPage
+                    ? 'bg-primary text-primary-foreground border-primary'
+                    : 'bg-card text-foreground border-border hover:border-primary hover:text-primary'
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button
+              type="button"
+              onClick={() => goTo(currentPage + 1)}
+              disabled={currentPage === totalPages - 1}
+              aria-label="Próxima página"
+              className="p-2 rounded-full border border-border bg-card text-foreground transition-colors hover:border-primary hover:text-primary disabled:opacity-40 disabled:pointer-events-none"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </nav>
+        )}
       </div>
 
       {/* Modals */}
