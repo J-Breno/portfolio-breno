@@ -252,3 +252,48 @@
   }
 }
 
+
+/* Data pipeline animation */
+.pipeline-packet {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 9999px;
+  background: hsl(var(--gold));
+  box-shadow: 0 0 10px 2px hsl(var(--gold) / 0.6);
+  opacity: 0;
+  animation: pipeline-flow-y 4s linear infinite;
+}
+@media (min-width: 768px) {
+  .pipeline-packet {
+    top: 50%;
+    left: 0;
+    animation-name: pipeline-flow-x;
+  }
+}
+@keyframes pipeline-flow-y {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+@keyframes pipeline-flow-x {
+  0% { left: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+.pipeline-pulse {
+  animation: pipeline-pulse 3.2s ease-out infinite;
+}
+@keyframes pipeline-pulse {
+  0%, 70%, 100% { transform: scale(1); opacity: 0; }
+  10% { opacity: 1; }
+  40% { transform: scale(1.35); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pipeline-packet, .pipeline-pulse { animation: none; opacity: 0; }
+}
