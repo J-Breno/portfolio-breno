@@ -25,11 +25,13 @@ const imageMap: Record<string, string> = {
 
 const ProjectsSection = () => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
   const [openModal, setOpenModal] = useState<string | null>(null);
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const projects = t.projects.items;
-  const PAGE_SIZE = 6;
+  // Phones show a single column with only 3 projects per page; larger screens keep 6.
+  const PAGE_SIZE = isMobile ? 3 : 6;
   const [page, setPage] = useState(0);
   const totalPages = Math.max(1, Math.ceil(projects.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages - 1);
