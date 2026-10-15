@@ -306,6 +306,9 @@ export const translations = {
       titleHighlight: 'Projetos',
       description: "Minha base em BI: dashboards que traduzem dados em decisões e orientam minha visão de engenharia.",
       viewProject: 'Ver Projeto',
+      previous: 'Anterior',
+      next: 'Próximo',
+      close: 'Fechar',
       items: [
         {
           id: 'real-x-meta',
@@ -729,6 +732,9 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
       titleHighlight: 'Projects',
       description: "My BI foundation: dashboards that turn data into decisions and shape my engineering perspective.",
       viewProject: 'View Project',
+      previous: 'Previous',
+      next: 'Next',
+      close: 'Close',
       items: [
         {
           id: 'real-x-meta',
@@ -1152,6 +1158,9 @@ Identifies the most profitable products and regions, guiding commercial strategy
       titleHighlight: 'Proyectos',
       description: "Mi base en BI: dashboards que traducen datos en decisiones y orientan mi visión de ingeniería.",
       viewProject: 'Ver Proyecto',
+      previous: 'Anterior',
+      next: 'Siguiente',
+      close: 'Cerrar',
       items: [
         {
           id: 'real-x-meta',
