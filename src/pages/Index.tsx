@@ -3,6 +3,7 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import TechMarquee from '@/components/TechMarquee';
+import DataPipeline from '@/components/DataPipeline';
 import ServicesSection from '@/components/ServicesSection';
 import SkillsSection from '@/components/SkillsSection';
 import StatsCounter from '@/components/StatsCounter';
@@ -44,6 +45,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <TechMarquee />
+        <DataPipeline />
         <ServicesSection />
         <SkillsSection />
         <StatsCounter />
