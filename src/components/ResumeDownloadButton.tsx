@@ -4,9 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Download, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
-import portugueseResume from '@/assets/resumes/portugues.pdf.asset.json';
-import englishResume from '@/assets/resumes/ingles.pdf.asset.json';
-import spanishResume from '@/assets/resumes/espanhol.pdf.asset.json';
+const resumes = {
+  pt: { url: '/cv/curriculo-joao-breno-portugues.pdf', filename: 'curriculo-joao-breno-portugues.pdf' },
+  en: { url: '/cv/curriculo-joao-breno-ingles.pdf', filename: 'curriculo-joao-breno-ingles.pdf' },
+  es: { url: '/cv/curriculo-joao-breno-espanhol.pdf', filename: 'curriculo-joao-breno-espanhol.pdf' },
+};
 
 interface ResumeDownloadButtonProps {
   variant?: 'header' | 'hero';
