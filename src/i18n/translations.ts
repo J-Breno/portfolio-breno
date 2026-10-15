@@ -299,6 +299,8 @@ export const translations = {
         },
       ],
     },
+    // Loading screen
+    loading: { text: 'Carregando dados...' },
     // Projects
     projects: {
       subtitle: 'Portfólio',
@@ -725,6 +727,8 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
         },
       ],
     },
+    // Loading screen
+    loading: { text: 'Loading data...' },
     // Projects
     projects: {
       subtitle: 'Portfolio',
@@ -1151,6 +1155,8 @@ Identifies the most profitable products and regions, guiding commercial strategy
         },
       ],
     },
+    // Loading screen
+    loading: { text: 'Cargando datos...' },
     // Projects
     projects: {
       subtitle: 'Portafolio',
