@@ -166,7 +166,7 @@ const ServicesSection = () => {
                     <span>{t.services.cta}</span>
                     <ChevronRight className="w-4 h-4" />
                   </div>
-                </motion.div>
+                </SpotlightCard>
               </motion.div>
             ))}
           </div>
