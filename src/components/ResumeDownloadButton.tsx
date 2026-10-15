@@ -5,9 +5,9 @@ import { Download, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 const resumes = {
-  pt: { url: '/cv/curriculo-joao-breno-portugues.pdf', filename: 'curriculo-joao-breno-portugues.pdf' },
-  en: { url: '/cv/curriculo-joao-breno-ingles.pdf', filename: 'curriculo-joao-breno-ingles.pdf' },
-  es: { url: '/cv/curriculo-joao-breno-espanhol.pdf', filename: 'curriculo-joao-breno-espanhol.pdf' },
+  pt: { url: '/cv/curriculo-joao-breno-portugues.pdf?v=3', filename: 'curriculo-joao-breno-portugues.pdf' },
+  en: { url: '/cv/curriculo-joao-breno-ingles.pdf?v=3', filename: 'curriculo-joao-breno-ingles.pdf' },
+  es: { url: '/cv/curriculo-joao-breno-espanhol.pdf?v=3', filename: 'curriculo-joao-breno-espanhol.pdf' },
 };
 
 interface ResumeDownloadButtonProps {
