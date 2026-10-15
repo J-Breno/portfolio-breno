@@ -301,6 +301,13 @@ export const translations = {
     },
     // Loading screen
     loading: { text: 'Carregando dados...' },
+    // 404
+    notFound: {
+      title: 'Página não encontrada',
+      message: 'O endereço que você procurou não existe ou foi movido. Que tal voltar e continuar explorando meu trabalho?',
+      cta: 'Voltar para o início',
+      tried: 'Você tentou acessar',
+    },
     // Projects
     projects: {
       subtitle: 'Portfólio',
@@ -729,6 +736,13 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
     },
     // Loading screen
     loading: { text: 'Loading data...' },
+    // 404
+    notFound: {
+      title: 'Page not found',
+      message: "The address you looked for doesn't exist or has been moved. Let's head back and keep exploring my work.",
+      cta: 'Back to home',
+      tried: 'You tried to access',
+    },
     // Projects
     projects: {
       subtitle: 'Portfolio',
@@ -1157,6 +1171,13 @@ Identifies the most profitable products and regions, guiding commercial strategy
     },
     // Loading screen
     loading: { text: 'Cargando datos...' },
+    // 404
+    notFound: {
+      title: 'Página no encontrada',
+      message: 'La dirección que buscabas no existe o se ha movido. ¿Te parece volver y seguir explorando mi trabajo?',
+      cta: 'Volver al inicio',
+      tried: 'Has intentado acceder a',
+    },
     // Projects
     projects: {
       subtitle: 'Portafolio',
