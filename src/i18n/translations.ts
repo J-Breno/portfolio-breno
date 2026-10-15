@@ -189,6 +189,8 @@ export const translations = {
       "description2": "Minha trajetória começou no BI: antes de construir pipelines, eu já conhecia os desafios de quem precisa usar os dados. Essa base em Power BI, DAX e modelagem me ajuda a traduzir requisitos de negócio em tabelas úteis, não apenas em processos que executam. Hoje, combino essa visão com integrações via FastAPI e validações com Pandas e PySpark.",
       "valueTitle": "Da origem ao dado que o negócio usa",
       "valueDescription": "Na UP-ISP, mantenho pipelines diários que integram 5 fontes e processam cerca de 150 mil registros por dia. Também desenvolvi 6 APIs com FastAPI que substituíram a coleta manual e reduziram a disponibilização das informações de horas para minutos. Meu foco é unir confiabilidade, qualidade e desempenho a uma entrega que faça sentido para a operação.",
+      "journeyTitle": "Minha trajetória",
+      "currentBadge": "Atual",
       "timeline": {
         "current": {
           "title": "Engenheiro de Dados Júnior — UP-ISP (07/2025 – Atual)",
@@ -610,6 +612,8 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
       "description2": "My journey started in BI: before building pipelines, I understood the challenges of the people using the data. That foundation in Power BI, DAX and modeling helps me translate business requirements into useful tables, not just processes that run. Today, I combine that perspective with FastAPI integrations and data validation using Pandas and PySpark.",
       "valueTitle": "From source to data the business can use",
       "valueDescription": "At UP-ISP, I maintain daily pipelines integrating 5 sources and processing around 150,000 records per day. I also developed 6 FastAPI APIs that replaced manual collection and cut data availability time from hours to minutes. My focus is reliability, quality and performance, with delivery grounded in operational needs.",
+      "journeyTitle": "My journey",
+      "currentBadge": "Current",
       "timeline": {
         "current": {
           "title": "Junior Data Engineer — UP-ISP (07/2025 – Present)",
@@ -1031,6 +1035,8 @@ Identifies the most profitable products and regions, guiding commercial strategy
       "description2": "Mi trayectoria comenzó en BI: antes de construir pipelines, ya conocía los retos de quienes utilizan los datos. Esa base en Power BI, DAX y modelado me ayuda a traducir requisitos de negocio en tablas útiles, no solo en procesos que se ejecutan. Hoy combino esa perspectiva con integraciones mediante FastAPI y validaciones con Pandas y PySpark.",
       "valueTitle": "Del origen al dato que el negocio utiliza",
       "valueDescription": "En UP-ISP mantengo pipelines diarios que integran 5 fuentes y procesan cerca de 150.000 registros al día. También desarrollé 6 APIs con FastAPI que sustituyeron la recopilación manual y redujeron la disponibilidad de la información de horas a minutos. Mi enfoque une fiabilidad, calidad y rendimiento con las necesidades de la operación.",
+      "journeyTitle": "Mi trayectoria",
+      "currentBadge": "Actual",
       "timeline": {
         "current": {
           "title": "Ingeniero de Datos Júnior — UP-ISP (07/2025 – Actualidad)",
