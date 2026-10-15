@@ -242,6 +242,11 @@
     background: hsl(0 0% 100% / 0.12);
   }
 
+  .loading-bar-fill {
+    background: linear-gradient(90deg, hsl(38 92% 47%), hsl(45 93% 58%));
+    box-shadow: 0 0 12px hsl(45 93% 58% / 0.5);
+  }
+
   .loading-text {
     color: hsl(0 0% 100% / 0.7);
   }

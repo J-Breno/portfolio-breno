@@ -38,7 +38,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
 
       <div className="loading-bar-track h-1.5 w-56 overflow-hidden rounded-full sm:w-72">
         <motion.div
-          className="bg-gradient-gold h-full rounded-full"
+          className="loading-bar-fill h-full rounded-full"
           initial={{ width: '0%' }}
           animate={{ width: '100%' }}
           transition={{ duration: 1.4, ease: 'easeInOut' }}
