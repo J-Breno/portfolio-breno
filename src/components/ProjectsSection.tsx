@@ -162,19 +162,19 @@ const ProjectsSection = () => {
         )}
       </div>
 
-      {/* Modals */}
-      {projects.map((project) => (
-        <ProjectModal
-          key={project.id}
-          isOpen={openModal === project.id}
-          onClose={() => setOpenModal(null)}
-          name={project.name}
-          description={project.description}
-          image={imageMap[project.id]}
-          link={project.link}
-          viewProjectLabel={t.projects.viewProject}
-        />
-      ))}
+      {/* Single modal that can browse every project across all pages */}
+      <ProjectModal
+        projects={projects.map((p) => ({ ...p, image: imageMap[p.id] }))}
+        index={openModal === null ? null : projects.findIndex((p) => p.id === openModal)}
+        onIndexChange={(i) => setOpenModal(projects[i].id)}
+        onClose={() => setOpenModal(null)}
+        labels={{
+          viewProject: t.projects.viewProject,
+          previous: t.projects.previous,
+          next: t.projects.next,
+          close: t.projects.close,
+        }}
+      />
     </section>
   );
 };
