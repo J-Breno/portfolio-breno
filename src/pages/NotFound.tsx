@@ -30,7 +30,7 @@ const NotFound = () => {
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative z-10 container mx-auto px-6 py-6 flex items-center justify-between"
+        className="relative z-50 container mx-auto px-6 py-6 flex items-center justify-between"
       >
         <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
           <div className="w-10 h-10 rounded-lg bg-gradient-gold flex items-center justify-center shadow-gold">
