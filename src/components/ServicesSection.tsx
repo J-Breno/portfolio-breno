@@ -135,12 +135,7 @@ const ServicesSection = () => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
               >
-                <motion.div
-                  className="h-full p-8 rounded-2xl bg-gradient-card border border-border/50 group hover:border-accent/30 transition-all duration-500 cursor-pointer"
-                  whileHover={{ y: -8, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                  onClick={() => setOpenModal(service.key)}
-                >
+                <SpotlightCard onClick={() => setOpenModal(service.key)}>
                   {/* Icon */}
                   <div className="w-14 h-14 rounded-xl bg-gradient-service flex items-center justify-center mb-6 shadow-gold group-hover:shadow-glow transition-all duration-500">
                     <service.icon className="w-7 h-7 text-primary-foreground" />
