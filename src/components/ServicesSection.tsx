@@ -1,9 +1,56 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { BarChart3, Database, Workflow, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
 import ServiceModal from './ServiceModal';
+
+const SpotlightCard = ({
+  children,
+  onClick,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+}) => {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [spot, setSpot] = useState<{ x: number; y: number; active: boolean }>({
+    x: 0,
+    y: 0,
+    active: false,
+  });
+  const isMobile = useIsMobile();
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isMobile) return;
+    const rect = cardRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setSpot({ x: e.clientX - rect.left, y: e.clientY - rect.top, active: true });
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      className="relative h-full p-8 rounded-2xl bg-gradient-card border border-border/50 group hover:border-accent/60 transition-all duration-500 cursor-pointer overflow-hidden"
+      whileHover={{ y: -8, scale: 1.02 }}
+      transition={{ type: 'spring', stiffness: 300 }}
+      onClick={onClick}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => setSpot((s) => ({ ...s, active: false }))}
+    >
+      {!isMobile && (
+        <div
+          className="pointer-events-none absolute inset-0 rounded-2xl transition-opacity duration-500"
+          style={{
+            opacity: spot.active ? 1 : 0,
+            background: `radial-gradient(320px circle at ${spot.x}px ${spot.y}px, hsl(var(--accent) / 0.15), transparent 70%)`,
+          }}
+        />
+      )}
+      <div className="relative z-10">{children}</div>
+    </motion.div>
+  );
+};
 
 const ServicesSection = () => {
   const [ref, inView] = useInView({
