@@ -14,6 +14,7 @@ import realXMetaControladoriaImg from '@/assets/projects/real-x-meta-controlador
 import financeiroDreImg from '@/assets/projects/financeiro-dre.png';
 import heavyPowerNutritionImg from '@/assets/projects/heavy-power-nutrition.png';
 import sqlDataMartDwImg from '@/assets/projects/sql-data-mart-dw.jpg';
+import n8nDataflowAsset from '@/assets/projects/n8n-dataflow-logistics.png.asset.json';
 
 const imageMap: Record<string, string> = {
   'real-x-meta': realXMetaImg,
@@ -23,6 +24,7 @@ const imageMap: Record<string, string> = {
   'financeiro-dre': financeiroDreImg,
   'heavy-power-nutrition': heavyPowerNutritionImg,
   'sql-data-mart-dw': sqlDataMartDwImg,
+  'n8n-dataflow-logistics': n8nDataflowAsset.url,
 };
 
 const ProjectsSection = () => {
@@ -31,7 +33,8 @@ const ProjectsSection = () => {
   const [openModal, setOpenModal] = useState<string | null>(null);
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
-  const projects = t.projects.items;
+  // Projects are appended to translations in the order they were added; newest shows first.
+  const projects = [...t.projects.items].reverse();
   // Phones show a single column with only 3 projects per page; larger screens keep 6.
   const PAGE_SIZE = isMobile ? 3 : 6;
   const [page, setPage] = useState(0);
