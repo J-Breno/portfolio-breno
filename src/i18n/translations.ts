@@ -321,6 +321,52 @@ export const translations = {
       close: 'Fechar',
       items: [
         {
+          id: 'sql-data-mart-dw',
+          name: 'SQL Data Mart x Data Warehouse',
+          shortDescription: 'Data Warehouse em SQL Server com Stage e modelo estrela',
+          description: `SQL Data Mart x Data Warehouse
+
+Objetivo:
+Tirar o peso analítico do banco transacional e entregar dados de vendas limpos, padronizados e prontos para BI, construindo um Data Warehouse completo em SQL Server (T-SQL).
+
+Arquitetura em 3 camadas:
+• Origem: banco transacional, somente leitura para o pipeline
+• Stage (ST): extração simples (TRUNCATE + INSERT) e tratamento isolado em views
+• DW: modelo estrela com fato F_VENDAS e dimensões Cliente, Produto, Empresa e Vendedor
+
+O que entrega:
+• Procedures de carga orquestradas por assunto, com carga full e incremental (só vendas novas por data de movimento)
+• Registro "Não Informado" em cada dimensão, evitando perda de linhas nos JOINs
+• Padronização de textos com função própria (FN_CAMEL_CASE) e tratamento de nulos
+• Regras de negócio aplicadas na Stage, como desconto total = desconto + desconto negociado
+• Dimensão calendário gerada por função (trimestre, semana, ano fiscal e mais)
+• Integridade garantida por chaves estrangeiras entre fato e dimensões
+
+Valor para a empresa:
+O sistema de origem fica protegido, as regras mudam em um só lugar e a área de Vendas ganha um Data Mart confiável, pronto para relatórios e dashboards.`,
+          link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
+        },
+        {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Pipeline de ingestão de cotações com n8n, PostgreSQL e alertas no Slack',
+          description: `DataFlow Logistics — Pipeline de Ingestão de Cotações com n8n
+
+Contexto:
+Uma operação logística no Brasil e na Europa precifica fretes em dólar, mas cada cliente paga em sua moeda (BRL, EUR ou USD). Sem câmbio atualizado e cruzado com o cadastro, a margem fica exposta.
+
+O que construí:
+• Workflow em n8n com duas frentes: backfill manual dos últimos 30 dias e coleta automática diária às 06h
+• Ingestão da Frankfurter API (USD→BRL e USD→EUR) direto para PostgreSQL (Supabase)
+• Camada Raw idempotente (ON CONFLICT / upsert), sem duplicar nem sobrescrever histórico
+• Camada Gold consolidada: clientes + rotas + cotação + frete convertido para a moeda local
+• Cálculo da variação cambial em 7 dias com alerta automático no Slack quando passa de 2%
+
+Valor para a empresa:
+Fretes convertidos todo dia sem esforço manual, uma visão única do negócio e aviso imediato quando o câmbio ameaça a margem, para ajustar contratos antes do prejuízo.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
+        },
+        {
           id: 'real-x-meta',
           name: 'Real X Meta',
           shortDescription: 'Dashboard de Faturamento vs Meta',
@@ -433,52 +479,6 @@ O que entrega:
 Valor para a empresa:
 Identifica os produtos e regiões mais rentáveis, orientando estratégia comercial e expansão.`,
           link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQzN2U2ZjYtNDFiMS00MGFjLWE2NzItYzQ5OWRjNmU3OWE5IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'sql-data-mart-dw',
-          name: 'SQL Data Mart x Data Warehouse',
-          shortDescription: 'Data Warehouse em SQL Server com Stage e modelo estrela',
-          description: `SQL Data Mart x Data Warehouse
-
-Objetivo:
-Tirar o peso analítico do banco transacional e entregar dados de vendas limpos, padronizados e prontos para BI, construindo um Data Warehouse completo em SQL Server (T-SQL).
-
-Arquitetura em 3 camadas:
-• Origem: banco transacional, somente leitura para o pipeline
-• Stage (ST): extração simples (TRUNCATE + INSERT) e tratamento isolado em views
-• DW: modelo estrela com fato F_VENDAS e dimensões Cliente, Produto, Empresa e Vendedor
-
-O que entrega:
-• Procedures de carga orquestradas por assunto, com carga full e incremental (só vendas novas por data de movimento)
-• Registro "Não Informado" em cada dimensão, evitando perda de linhas nos JOINs
-• Padronização de textos com função própria (FN_CAMEL_CASE) e tratamento de nulos
-• Regras de negócio aplicadas na Stage, como desconto total = desconto + desconto negociado
-• Dimensão calendário gerada por função (trimestre, semana, ano fiscal e mais)
-• Integridade garantida por chaves estrangeiras entre fato e dimensões
-
-Valor para a empresa:
-O sistema de origem fica protegido, as regras mudam em um só lugar e a área de Vendas ganha um Data Mart confiável, pronto para relatórios e dashboards.`,
-          link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
-        },
-        {
-          id: 'n8n-dataflow-logistics',
-          name: 'DataFlow Logistics — Ingestão com n8n',
-          shortDescription: 'Pipeline de ingestão de cotações com n8n, PostgreSQL e alertas no Slack',
-          description: `DataFlow Logistics — Pipeline de Ingestão de Cotações com n8n
-
-Contexto:
-Uma operação logística no Brasil e na Europa precifica fretes em dólar, mas cada cliente paga em sua moeda (BRL, EUR ou USD). Sem câmbio atualizado e cruzado com o cadastro, a margem fica exposta.
-
-O que construí:
-• Workflow em n8n com duas frentes: backfill manual dos últimos 30 dias e coleta automática diária às 06h
-• Ingestão da Frankfurter API (USD→BRL e USD→EUR) direto para PostgreSQL (Supabase)
-• Camada Raw idempotente (ON CONFLICT / upsert), sem duplicar nem sobrescrever histórico
-• Camada Gold consolidada: clientes + rotas + cotação + frete convertido para a moeda local
-• Cálculo da variação cambial em 7 dias com alerta automático no Slack quando passa de 2%
-
-Valor para a empresa:
-Fretes convertidos todo dia sem esforço manual, uma visão única do negócio e aviso imediato quando o câmbio ameaça a margem, para ajustar contratos antes do prejuízo.`,
-          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
         },
       ],
     },
@@ -803,6 +803,52 @@ Fretes convertidos todo dia sem esforço manual, uma visão única do negócio e
       close: 'Close',
       items: [
         {
+          id: 'sql-data-mart-dw',
+          name: 'SQL Data Mart x Data Warehouse',
+          shortDescription: 'SQL Server Data Warehouse with Stage layer and star schema',
+          description: `SQL Data Mart x Data Warehouse
+
+Objective:
+Offload analytics from the transactional database and deliver clean, standardized, BI-ready sales data by building a complete Data Warehouse in SQL Server (T-SQL).
+
+3-layer architecture:
+• Source: transactional database, read-only for the pipeline
+• Stage (ST): lightweight extraction (TRUNCATE + INSERT) with transformations isolated in views
+• DW: star schema with the F_VENDAS fact and Customer, Product, Company and Seller dimensions
+
+Deliverables:
+• Load procedures orchestrated by subject, with full and incremental loads (only new sales by movement date)
+• "Not Informed" record in every dimension, preventing row loss in JOINs
+• Text standardization with a custom function (FN_CAMEL_CASE) and null handling
+• Business rules applied in Stage, such as total discount = discount + negotiated discount
+• Calendar dimension generated by a function (quarter, week, fiscal year and more)
+• Integrity enforced by foreign keys between fact and dimensions
+
+Business Value:
+The source system stays protected, rules change in a single place, and Sales gets a reliable Data Mart ready for reports and dashboards.`,
+          link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
+        },
+        {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Exchange-rate ingestion pipeline with n8n, PostgreSQL and Slack alerts',
+          description: `DataFlow Logistics — Exchange-Rate Ingestion Pipeline with n8n
+
+Context:
+A logistics operation in Brazil and Europe prices freight in US dollars, but each customer pays in their own currency (BRL, EUR or USD). Without up-to-date rates joined to master data, margins are exposed.
+
+What I built:
+• n8n workflow with two branches: a manual 30-day backfill and an automated daily load at 6 AM
+• Ingestion from the Frankfurter API (USD→BRL and USD→EUR) into PostgreSQL (Supabase)
+• Idempotent Raw layer (ON CONFLICT / upsert) that never duplicates or overwrites history
+• Consolidated Gold layer: customers + routes + rate + freight converted to local currency
+• 7-day exchange-rate variation with an automatic Slack alert when it exceeds 2%
+
+Business Value:
+Freight converted daily with zero manual effort, a single view of the business and an instant warning when currency swings threaten margins, so contracts can be adjusted before losses.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
+        },
+        {
           id: 'real-x-meta',
           name: 'Real X Meta',
           shortDescription: 'Revenue vs Target Dashboard',
@@ -915,52 +961,6 @@ Deliverables:
 Business Value:
 Identifies the most profitable products and regions, guiding commercial strategy and expansion.`,
           link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQzN2U2ZjYtNDFiMS00MGFjLWE2NzItYzQ5OWRjNmU3OWE5IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'sql-data-mart-dw',
-          name: 'SQL Data Mart x Data Warehouse',
-          shortDescription: 'SQL Server Data Warehouse with Stage layer and star schema',
-          description: `SQL Data Mart x Data Warehouse
-
-Objective:
-Offload analytics from the transactional database and deliver clean, standardized, BI-ready sales data by building a complete Data Warehouse in SQL Server (T-SQL).
-
-3-layer architecture:
-• Source: transactional database, read-only for the pipeline
-• Stage (ST): lightweight extraction (TRUNCATE + INSERT) with transformations isolated in views
-• DW: star schema with the F_VENDAS fact and Customer, Product, Company and Seller dimensions
-
-Deliverables:
-• Load procedures orchestrated by subject, with full and incremental loads (only new sales by movement date)
-• "Not Informed" record in every dimension, preventing row loss in JOINs
-• Text standardization with a custom function (FN_CAMEL_CASE) and null handling
-• Business rules applied in Stage, such as total discount = discount + negotiated discount
-• Calendar dimension generated by a function (quarter, week, fiscal year and more)
-• Integrity enforced by foreign keys between fact and dimensions
-
-Business Value:
-The source system stays protected, rules change in a single place, and Sales gets a reliable Data Mart ready for reports and dashboards.`,
-          link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
-        },
-        {
-          id: 'n8n-dataflow-logistics',
-          name: 'DataFlow Logistics — Ingestão com n8n',
-          shortDescription: 'Exchange-rate ingestion pipeline with n8n, PostgreSQL and Slack alerts',
-          description: `DataFlow Logistics — Exchange-Rate Ingestion Pipeline with n8n
-
-Context:
-A logistics operation in Brazil and Europe prices freight in US dollars, but each customer pays in their own currency (BRL, EUR or USD). Without up-to-date rates joined to master data, margins are exposed.
-
-What I built:
-• n8n workflow with two branches: a manual 30-day backfill and an automated daily load at 6 AM
-• Ingestion from the Frankfurter API (USD→BRL and USD→EUR) into PostgreSQL (Supabase)
-• Idempotent Raw layer (ON CONFLICT / upsert) that never duplicates or overwrites history
-• Consolidated Gold layer: customers + routes + rate + freight converted to local currency
-• 7-day exchange-rate variation with an automatic Slack alert when it exceeds 2%
-
-Business Value:
-Freight converted daily with zero manual effort, a single view of the business and an instant warning when currency swings threaten margins, so contracts can be adjusted before losses.`,
-          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
         },
       ],
     },
@@ -1285,6 +1285,52 @@ Freight converted daily with zero manual effort, a single view of the business a
       close: 'Cerrar',
       items: [
         {
+          id: 'sql-data-mart-dw',
+          name: 'SQL Data Mart x Data Warehouse',
+          shortDescription: 'Data Warehouse en SQL Server con Stage y modelo estrella',
+          description: `SQL Data Mart x Data Warehouse
+
+Objetivo:
+Quitar la carga analítica de la base transaccional y entregar datos de ventas limpios, estandarizados y listos para BI, construyendo un Data Warehouse completo en SQL Server (T-SQL).
+
+Arquitectura en 3 capas:
+• Origen: base transaccional, solo lectura para el pipeline
+• Stage (ST): extracción simple (TRUNCATE + INSERT) y tratamiento aislado en vistas
+• DW: modelo estrella con la tabla de hechos F_VENDAS y dimensiones Cliente, Producto, Empresa y Vendedor
+
+Qué entrega:
+• Procedures de carga orquestados por tema, con carga full e incremental (solo ventas nuevas por fecha de movimiento)
+• Registro "No Informado" en cada dimensión, evitando pérdida de filas en los JOINs
+• Estandarización de textos con función propia (FN_CAMEL_CASE) y tratamiento de nulos
+• Reglas de negocio aplicadas en Stage, como descuento total = descuento + descuento negociado
+• Dimensión calendario generada por función (trimestre, semana, año fiscal y más)
+• Integridad garantizada por claves foráneas entre hechos y dimensiones
+
+Valor para la empresa:
+El sistema de origen queda protegido, las reglas cambian en un solo lugar y el área de Ventas obtiene un Data Mart confiable, listo para informes y dashboards.`,
+          link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
+        },
+        {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Pipeline de ingesta de cotizaciones con n8n, PostgreSQL y alertas en Slack',
+          description: `DataFlow Logistics — Pipeline de Ingesta de Cotizaciones con n8n
+
+Contexto:
+Una operación logística en Brasil y Europa fija los fletes en dólares, pero cada cliente paga en su moneda (BRL, EUR o USD). Sin tipo de cambio actualizado y cruzado con el registro, el margen queda expuesto.
+
+Qué construí:
+• Workflow en n8n con dos frentes: backfill manual de los últimos 30 días y carga automática diaria a las 06h
+• Ingesta desde la Frankfurter API (USD→BRL y USD→EUR) hacia PostgreSQL (Supabase)
+• Capa Raw idempotente (ON CONFLICT / upsert), sin duplicar ni sobrescribir el histórico
+• Capa Gold consolidada: clientes + rutas + cotización + flete convertido a la moneda local
+• Cálculo de la variación cambiaria en 7 días con alerta automática en Slack cuando supera el 2%
+
+Valor para la empresa:
+Fletes convertidos cada día sin esfuerzo manual, una visión única del negocio y aviso inmediato cuando el tipo de cambio amenaza el margen, para ajustar contratos antes de perder dinero.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
+        },
+        {
           id: 'real-x-meta',
           name: 'Real X Meta',
           shortDescription: 'Dashboard de Facturación vs Meta',
@@ -1397,52 +1443,6 @@ Qué entrega:
 Valor para la empresa:
 Identifica los productos y regiones más rentables, orientando estrategia comercial y expansión.`,
           link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQzN2U2ZjYtNDFiMS00MGFjLWE2NzItYzQ5OWRjNmU3OWE5IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'sql-data-mart-dw',
-          name: 'SQL Data Mart x Data Warehouse',
-          shortDescription: 'Data Warehouse en SQL Server con Stage y modelo estrella',
-          description: `SQL Data Mart x Data Warehouse
-
-Objetivo:
-Quitar la carga analítica de la base transaccional y entregar datos de ventas limpios, estandarizados y listos para BI, construyendo un Data Warehouse completo en SQL Server (T-SQL).
-
-Arquitectura en 3 capas:
-• Origen: base transaccional, solo lectura para el pipeline
-• Stage (ST): extracción simple (TRUNCATE + INSERT) y tratamiento aislado en vistas
-• DW: modelo estrella con la tabla de hechos F_VENDAS y dimensiones Cliente, Producto, Empresa y Vendedor
-
-Qué entrega:
-• Procedures de carga orquestados por tema, con carga full e incremental (solo ventas nuevas por fecha de movimiento)
-• Registro "No Informado" en cada dimensión, evitando pérdida de filas en los JOINs
-• Estandarización de textos con función propia (FN_CAMEL_CASE) y tratamiento de nulos
-• Reglas de negocio aplicadas en Stage, como descuento total = descuento + descuento negociado
-• Dimensión calendario generada por función (trimestre, semana, año fiscal y más)
-• Integridad garantizada por claves foráneas entre hechos y dimensiones
-
-Valor para la empresa:
-El sistema de origen queda protegido, las reglas cambian en un solo lugar y el área de Ventas obtiene un Data Mart confiable, listo para informes y dashboards.`,
-          link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
-        },
-        {
-          id: 'n8n-dataflow-logistics',
-          name: 'DataFlow Logistics — Ingestão com n8n',
-          shortDescription: 'Pipeline de ingesta de cotizaciones con n8n, PostgreSQL y alertas en Slack',
-          description: `DataFlow Logistics — Pipeline de Ingesta de Cotizaciones con n8n
-
-Contexto:
-Una operación logística en Brasil y Europa fija los fletes en dólares, pero cada cliente paga en su moneda (BRL, EUR o USD). Sin tipo de cambio actualizado y cruzado con el registro, el margen queda expuesto.
-
-Qué construí:
-• Workflow en n8n con dos frentes: backfill manual de los últimos 30 días y carga automática diaria a las 06h
-• Ingesta desde la Frankfurter API (USD→BRL y USD→EUR) hacia PostgreSQL (Supabase)
-• Capa Raw idempotente (ON CONFLICT / upsert), sin duplicar ni sobrescribir el histórico
-• Capa Gold consolidada: clientes + rutas + cotización + flete convertido a la moneda local
-• Cálculo de la variación cambiaria en 7 días con alerta automática en Slack cuando supera el 2%
-
-Valor para la empresa:
-Fletes convertidos cada día sin esfuerzo manual, una visión única del negocio y aviso inmediato cuando el tipo de cambio amenaza el margen, para ajustar contratos antes de perder dinero.`,
-          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
         },
       ],
     },
