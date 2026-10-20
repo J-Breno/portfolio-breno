@@ -43,6 +43,7 @@ const Index = () => {
           <LoadingScreen key="loading-screen" onComplete={handleLoadingComplete} />
         )}
       </AnimatePresence>
+      <ScrollProgress />
       <Navbar />
       <main>
         <HeroSection />
@@ -57,6 +58,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 };
