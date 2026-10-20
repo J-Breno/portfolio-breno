@@ -13,6 +13,7 @@ import mrBolosImg from '@/assets/projects/mr-bolos.png';
 import realXMetaControladoriaImg from '@/assets/projects/real-x-meta-controladoria.png';
 import financeiroDreImg from '@/assets/projects/financeiro-dre.png';
 import heavyPowerNutritionImg from '@/assets/projects/heavy-power-nutrition.png';
+import sqlDataMartDwImg from '@/assets/projects/sql-data-mart-dw.jpg';
 
 const imageMap: Record<string, string> = {
   'real-x-meta': realXMetaImg,
@@ -21,6 +22,7 @@ const imageMap: Record<string, string> = {
   'real-x-meta-controladoria': realXMetaControladoriaImg,
   'financeiro-dre': financeiroDreImg,
   'heavy-power-nutrition': heavyPowerNutritionImg,
+  'sql-data-mart-dw': sqlDataMartDwImg,
 };
 
 const ProjectsSection = () => {
