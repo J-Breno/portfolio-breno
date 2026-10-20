@@ -16,6 +16,7 @@ export const translations = {
       cvPortuguese: 'Baixar em Português',
       cvEnglish: 'Baixar em Inglês',
       cvSpanish: 'Baixar em Espanhol',
+      backToTop: 'Voltar ao topo',
     },
     // Hero
     hero: {
@@ -519,6 +520,7 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
       cvPortuguese: 'Download in Portuguese',
       cvEnglish: 'Download in English',
       cvSpanish: 'Download in Spanish',
+      backToTop: 'Back to top',
     },
     // Hero
     hero: {
@@ -1022,6 +1024,7 @@ Identifies the most profitable products and regions, guiding commercial strategy
       cvPortuguese: 'Descargar en Portugués',
       cvEnglish: 'Descargar en Inglés',
       cvSpanish: 'Descargar en Español',
+      backToTop: 'Volver arriba',
     },
     // Hero
     hero: {
