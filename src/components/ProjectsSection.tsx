@@ -15,7 +15,7 @@ import financeiroDreImg from '@/assets/projects/financeiro-dre.png';
 import heavyPowerNutritionImg from '@/assets/projects/heavy-power-nutrition.png';
 import sqlDataMartDwImg from '@/assets/projects/sql-data-mart-dw.jpg';
 import futdataDatabricksImg from '@/assets/projects/futdata-databricks.jpg';
-import n8nDataflowAsset from '@/assets/projects/n8n-dataflow-logistics.png.asset.json';
+import n8nDataflowImg from '@/assets/projects/n8n-dataflow-logistics.png';
 
 const imageMap: Record<string, string> = {
   'real-x-meta': realXMetaImg,
@@ -26,7 +26,7 @@ const imageMap: Record<string, string> = {
   'heavy-power-nutrition': heavyPowerNutritionImg,
   'futdata-databricks': futdataDatabricksImg,
   'sql-data-mart-dw': sqlDataMartDwImg,
-  'n8n-dataflow-logistics': n8nDataflowAsset.url,
+  'n8n-dataflow-logistics': n8nDataflowImg,
 };
 
 const ProjectsSection = () => {
