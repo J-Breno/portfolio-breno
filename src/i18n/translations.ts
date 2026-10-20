@@ -321,6 +321,26 @@ export const translations = {
       close: 'Fechar',
       items: [
         {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Pipeline de ingestão de cotações com n8n, PostgreSQL e alertas no Slack',
+          description: `DataFlow Logistics — Pipeline de Ingestão de Cotações com n8n
+
+Contexto:
+Uma operação logística no Brasil e na Europa precifica fretes em dólar, mas cada cliente paga em sua moeda (BRL, EUR ou USD). Sem câmbio atualizado e cruzado com o cadastro, a margem fica exposta.
+
+O que construí:
+• Workflow em n8n com duas frentes: backfill manual dos últimos 30 dias e coleta automática diária às 06h
+• Ingestão da Frankfurter API (USD→BRL e USD→EUR) direto para PostgreSQL (Supabase)
+• Camada Raw idempotente (ON CONFLICT / upsert), sem duplicar nem sobrescrever histórico
+• Camada Gold consolidada: clientes + rotas + cotação + frete convertido para a moeda local
+• Cálculo da variação cambial em 7 dias com alerta automático no Slack quando passa de 2%
+
+Valor para a empresa:
+Fretes convertidos todo dia sem esforço manual, uma visão única do negócio e aviso imediato quando o câmbio ameaça a margem, para ajustar contratos antes do prejuízo.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
+        },
+        {
           id: 'sql-data-mart-dw',
           name: 'SQL Data Mart x Data Warehouse',
           shortDescription: 'Data Warehouse em SQL Server com Stage e modelo estrela',
@@ -345,140 +365,6 @@ O que entrega:
 Valor para a empresa:
 O sistema de origem fica protegido, as regras mudam em um só lugar e a área de Vendas ganha um Data Mart confiável, pronto para relatórios e dashboards.`,
           link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
-        },
-        {
-          id: 'n8n-dataflow-logistics',
-          name: 'DataFlow Logistics — Ingestão com n8n',
-          shortDescription: 'Pipeline de ingestão de cotações com n8n, PostgreSQL e alertas no Slack',
-          description: `DataFlow Logistics — Pipeline de Ingestão de Cotações com n8n
-
-Contexto:
-Uma operação logística no Brasil e na Europa precifica fretes em dólar, mas cada cliente paga em sua moeda (BRL, EUR ou USD). Sem câmbio atualizado e cruzado com o cadastro, a margem fica exposta.
-
-O que construí:
-• Workflow em n8n com duas frentes: backfill manual dos últimos 30 dias e coleta automática diária às 06h
-• Ingestão da Frankfurter API (USD→BRL e USD→EUR) direto para PostgreSQL (Supabase)
-• Camada Raw idempotente (ON CONFLICT / upsert), sem duplicar nem sobrescrever histórico
-• Camada Gold consolidada: clientes + rotas + cotação + frete convertido para a moeda local
-• Cálculo da variação cambial em 7 dias com alerta automático no Slack quando passa de 2%
-
-Valor para a empresa:
-Fretes convertidos todo dia sem esforço manual, uma visão única do negócio e aviso imediato quando o câmbio ameaça a margem, para ajustar contratos antes do prejuízo.`,
-          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
-        },
-        {
-          id: 'real-x-meta',
-          name: 'Real X Meta',
-          shortDescription: 'Dashboard de Faturamento vs Meta',
-          description: `Real X Meta
-
-Objetivo:
-Analisar o faturamento e o atingimento das metas ao longo do tempo, comparando períodos e identificando tendências.
-
-O que entrega:
-• Visão geral e evolução temporal do faturamento
-• Comparativo Faturamento vs Meta por mês
-• Análise Ano Atual vs Ano Anterior
-• Comparação entre períodos distintos
-
-Valor para a empresa:
-Apoia decisões estratégicas com clareza sobre performance comercial e cumprimento de metas.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiODQxMmU5YWEtZDJhMC00MGZkLWFkM2QtMTNlODc4OGY0MGU0IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'real-x-meta-comercial',
-          name: 'Realizado X Meta Comercial',
-          shortDescription: 'Performance Comercial Detalhada',
-          description: `Realizado X Meta Comercial
-
-Objetivo:
-Acompanhar a performance comercial detalhada por vendedor, gerente e produto, comparando realizado com meta.
-
-O que entrega:
-• KPIs de Faturamento, NFs emitidas e Ticket médio
-• Faturamento vs Meta por mês e por produto
-• Ranking de vendedores e performance por gerente
-• Identificação de quem bateu ou não a meta
-
-Valor para a empresa:
-Direciona ações comerciais com base em dados e melhora a produtividade da equipe de vendas.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiN2JhY2M4NzAtNzQ2Mi00YjU0LTllYjQtYjJmNGI1MGNiNmU4IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'mr-bolos',
-          name: 'Mr Bolos e Doces',
-          shortDescription: 'Dashboard Comercial & Estratégico',
-          description: `Mr Bolos e Doces
-
-Objetivo:
-Analisar faturamento, custos e margem de uma confeitaria, apoiando decisões de precificação e mix de produtos.
-
-O que entrega:
-• Visão geral de Faturamento, Custos e Margem Bruta
-• Análise mensal e média de pedidos por dia da semana
-• Detalhamento por tipo, categoria e produto
-• Alerta de produtos abaixo da margem de segurança
-
-Valor para a empresa:
-Aumenta a rentabilidade ao identificar produtos deficitários e otimizar o mix de vendas.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiYTU1NDkzOGYtMWExNi00OWFjLWI2YzYtNjRmMDUzYjAzMjE4IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'real-x-meta-controladoria',
-          name: 'Real X Meta Controladoria',
-          shortDescription: 'DRE - Realizado vs Previsto',
-          description: `Real X Meta Controladoria
-
-Objetivo:
-Acompanhar o Demonstrativo de Resultado comparando o Realizado com o Previsto por filial e período.
-
-O que entrega:
-• Análise Real vs Meta com AV e AH
-• Análise horizontal, vertical e de despesas
-• Detalhamento por conta gerencial e filial
-• Resultado líquido do exercício e acumulado
-
-Valor para a empresa:
-Dá visibilidade contábil e gerencial para decisões financeiras baseadas em dados confiáveis.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiZmY0YmVlNzUtOTZjOC00NjdlLTk3NjUtYjJiOGEwZDQwMDU0IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'financeiro-dre',
-          name: 'Financeiro - DRE',
-          shortDescription: 'Dashboard Financeiro Executivo',
-          description: `Financeiro - DRE
-
-Objetivo:
-Consolidar o Demonstrativo de Resultado do Exercício com uma visão executiva de indicadores financeiros.
-
-O que entrega:
-• KPIs de Receita Líquida, Margem de Contribuição, EBITDA e Lucro Líquido
-• Análise mês a mês do DRE completo
-• Análise Horizontal (AH) por conta gerencial
-• Percentuais sobre a receita bruta
-
-Valor para a empresa:
-Facilita a leitura da saúde financeira e apoia decisões de controle de custos e investimentos.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQ5ZDNkMTEtODEyOC00ZDc0LWEyZjctNTYzYWRiYjA5YTk3IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'heavy-power-nutrition',
-          name: 'Heavy Power Nutrition',
-          shortDescription: 'Sales Overview - Suplementos',
-          description: `Heavy Power Nutrition
-
-Objetivo:
-Analisar as vendas de uma rede de suplementos alimentares com visão geográfica, por produto e por canal.
-
-O que entrega:
-• KPIs de Gross Sales, Net Sales, Discount e Margin
-• Análise mensal e por tipo de negócio
-• Análise geográfica por cidade
-• Detalhamento por categoria, subcategoria e produto
-
-Valor para a empresa:
-Identifica os produtos e regiões mais rentáveis, orientando estratégia comercial e expansão.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQzN2U2ZjYtNDFiMS00MGFjLWE2NzItYzQ5OWRjNmU3OWE5IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
         },
       ],
     },
@@ -803,6 +689,26 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
       close: 'Close',
       items: [
         {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Exchange-rate ingestion pipeline with n8n, PostgreSQL and Slack alerts',
+          description: `DataFlow Logistics — Exchange-Rate Ingestion Pipeline with n8n
+
+Context:
+A logistics operation in Brazil and Europe prices freight in US dollars, but each customer pays in their own currency (BRL, EUR or USD). Without up-to-date rates joined to master data, margins are exposed.
+
+What I built:
+• n8n workflow with two branches: a manual 30-day backfill and an automated daily load at 6 AM
+• Ingestion from the Frankfurter API (USD→BRL and USD→EUR) into PostgreSQL (Supabase)
+• Idempotent Raw layer (ON CONFLICT / upsert) that never duplicates or overwrites history
+• Consolidated Gold layer: customers + routes + rate + freight converted to local currency
+• 7-day exchange-rate variation with an automatic Slack alert when it exceeds 2%
+
+Business Value:
+Freight converted daily with zero manual effort, a single view of the business and an instant warning when currency swings threaten margins, so contracts can be adjusted before losses.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
+        },
+        {
           id: 'sql-data-mart-dw',
           name: 'SQL Data Mart x Data Warehouse',
           shortDescription: 'SQL Server Data Warehouse with Stage layer and star schema',
@@ -827,140 +733,6 @@ Deliverables:
 Business Value:
 The source system stays protected, rules change in a single place, and Sales gets a reliable Data Mart ready for reports and dashboards.`,
           link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
-        },
-        {
-          id: 'n8n-dataflow-logistics',
-          name: 'DataFlow Logistics — Ingestão com n8n',
-          shortDescription: 'Exchange-rate ingestion pipeline with n8n, PostgreSQL and Slack alerts',
-          description: `DataFlow Logistics — Exchange-Rate Ingestion Pipeline with n8n
-
-Context:
-A logistics operation in Brazil and Europe prices freight in US dollars, but each customer pays in their own currency (BRL, EUR or USD). Without up-to-date rates joined to master data, margins are exposed.
-
-What I built:
-• n8n workflow with two branches: a manual 30-day backfill and an automated daily load at 6 AM
-• Ingestion from the Frankfurter API (USD→BRL and USD→EUR) into PostgreSQL (Supabase)
-• Idempotent Raw layer (ON CONFLICT / upsert) that never duplicates or overwrites history
-• Consolidated Gold layer: customers + routes + rate + freight converted to local currency
-• 7-day exchange-rate variation with an automatic Slack alert when it exceeds 2%
-
-Business Value:
-Freight converted daily with zero manual effort, a single view of the business and an instant warning when currency swings threaten margins, so contracts can be adjusted before losses.`,
-          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
-        },
-        {
-          id: 'real-x-meta',
-          name: 'Real X Meta',
-          shortDescription: 'Revenue vs Target Dashboard',
-          description: `Real X Meta
-
-Objective:
-Analyze revenue and target achievement over time, comparing periods and identifying trends.
-
-Deliverables:
-• Overview and time evolution of revenue
-• Revenue vs Target comparison by month
-• Current Year vs Previous Year analysis
-• Comparison between distinct periods
-
-Business Value:
-Supports strategic decisions with clarity on commercial performance and goal achievement.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiODQxMmU5YWEtZDJhMC00MGZkLWFkM2QtMTNlODc4OGY0MGU0IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'real-x-meta-comercial',
-          name: 'Realizado X Meta Comercial',
-          shortDescription: 'Detailed Sales Performance',
-          description: `Realizado X Meta Comercial
-
-Objective:
-Track detailed sales performance by seller, manager and product, comparing actuals with targets.
-
-Deliverables:
-• KPIs for Revenue, invoices and Average Ticket
-• Revenue vs Target by month and product
-• Seller ranking and manager performance
-• Identification of who met or missed targets
-
-Business Value:
-Guides commercial actions with data and improves sales team productivity.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiN2JhY2M4NzAtNzQ2Mi00YjU0LTllYjQtYjJmNGI1MGNiNmU4IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'mr-bolos',
-          name: 'Mr Bolos e Doces',
-          shortDescription: 'Commercial & Strategic Dashboard',
-          description: `Mr Bolos e Doces
-
-Objective:
-Analyze revenue, costs and margin of a bakery, supporting pricing and product mix decisions.
-
-Deliverables:
-• Revenue, Costs and Gross Margin overview
-• Monthly analysis and average orders per weekday
-• Breakdown by type, category and product
-• Alerts on products below safety margin
-
-Business Value:
-Increases profitability by identifying underperforming products and optimizing the sales mix.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiYTU1NDkzOGYtMWExNi00OWFjLWI2YzYtNjRmMDUzYjAzMjE4IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'real-x-meta-controladoria',
-          name: 'Real X Meta Controladoria',
-          shortDescription: 'P&L - Actual vs Forecast',
-          description: `Real X Meta Controladoria
-
-Objective:
-Track the P&L statement comparing Actual with Forecast by branch and period.
-
-Deliverables:
-• Actual vs Target analysis with vertical/horizontal analysis
-• Horizontal, vertical and expense analysis
-• Breakdown by management account and branch
-• Net result of the period and year-to-date
-
-Business Value:
-Provides accounting and managerial visibility for reliable data-driven financial decisions.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiZmY0YmVlNzUtOTZjOC00NjdlLTk3NjUtYjJiOGEwZDQwMDU0IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'financeiro-dre',
-          name: 'Financeiro - DRE',
-          shortDescription: 'Executive Financial Dashboard',
-          description: `Financeiro - DRE
-
-Objective:
-Consolidate the P&L statement with an executive view of financial indicators.
-
-Deliverables:
-• KPIs for Net Revenue, Contribution Margin, EBITDA and Net Profit
-• Month-by-month full P&L analysis
-• Horizontal analysis by management account
-• Percentages over gross revenue
-
-Business Value:
-Simplifies reading of financial health and supports cost control and investment decisions.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQ5ZDNkMTEtODEyOC00ZDc0LWEyZjctNTYzYWRiYjA5YTk3IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'heavy-power-nutrition',
-          name: 'Heavy Power Nutrition',
-          shortDescription: 'Sales Overview - Supplements',
-          description: `Heavy Power Nutrition
-
-Objective:
-Analyze sales of a supplement chain with geographic, product and channel views.
-
-Deliverables:
-• KPIs for Gross Sales, Net Sales, Discount and Margin
-• Monthly and business-type analysis
-• Geographic analysis by city
-• Breakdown by category, subcategory and product
-
-Business Value:
-Identifies the most profitable products and regions, guiding commercial strategy and expansion.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQzN2U2ZjYtNDFiMS00MGFjLWE2NzItYzQ5OWRjNmU3OWE5IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
         },
       ],
     },
@@ -1285,6 +1057,26 @@ Identifies the most profitable products and regions, guiding commercial strategy
       close: 'Cerrar',
       items: [
         {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Pipeline de ingesta de cotizaciones con n8n, PostgreSQL y alertas en Slack',
+          description: `DataFlow Logistics — Pipeline de Ingesta de Cotizaciones con n8n
+
+Contexto:
+Una operación logística en Brasil y Europa fija los fletes en dólares, pero cada cliente paga en su moneda (BRL, EUR o USD). Sin tipo de cambio actualizado y cruzado con el registro, el margen queda expuesto.
+
+Qué construí:
+• Workflow en n8n con dos frentes: backfill manual de los últimos 30 días y carga automática diaria a las 06h
+• Ingesta desde la Frankfurter API (USD→BRL y USD→EUR) hacia PostgreSQL (Supabase)
+• Capa Raw idempotente (ON CONFLICT / upsert), sin duplicar ni sobrescribir el histórico
+• Capa Gold consolidada: clientes + rutas + cotización + flete convertido a la moneda local
+• Cálculo de la variación cambiaria en 7 días con alerta automática en Slack cuando supera el 2%
+
+Valor para la empresa:
+Fletes convertidos cada día sin esfuerzo manual, una visión única del negocio y aviso inmediato cuando el tipo de cambio amenaza el margen, para ajustar contratos antes de perder dinero.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
+        },
+        {
           id: 'sql-data-mart-dw',
           name: 'SQL Data Mart x Data Warehouse',
           shortDescription: 'Data Warehouse en SQL Server con Stage y modelo estrella',
@@ -1309,140 +1101,6 @@ Qué entrega:
 Valor para la empresa:
 El sistema de origen queda protegido, las reglas cambian en un solo lugar y el área de Ventas obtiene un Data Mart confiable, listo para informes y dashboards.`,
           link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
-        },
-        {
-          id: 'n8n-dataflow-logistics',
-          name: 'DataFlow Logistics — Ingestão com n8n',
-          shortDescription: 'Pipeline de ingesta de cotizaciones con n8n, PostgreSQL y alertas en Slack',
-          description: `DataFlow Logistics — Pipeline de Ingesta de Cotizaciones con n8n
-
-Contexto:
-Una operación logística en Brasil y Europa fija los fletes en dólares, pero cada cliente paga en su moneda (BRL, EUR o USD). Sin tipo de cambio actualizado y cruzado con el registro, el margen queda expuesto.
-
-Qué construí:
-• Workflow en n8n con dos frentes: backfill manual de los últimos 30 días y carga automática diaria a las 06h
-• Ingesta desde la Frankfurter API (USD→BRL y USD→EUR) hacia PostgreSQL (Supabase)
-• Capa Raw idempotente (ON CONFLICT / upsert), sin duplicar ni sobrescribir el histórico
-• Capa Gold consolidada: clientes + rutas + cotización + flete convertido a la moneda local
-• Cálculo de la variación cambiaria en 7 días con alerta automática en Slack cuando supera el 2%
-
-Valor para la empresa:
-Fletes convertidos cada día sin esfuerzo manual, una visión única del negocio y aviso inmediato cuando el tipo de cambio amenaza el margen, para ajustar contratos antes de perder dinero.`,
-          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
-        },
-        {
-          id: 'real-x-meta',
-          name: 'Real X Meta',
-          shortDescription: 'Dashboard de Facturación vs Meta',
-          description: `Real X Meta
-
-Objetivo:
-Analizar la facturación y el cumplimiento de metas a lo largo del tiempo, comparando períodos e identificando tendencias.
-
-Qué entrega:
-• Visión general y evolución temporal de la facturación
-• Comparativo Facturación vs Meta por mes
-• Análisis Año Actual vs Año Anterior
-• Comparación entre períodos distintos
-
-Valor para la empresa:
-Apoya decisiones estratégicas con claridad sobre el desempeño comercial y el cumplimiento de metas.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiODQxMmU5YWEtZDJhMC00MGZkLWFkM2QtMTNlODc4OGY0MGU0IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'real-x-meta-comercial',
-          name: 'Realizado X Meta Comercial',
-          shortDescription: 'Desempeño Comercial Detallado',
-          description: `Realizado X Meta Comercial
-
-Objetivo:
-Seguir el desempeño comercial detallado por vendedor, gerente y producto, comparando realizado con meta.
-
-Qué entrega:
-• KPIs de Facturación, Facturas emitidas y Ticket medio
-• Facturación vs Meta por mes y por producto
-• Ranking de vendedores y desempeño por gerente
-• Identificación de quién cumplió o no la meta
-
-Valor para la empresa:
-Orienta acciones comerciales con datos y mejora la productividad del equipo de ventas.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiN2JhY2M4NzAtNzQ2Mi00YjU0LTllYjQtYjJmNGI1MGNiNmU4IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'mr-bolos',
-          name: 'Mr Bolos e Doces',
-          shortDescription: 'Dashboard Comercial y Estratégico',
-          description: `Mr Bolos e Doces
-
-Objetivo:
-Analizar facturación, costos y margen de una pastelería, apoyando decisiones de precios y mix de productos.
-
-Qué entrega:
-• Visión general de Facturación, Costos y Margen Bruto
-• Análisis mensual y promedio de pedidos por día de la semana
-• Detalle por tipo, categoría y producto
-• Alerta de productos por debajo del margen de seguridad
-
-Valor para la empresa:
-Aumenta la rentabilidad al identificar productos deficitarios y optimizar el mix de ventas.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiYTU1NDkzOGYtMWExNi00OWFjLWI2YzYtNjRmMDUzYjAzMjE4IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'real-x-meta-controladoria',
-          name: 'Real X Meta Controladoria',
-          shortDescription: 'Estado de Resultados - Real vs Previsto',
-          description: `Real X Meta Controladoria
-
-Objetivo:
-Seguir el Estado de Resultados comparando Real con Previsto por sucursal y período.
-
-Qué entrega:
-• Análisis Real vs Meta con AV y AH
-• Análisis horizontal, vertical y de gastos
-• Detalle por cuenta gerencial y sucursal
-• Resultado neto del ejercicio y acumulado
-
-Valor para la empresa:
-Ofrece visibilidad contable y gerencial para decisiones financieras basadas en datos confiables.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiZmY0YmVlNzUtOTZjOC00NjdlLTk3NjUtYjJiOGEwZDQwMDU0IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'financeiro-dre',
-          name: 'Financeiro - DRE',
-          shortDescription: 'Dashboard Financiero Ejecutivo',
-          description: `Financeiro - DRE
-
-Objetivo:
-Consolidar el Estado de Resultados con una visión ejecutiva de indicadores financieros.
-
-Qué entrega:
-• KPIs de Ingresos Netos, Margen de Contribución, EBITDA y Beneficio Neto
-• Análisis mes a mes del Estado de Resultados completo
-• Análisis Horizontal por cuenta gerencial
-• Porcentajes sobre los ingresos brutos
-
-Valor para la empresa:
-Facilita la lectura de la salud financiera y apoya decisiones de control de costos e inversiones.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQ5ZDNkMTEtODEyOC00ZDc0LWEyZjctNTYzYWRiYjA5YTk3IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
-        },
-        {
-          id: 'heavy-power-nutrition',
-          name: 'Heavy Power Nutrition',
-          shortDescription: 'Sales Overview - Suplementos',
-          description: `Heavy Power Nutrition
-
-Objetivo:
-Analizar las ventas de una cadena de suplementos con visión geográfica, por producto y canal.
-
-Qué entrega:
-• KPIs de Gross Sales, Net Sales, Discount y Margin
-• Análisis mensual y por tipo de negocio
-• Análisis geográfico por ciudad
-• Detalle por categoría, subcategoría y producto
-
-Valor para la empresa:
-Identifica los productos y regiones más rentables, orientando estrategia comercial y expansión.`,
-          link: 'https://app.powerbi.com/view?r=eyJrIjoiNGQzN2U2ZjYtNDFiMS00MGFjLWE2NzItYzQ5OWRjNmU3OWE5IiwidCI6IjVjNTcwY2M3LTNjMDEtNGNmNC04YmQ1LTBmZDc1MWY2Zjg2YiJ9',
         },
       ],
     },
