@@ -13,6 +13,8 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import LoadingScreen from '@/components/LoadingScreen';
+import ScrollProgress from '@/components/ScrollProgress';
+import BackToTop from '@/components/BackToTop';
 
 const SESSION_KEY = 'jb-intro-shown';
 
