@@ -321,6 +321,27 @@ export const translations = {
       close: 'Fechar',
       items: [
         {
+          id: 'futdata-databricks',
+          name: 'FutData Insights — Pipeline no Azure Databricks',
+          shortDescription: 'Pipeline de dados no Azure Databricks com PySpark, SQL e arquitetura medalhão',
+          description: `FutData Insights — Pipeline de Dados no Azure Databricks
+
+Contexto:
+Uma empresa de análise esportiva fechou contrato com um clube da Série A que sofria com a irregularidade dos resultados, e os dados chegavam em formatos heterogêneos (CSV e JSON, com encodings mistos) espalhados pelo Azure Data Lake.
+
+O que construí:
+• Arquitetura medalhão completa no Azure Databricks: Bronze (dados brutos), Silver (Parquet limpo e tipado) e Gold (modelo analítico em tabelas Delta)
+• Ingestão de 5 fontes com PySpark, unindo UTF-8 e UTF-16 no mesmo fluxo, com schemas explícitos, struct aninhado e coluna de auditoria dt_ingestao
+• Padronização de todos os campos com convenção própria de nomes (id_, nm_, cd_, dt_, qt_, vl_)
+• Camada Gold com a fato ft_partidas e dimensões de times, estádios, torneios e jogadores, gravadas em Delta e consultáveis também via Spark SQL
+• Notebook genérico parametrizado por widget, funções reutilizáveis e orquestração de ponta a ponta com Databricks Workflows
+• Análises com joins, window functions e agregações para revelar os fatores por trás do desempenho do clube
+
+Valor para a empresa:
+Dados brutos e bagunçados viram tabelas confiáveis no Unity Catalog, prontas para alimentar insights e dashboards que ajudam a comissão técnica a tomar decisões em campo.`,
+          link: 'https://github.com/J-Breno/databricks_project_FutData',
+        },
+        {
           id: 'n8n-dataflow-logistics',
           name: 'DataFlow Logistics — Ingestão com n8n',
           shortDescription: 'Pipeline de ingestão de cotações com n8n, PostgreSQL e alertas no Slack',
@@ -803,6 +824,27 @@ Identifica os produtos e regiões mais rentáveis, orientando estratégia comerc
       close: 'Close',
       items: [
         {
+          id: 'futdata-databricks',
+          name: 'FutData Insights — Azure Databricks Pipeline',
+          shortDescription: 'Data pipeline on Azure Databricks with PySpark, SQL and the medallion architecture',
+          description: `FutData Insights — Data Pipeline on Azure Databricks
+
+Context:
+A sports analytics company signed a contract with a Série A club struggling with inconsistent results, and the data arrived in heterogeneous formats (CSV and JSON, with mixed encodings) scattered across Azure Data Lake Storage.
+
+What I built:
+• A full medallion architecture on Azure Databricks: Bronze (raw data), Silver (clean, typed Parquet) and Gold (analytical model in Delta tables)
+• Ingestion of 5 sources with PySpark, unifying UTF-8 and UTF-16 in the same flow, with explicit schemas, nested structs and a dt_ingestao audit column
+• Every field standardized with a custom naming convention (id_, nm_, cd_, dt_, qt_, vl_)
+• Gold layer with the ft_partidas fact table and dimensions for teams, stadiums, tournaments and players, stored as Delta and queryable via Spark SQL
+• A generic widget-parameterized notebook, reusable functions and end-to-end orchestration with Databricks Workflows
+• Analysis with joins, window functions and aggregations to surface the factors behind the club's performance
+
+Value for the business:
+Messy raw data becomes reliable tables in Unity Catalog, ready to feed insights and dashboards that help the coaching staff make decisions on the pitch.`,
+          link: 'https://github.com/J-Breno/databricks_project_FutData',
+        },
+        {
           id: 'n8n-dataflow-logistics',
           name: 'DataFlow Logistics — Ingestão com n8n',
           shortDescription: 'Exchange-rate ingestion pipeline with n8n, PostgreSQL and Slack alerts',
@@ -1284,6 +1326,27 @@ Identifies the most profitable products and regions, guiding commercial strategy
       next: 'Siguiente',
       close: 'Cerrar',
       items: [
+        {
+          id: 'futdata-databricks',
+          name: 'FutData Insights — Pipeline en Azure Databricks',
+          shortDescription: 'Pipeline de datos en Azure Databricks con PySpark, SQL y arquitectura medallón',
+          description: `FutData Insights — Pipeline de Datos en Azure Databricks
+
+Contexto:
+Una empresa de análisis deportivo firmó contrato con un club de la Série A que sufría con la irregularidad de sus resultados, y los datos llegaban en formatos heterogéneos (CSV y JSON, con encodings mezclados) dispersos en Azure Data Lake Storage.
+
+Lo que construí:
+• Arquitectura medallón completa en Azure Databricks: Bronze (datos crudos), Silver (Parquet limpio y tipado) y Gold (modelo analítico en tablas Delta)
+• Ingesta de 5 fuentes con PySpark, unificando UTF-8 y UTF-16 en el mismo flujo, con esquemas explícitos, struct anidado y columna de auditoría dt_ingestao
+• Estandarización de todos los campos con una convención propia de nombres (id_, nm_, cd_, dt_, qt_, vl_)
+• Capa Gold con la tabla de hechos ft_partidas y dimensiones de equipos, estadios, torneos y jugadores, grabadas en Delta y consultables también con Spark SQL
+• Notebook genérico parametrizado por widget, funciones reutilizables y orquestación de punta a punta con Databricks Workflows
+• Análisis con joins, window functions y agregaciones para revelar los factores detrás del desempeño del club
+
+Valor para la empresa:
+Datos crudos y desordenados se convierten en tablas confiables en Unity Catalog, listas para alimentar insights y dashboards que ayudan al cuerpo técnico a tomar decisiones en el campo.`,
+          link: 'https://github.com/J-Breno/databricks_project_FutData',
+        },
         {
           id: 'n8n-dataflow-logistics',
           name: 'DataFlow Logistics — Ingestão com n8n',
