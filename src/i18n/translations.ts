@@ -460,6 +460,26 @@ Valor para a empresa:
 O sistema de origem fica protegido, as regras mudam em um só lugar e a área de Vendas ganha um Data Mart confiável, pronto para relatórios e dashboards.`,
           link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
         },
+        {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Pipeline de ingestão de cotações com n8n, PostgreSQL e alertas no Slack',
+          description: `DataFlow Logistics — Pipeline de Ingestão de Cotações com n8n
+
+Contexto:
+Uma operação logística no Brasil e na Europa precifica fretes em dólar, mas cada cliente paga em sua moeda (BRL, EUR ou USD). Sem câmbio atualizado e cruzado com o cadastro, a margem fica exposta.
+
+O que construí:
+• Workflow em n8n com duas frentes: backfill manual dos últimos 30 dias e coleta automática diária às 06h
+• Ingestão da Frankfurter API (USD→BRL e USD→EUR) direto para PostgreSQL (Supabase)
+• Camada Raw idempotente (ON CONFLICT / upsert), sem duplicar nem sobrescrever histórico
+• Camada Gold consolidada: clientes + rotas + cotação + frete convertido para a moeda local
+• Cálculo da variação cambial em 7 dias com alerta automático no Slack quando passa de 2%
+
+Valor para a empresa:
+Fretes convertidos todo dia sem esforço manual, uma visão única do negócio e aviso imediato quando o câmbio ameaça a margem, para ajustar contratos antes do prejuízo.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
+        },
       ],
     },
   },
@@ -922,6 +942,26 @@ Business Value:
 The source system stays protected, rules change in a single place, and Sales gets a reliable Data Mart ready for reports and dashboards.`,
           link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
         },
+        {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Exchange-rate ingestion pipeline with n8n, PostgreSQL and Slack alerts',
+          description: `DataFlow Logistics — Exchange-Rate Ingestion Pipeline with n8n
+
+Context:
+A logistics operation in Brazil and Europe prices freight in US dollars, but each customer pays in their own currency (BRL, EUR or USD). Without up-to-date rates joined to master data, margins are exposed.
+
+What I built:
+• n8n workflow with two branches: a manual 30-day backfill and an automated daily load at 6 AM
+• Ingestion from the Frankfurter API (USD→BRL and USD→EUR) into PostgreSQL (Supabase)
+• Idempotent Raw layer (ON CONFLICT / upsert) that never duplicates or overwrites history
+• Consolidated Gold layer: customers + routes + rate + freight converted to local currency
+• 7-day exchange-rate variation with an automatic Slack alert when it exceeds 2%
+
+Business Value:
+Freight converted daily with zero manual effort, a single view of the business and an instant warning when currency swings threaten margins, so contracts can be adjusted before losses.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
+        },
       ],
     },
   },
@@ -1383,6 +1423,26 @@ Qué entrega:
 Valor para la empresa:
 El sistema de origen queda protegido, las reglas cambian en un solo lugar y el área de Ventas obtiene un Data Mart confiable, listo para informes y dashboards.`,
           link: 'https://github.com/J-Breno/sql/tree/main/12_projeto_data_mart_x_data_warehouse',
+        },
+        {
+          id: 'n8n-dataflow-logistics',
+          name: 'DataFlow Logistics — Ingestão com n8n',
+          shortDescription: 'Pipeline de ingesta de cotizaciones con n8n, PostgreSQL y alertas en Slack',
+          description: `DataFlow Logistics — Pipeline de Ingesta de Cotizaciones con n8n
+
+Contexto:
+Una operación logística en Brasil y Europa fija los fletes en dólares, pero cada cliente paga en su moneda (BRL, EUR o USD). Sin tipo de cambio actualizado y cruzado con el registro, el margen queda expuesto.
+
+Qué construí:
+• Workflow en n8n con dos frentes: backfill manual de los últimos 30 días y carga automática diaria a las 06h
+• Ingesta desde la Frankfurter API (USD→BRL y USD→EUR) hacia PostgreSQL (Supabase)
+• Capa Raw idempotente (ON CONFLICT / upsert), sin duplicar ni sobrescribir el histórico
+• Capa Gold consolidada: clientes + rutas + cotización + flete convertido a la moneda local
+• Cálculo de la variación cambiaria en 7 días con alerta automática en Slack cuando supera el 2%
+
+Valor para la empresa:
+Fletes convertidos cada día sin esfuerzo manual, una visión única del negocio y aviso inmediato cuando el tipo de cambio amenaza el margen, para ajustar contratos antes de perder dinero.`,
+          link: 'https://github.com/J-Breno/ingestao_de_dados_N8N_DataFlow_Logistcs',
         },
       ],
     },
