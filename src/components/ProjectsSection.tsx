@@ -14,6 +14,7 @@ import realXMetaControladoriaImg from '@/assets/projects/real-x-meta-controlador
 import financeiroDreImg from '@/assets/projects/financeiro-dre.png';
 import heavyPowerNutritionImg from '@/assets/projects/heavy-power-nutrition.png';
 import sqlDataMartDwImg from '@/assets/projects/sql-data-mart-dw.jpg';
+import futdataDatabricksImg from '@/assets/projects/futdata-databricks.jpg';
 import n8nDataflowAsset from '@/assets/projects/n8n-dataflow-logistics.png.asset.json';
 
 const imageMap: Record<string, string> = {
@@ -23,6 +24,7 @@ const imageMap: Record<string, string> = {
   'real-x-meta-controladoria': realXMetaControladoriaImg,
   'financeiro-dre': financeiroDreImg,
   'heavy-power-nutrition': heavyPowerNutritionImg,
+  'futdata-databricks': futdataDatabricksImg,
   'sql-data-mart-dw': sqlDataMartDwImg,
   'n8n-dataflow-logistics': n8nDataflowAsset.url,
 };
